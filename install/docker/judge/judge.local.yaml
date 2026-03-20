@@ -1,0 +1,10 @@
+hosts:
+  localdev:
+    type: hydro
+    server_url: http://host.docker.internal:2333/
+    uname: judge
+    password: examplepassword
+    detail: full
+parallelism: 1
+singleTaskParallelism: 1
+disable: true

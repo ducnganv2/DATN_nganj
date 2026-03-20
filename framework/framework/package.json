@@ -1,0 +1,32 @@
+{
+    "name": "@hydrooj/framework",
+    "version": "0.2.7",
+    "main": "index.ts",
+    "license": "MIT",
+    "repository": "https://github.com/hydro-dev/Hydro",
+    "peerDependencies": {
+        "cordis": "*"
+    },
+    "dependencies": {
+        "@hydrooj/utils": "workspace:^",
+        "@koa/router": "^15.3.0",
+        "@mongodb-js/saslprep": "^1.4.6",
+        "emoji-regex": "^10.6.0",
+        "fs-extra": "^11.3.3",
+        "koa": "^3.1.2",
+        "koa-body": "^7.0.1",
+        "koa-compress": "5.1.1",
+        "path-to-regexp": "^8.3.0",
+        "sanitize-filename": "^1.6.3",
+        "schemastery": "^3.17.2",
+        "shorty.js": "^1.0.1",
+        "ws": "^8.19.0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/koa": "^3.0.1",
+        "@types/koa-compress": "^4.0.7",
+        "@types/koa__router": "^12.0.5",
+        "@types/ws": "^8.18.1"
+    }
+}

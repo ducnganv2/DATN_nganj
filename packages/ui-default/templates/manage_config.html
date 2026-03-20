@@ -1,0 +1,6 @@
+{% extends "manage_base.html" %}
+{% block manage_content %}
+{{ set(UiContext, 'schema', schema) }}
+{{ set(UiContext, 'config', value) }}
+<div id="app"></div>
+{% endblock %}

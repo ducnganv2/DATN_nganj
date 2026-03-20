@@ -1,0 +1,9 @@
+services:
+  oj-judge-local:
+    build: ./judge
+    container_name: oj-judge-local
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - ./judge/judge.local.yaml:/root/.hydro/judge.yaml:ro
+      - ./judge/mount.yaml:/root/.hydro/mount.yaml:ro
