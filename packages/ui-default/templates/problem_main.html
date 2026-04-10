@@ -1,6 +1,7 @@
 {% import "components/record.html" as record with context %}
 {% import "components/problem.html" as problem with context %}
 {% extends "layout/basic.html" %}
+{% set problem_categories = handler.ctx.setting.get('problem.categories')|parseYaml %}
 {% block content %}
   <div class="row">
     <div class="medium-9 columns">
@@ -85,12 +86,14 @@
         </div>
       {% endif %}
       <div class="section side">
+        {% if problem_categories and Object.keys(problem_categories).length %}
         <div class="section__header edit-mode-hide">
           <h1 class="section__title">{{ _('Categories') }}</h1>
         </div>
         <div class="section__body">
           {% include "partials/category.html" %}
         </div>
+        {% endif %}
         <div class="section__body edit-mode-hide">
           {% include "partials/problem_lucky.html" %}
         </div>

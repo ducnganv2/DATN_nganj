@@ -136,7 +136,7 @@ export default class Hydro implements Session {
     }
 
     async consume(queue: PQueue) {
-        log.info('正在连接 %sjudge/conn', this.config.server_url);
+        log.info('Connecting to %sjudge/conn', this.config.server_url);
         this.ws = new WebSocket(`${this.config.server_url.replace(/^http/i, 'ws')}judge/conn`, {
             headers: {
                 Authorization: `Bearer ${this.config.cookie.split('sid=')[1].split(';')[0]}`,
@@ -172,11 +172,11 @@ export default class Hydro implements Session {
             if (request.task) queue.add(() => new JudgeTask(this, request.task).handle().catch((e) => log.error(e)));
         });
         this.ws.on('close', (data, reason) => {
-            log.warn(`[${this.config.host}] Websocket 断开:`, data, reason.toString());
+            log.warn(`[${this.config.host}] Websocket disconnected:`, data, reason.toString());
             setTimeout(() => this.retry(queue), 30000);
         });
         this.ws.on('error', (e) => {
-            log.error(`[${this.config.host}] Websocket 错误:`, e);
+            log.error(`[${this.config.host}] Websocket error:`, e);
             setTimeout(() => this.retry(queue), 30000);
         });
         await new Promise((resolve) => {
@@ -207,7 +207,7 @@ export default class Hydro implements Session {
                 resolve(null);
             });
         });
-        log.info(`[${this.config.host}] 已连接`);
+        log.info(`[${this.config.host}] Connected`);
     }
 
     dispose() {

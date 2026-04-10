@@ -1,21 +1,41 @@
 # migrate
 
+This module imports data from other online judge systems.
+Keep network connectivity stable during migration.
 
-这个模块用于从其他系统批量导入数据。
-迁移过程中请保持网络畅通。
+Mô-đun này dùng để nhập dữ liệu từ các hệ thống OJ khác.
+Trong quá trình migrate, hãy giữ kết nối mạng ổn định.
 
 ## migrate-vijos
 
-从Vijos4.0的数据库导入数据。  
-迁移前，您需要指定数据来源。  
-**请不要**将 Hydro 正在使用的数据库设置为数据来源的数据库。  
-迁移过程中，Hydro 的以下内容会被**清空**：  
-题目列表，提交记录，用户列表，比赛列表，比赛成绩表，训练列表，训练进度，站内消息，题解，讨论  
-以下内容将被迁移：  
-题目与测试数据、题解，讨论与回复，比赛、训练、作业相关数据，提交记录，用户列表，站内消息。
+Import data from a Vijos 4.0 database.
+
+Before migration, you must configure a source database.
+Do not use the same database currently used by Hydro as the source database.
+
+During migration, Hydro data will be cleared.
+Typical affected data includes:
+- problems
+- submissions
+- users
+- contests and standings
+- trainings and progress
+- internal messages
+- solutions and discussions
+
+Imported data may include:
+- problems and test data
+- solutions, discussions, and replies
+- contest/training/homework related data
+- submissions
+- users
+- internal messages
 
 ## migrate-hustoj
 
-从HustOJ的数据库导入数据。  
-迁移过程中，Hydro 的内容会被**清空**，以下内容将被迁移：  
-题目与测试数据，用户列表。
+Import data from a HustOJ database.
+
+During migration, Hydro data will be cleared.
+Typical imported data includes:
+- problems and test data
+- users

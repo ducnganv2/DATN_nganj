@@ -54,8 +54,8 @@ export default class TelegramService extends Service {
                 this.response.template = 'telegram_login.html';
             },
         });
-        ctx.i18n.load('zh', {
-            'Login With Telegram': '使用 Telegram 登录',
+        ctx.i18n.load('vi', {
+            'Login With Telegram': 'Dang nhap bang Telegram',
         });
     }
 }

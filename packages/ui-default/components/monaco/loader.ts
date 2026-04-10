@@ -22,12 +22,10 @@ const loaders = {
     const { setLocaleData } = await import('./nls');
     let resource;
     const lang = UserContext.viewLang;
-    if (lang === 'zh') {
-      resource = await import('monaco-editor-nls/locale/zh-hans.json');
-    } else if (lang === 'zh_TW') {
-      resource = await import('monaco-editor-nls/locale/zh-hant.json');
-    } else if (lang === 'ko') {
-      resource = await import('monaco-editor-nls/locale/ko.json');
+    if (lang?.startsWith('vi')) {
+      // monaco-editor-nls does not ship a Vietnamese locale yet.
+      // Keep Vietnamese as a supported app language and fall back to Monaco defaults.
+      resource = await import('./locales/vi.json');
     }
     if (resource) setLocaleData(resource);
   },

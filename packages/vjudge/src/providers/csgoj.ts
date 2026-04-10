@@ -119,7 +119,10 @@ export default class CSGOJProvider extends BasicFetcher implements IBasicProvide
             },
             files,
             tag: [tag],
-            content: JSON.stringify({ zh: contents.join('\n\n') }),
+            content: JSON.stringify({
+                en: contents.join('\n\n'),
+                vi: contents.join('\n\n'),
+            }),
         };
     }
 

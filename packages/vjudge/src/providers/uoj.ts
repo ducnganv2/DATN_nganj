@@ -10,17 +10,21 @@ import { VERDICT } from '../verdict';
 
 const logger = new Logger('remote/uoj');
 const MAPPING = {
-    一: 1,
-    二: 2,
-    三: 3,
-    四: 4,
-    五: 5,
-    六: 6,
-    七: 7,
-    八: 8,
-    九: 9,
-    十: 10,
+    '\u4e00': 1,
+    '\u4e8c': 2,
+    '\u4e09': 3,
+    '\u56db': 4,
+    '\u4e94': 5,
+    '\u516d': 6,
+    '\u4e03': 7,
+    '\u516b': 8,
+    '\u4e5d': 9,
+    '\u5341': 10,
 };
+const LOGIN_TITLE = '<title>\u767b\u5f55 - ';
+const SAMPLE_PREFIX = '\u6837\u4f8b';
+const SUBMISSION_HISTORY = '\u6211\u7684\u63d0\u4ea4\u8bb0\u5f55';
+const DETAIL_TITLE = '\u8be6\u7ec6';
 
 export default class UOJProvider extends BasicFetcher implements IBasicProvider {
     constructor(public account: RemoteAccount, private save: (data: any) => Promise<void>) {
@@ -44,7 +48,7 @@ export default class UOJProvider extends BasicFetcher implements IBasicProvider 
     }
 
     get loggedIn() {
-        return this.get('/login').then(({ text: html }) => !html.includes('<title>登录 - '));
+        return this.get('/login').then(({ text: html }) => !html.includes(LOGIN_TITLE));
     }
 
     async ensureLogin() {
@@ -101,8 +105,8 @@ export default class UOJProvider extends BasicFetcher implements IBasicProvider 
             if (!before) continue;
             if (before.textContent === 'input') {
                 const tid = before.previousElementSibling;
-                if ((tid.textContent).startsWith('样例')) {
-                    lastId = MAPPING[tid.textContent.split('样例')[1]];
+                if ((tid.textContent).startsWith(SAMPLE_PREFIX)) {
+                    lastId = MAPPING[tid.textContent.split(SAMPLE_PREFIX)[1]];
                     tid.remove();
                 }
             } else if (before.textContent !== 'output') continue;
@@ -155,7 +159,7 @@ export default class UOJProvider extends BasicFetcher implements IBasicProvider 
             answer_answer_editor: code,
             'submit-answer': 'answer',
         });
-        if (!text.includes('我的提交记录')) throw new Error('Submit fail');
+        if (!text.includes(SUBMISSION_HISTORY)) throw new Error('Submit fail');
         const { text: status } = await this.get(`/submissions?problem_id=${id.split('P')[1]}&submitter=${this.account.handle}`);
         const $dom = new JSDOM(status);
         return $dom.window.document.querySelector('tbody>tr>td>a').innerHTML.split('#')[1];
@@ -173,7 +177,7 @@ export default class UOJProvider extends BasicFetcher implements IBasicProvider 
             const find = (content: string) => Array.from(document.querySelectorAll('.panel-heading>.panel-title'))
                 .find((n) => n.innerHTML === content).parentElement.parentElement.children[1];
             if (text.includes('Compile Error')) {
-                await next({ compilerText: find('详细').children[0].innerHTML });
+                await next({ compilerText: find(DETAIL_TITLE).children[0].innerHTML });
                 return await end({
                     status: STATUS.STATUS_COMPILE_ERROR, score: 0, time: 0, memory: 0,
                 });

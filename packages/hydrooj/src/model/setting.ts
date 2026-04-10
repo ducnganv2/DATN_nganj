@@ -334,7 +334,7 @@ SystemSetting(Schema.object({
 }));
 // We will keep the old settings as-is until new setting ui is ready.
 SystemSetting(
-    Setting('setting_server', 'server.language', 'zh_CN', langRange, 'server.language', 'Default display language'),
+    Setting('setting_server', 'server.language', 'en', langRange, 'server.language', 'Default display language'),
     ServerLangSettingNode,
     Setting('setting_limits', 'limit.by_user', false, 'boolean', 'limit.by_user', 'Use per-user limits instead of per ip limits'),
     Setting('setting_limits', 'limit.problem_files_max', 100, 'number', 'limit.problem_files_max', 'Max files per problem'),

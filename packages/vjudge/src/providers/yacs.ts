@@ -8,6 +8,7 @@ import { IBasicProvider, RemoteAccount } from '../interface';
 import { VERDICT } from '../verdict';
 
 const logger = new Logger('remote/yacs');
+const PUBLISHED_STATUS = '\u699c\u5355\u5df2\u516c\u5e03';
 
 export default class YACSProvider extends BasicFetcher implements IBasicProvider {
     constructor(public account: RemoteAccount, private save: (data: any) => Promise<void>) {
@@ -53,20 +54,20 @@ export default class YACSProvider extends BasicFetcher implements IBasicProvider
         if (problem.level) tag.push(problem.level);
         if (problem.contest) tag.push(problem.contest.name);
         let content = '';
-        if (problem.background.trim()) content += `## 题目背景\n\n${problem.background.trim()}\n\n`;
-        content += `## 题目描述\n\n${problem.description.trim()}\n\n`;
-        content += `## 输入格式\n\n${problem.inputFormat.trim()}\n\n`;
-        content += `## 输出格式\n\n${problem.outputFormat.trim()}\n\n`;
+        if (problem.background.trim()) content += `## Background\n\n${problem.background.trim()}\n\n`;
+        content += `## Description\n\n${problem.description.trim()}\n\n`;
+        content += `## Input Format\n\n${problem.inputFormat.trim()}\n\n`;
+        content += `## Output Format\n\n${problem.outputFormat.trim()}\n\n`;
         content += problem.exampleList.map((sample, index) => {
             const sampleId = index + 1;
             let ret = '';
             ret += `\`\`\`input${sampleId}\n${sample.input.trim()}\n\`\`\`\n\n`;
             ret += `\`\`\`output${sampleId}\n${sample.output.trim()}\n\`\`\`\n\n`;
-            if (sample.note && sample.note.trim()) ret += `## 样例解释 ${sampleId}\n\n${sample.note.trim()}\n\n`;
+            if (sample.note && sample.note.trim()) ret += `## Sample Note ${sampleId}\n\n${sample.note.trim()}\n\n`;
             return ret;
         }).join('');
-        content += `## 数据范围\n\n${problem.dataRange.trim()}\n\n`;
-        if (problem.source.trim()) content += `## 来源\n\n${problem.source.trim()}\n\n`;
+        content += `## Constraints\n\n${problem.dataRange.trim()}\n\n`;
+        if (problem.source.trim()) content += `## Source\n\n${problem.source.trim()}\n\n`;
         return {
             title: problem.title,
             data: {
@@ -87,7 +88,7 @@ export default class YACSProvider extends BasicFetcher implements IBasicProvider
     async listProblem(page: number) {
         const data = await this.getData(`/problem?pi=${page}`);
         return data.problemList
-            .filter((problem) => problem.contest.status === '榜单已公布')
+            .filter((problem) => problem.contest.status === PUBLISHED_STATUS)
             .map((problem) => `P${problem.id}`);
     }
 

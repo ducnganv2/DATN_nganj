@@ -1,9 +1,11 @@
 import { CustomSelectAutoComplete } from '@hydrooj/components';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { getAvailableLangs } from 'vj/utils';
 
-const prefixes = new Set(Object.keys(window.LANGS).filter((i) => i.includes('.')).map((i) => i.split('.')[0]));
-const data = Object.keys(window.LANGS).filter((i) => !prefixes.has(i))
+const availableLangs = getAvailableLangs();
+const prefixes = new Set(Object.keys(availableLangs).filter((i) => i.includes('.')).map((i) => i.split('.')[0]));
+const data = Object.keys(availableLangs)
   .map((i) => ({ name: `${i.includes('.') ? `${window.LANGS[i.split('.')[0]].display || ''}/` : ''}${window.LANGS[i].display}`, _id: i }));
 const withAuto = [...data, { name: 'Auto', _id: 'auto' }];
 
@@ -13,7 +15,7 @@ const LanguageSelectAutoComplete = React.forwardRef<any, any>((props, ref) => (
     {...props}
     selectedKeys={typeof props.selectedKeys === 'string' ? props.selectedKeys.split(',') : props.selectedKeys}
     data={props.withAuto ? withAuto : data}
-    renderItem={(item) => (prefixes.has(item._id) ? '' : `${item.name}`)}
+    renderItem={(item) => `${item.name}`}
     onChange={(val) => {
       let value = val.split(',');
       const active = new Set(value.filter((i) => i.includes('.')).map((i) => i.split('.')[0]));
@@ -23,7 +25,7 @@ const LanguageSelectAutoComplete = React.forwardRef<any, any>((props, ref) => (
     }}
     multi={!!props.multi}
   />
-));
+ ));
 
 LanguageSelectAutoComplete.propTypes = {
   width: PropTypes.string,

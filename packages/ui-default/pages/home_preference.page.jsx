@@ -13,16 +13,21 @@ async function initCodeLangHelper() {
     .hide()
     .after($el);
 
+  const availableLangs = getAvailableLangs();
   const main = {};
-  for (const key in window.LANGS) {
-    if (!key.includes('.') && !window.LANGS[key].hidden) main[key] = window.LANGS[key].display;
+  for (const key in availableLangs) {
+    if (!key.includes('.')) main[key] = availableLangs[key].display;
+    else {
+      const base = key.split('.')[0];
+      main[base] = window.LANGS[base].display;
+    }
   }
 
   await delay(50);
   renderLanguageSelect(
     document.getElementById('codelang-select'),
     $('[name="codeLang"]'),
-    getAvailableLangs(),
+    availableLangs,
     main,
     [$('[name="codeLang"]').val()],
   );

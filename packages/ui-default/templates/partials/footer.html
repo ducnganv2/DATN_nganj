@@ -16,17 +16,6 @@
       </div>
       <div class="medium-3 large-2 columns footer__category expandable">
         <h1>
-          {{ _('Development') }}
-          <span class="expand-icon">
-            <span class="icon icon-expand_more"></span>
-          </span>
-        </h1>
-        <div class="footer__category__expander"><ul class="footer__category__list">
-          <li class="footer__category__item"><a href="https://github.com/hydro-dev/Hydro" target="_blank">{{ _('Open Source') }}</a></li>
-        </ul></div>
-      </div>
-      <div class="medium-3 large-2 columns footer__category expandable">
-        <h1>
           {{ _('Support') }}
           <span class="expand-icon">
             <span class="icon icon-expand_more"></span>
@@ -95,12 +84,8 @@
           {%- for html in (model.system.get('ui-default.footer_extra_html')|default('')).split('\n') -%}
             <li class="footer__extra-link-item">{{ html|safe }}</li>
           {%- endfor -%}
-          <li class="footer__extra-link-item">Worker {{ process.env.NODE_APP_INSTANCE }}, {{ Date.now() - handler.args.__start }}ms</li>
           <!-- Prepare {{ handler.args.__prepareDone - handler.args.__prepare }}ms -->
           <!-- Method {{ handler.args.__methodDone - handler.args.__method }}ms -->
-          {# You are not permitted to hide, edit or remove the following copyright info unless you have purchased an active enterprise license. #}
-          {# 除非您已购买了有效的企业版授权，否则您不得隐藏、修改或移除下方的版权信息。 #}
-          <li class="footer__extra-link-item">Powered by <a href="https://hydro.js.org">Hydro v{{ global.Hydro.version.hydrooj }}</a> {{ "Professional" if model.system.get('server.pro') else "Community" }}</li>
         </ol>
       </div>
     </div>

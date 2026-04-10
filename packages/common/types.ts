@@ -97,6 +97,19 @@ export interface RecordJudgeInfo {
     subtasks?: Record<number, SubtaskResult>;
 }
 
+export type SubmissionAICheckState = 'pending' | 'checked' | 'skipped' | 'error';
+
+export interface SubmissionAICheck {
+    state: SubmissionAICheckState;
+    isAI: boolean | null;
+    score?: number | null;
+    threshold?: number | null;
+    confidence?: number | null;
+    provider: string;
+    message: string;
+    checkedAt: Date;
+}
+
 export interface RecordPayload extends RecordJudgeInfo {
     domainId: string;
     pid: number;
@@ -114,6 +127,7 @@ export interface RecordPayload extends RecordJudgeInfo {
     contest?: string;
 
     files?: Record<string, string>;
+    aiCheck?: SubmissionAICheck;
 }
 
 export interface JudgeRequest extends Omit<RecordPayload, 'testCases'> {

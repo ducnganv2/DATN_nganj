@@ -90,24 +90,7 @@ export async function run({
     const target = await DomainModel.get(domainId);
     if (!target) throw new NotFoundError(domainId);
     report({ message: 'Connected to database' });
-    /*
-        `id` int NOT NULL AUTO_INCREMENT, 用户id（主键）
-        `username` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL, 用户名
-        `email` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL, 用户E-mail
-        `password` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL, 密码
-        `nickname` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL, 昵称
-        `nameplate` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `information` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL, 个人信息
-        `ac_num` int NULL DEFAULT NULL,  AC数量
-        `submit_num` int NULL DEFAULT NULL, 提交数量
-        `is_admin` tinyint NULL DEFAULT NULL, 是否为管理员
-        `is_show` tinyint NULL DEFAULT NULL, 是否公开信息
-        `public_email` tinyint NULL DEFAULT 1, 是否公开E-mail
-        `prefer_formatted_code` tinyint NULL DEFAULT 1, 是否使用格式化代码
-        `sex` int NULL DEFAULT NULL, 性别
-        `rating` int NULL DEFAULT NULL,
-        `register_time` int NULL DEFAULT NULL, 注册时间
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const uidMap: Record<string, number> = {};
     const superAdmin = [];
     const udocs = await query('SELECT * FROM `user`');
@@ -176,29 +159,7 @@ export async function run({
     for (const tag of allTags) tagMap[tag.id] = tag.name;
     report({ message: 'tag finished' });
 
-    /*
-        `id` int NOT NULL AUTO_INCREMENT,
-        `title` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
-        `user_id` int NULL DEFAULT NULL,
-        `publicizer_id` int NULL DEFAULT NULL,
-        `is_anonymous` tinyint NULL DEFAULT NULL,
-        `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `input_format` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `output_format` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `example` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `limit_and_hint` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `time_limit` int NULL DEFAULT NULL,
-        `memory_limit` int NULL DEFAULT NULL,
-        `additional_file_id` int NULL DEFAULT NULL,
-        `ac_num` int NULL DEFAULT NULL,
-        `submit_num` int NULL DEFAULT NULL,
-        `is_public` tinyint NULL DEFAULT NULL,
-        `file_io` tinyint NULL DEFAULT NULL,
-        `file_io_input_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `file_io_output_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-        `publicize_time` datetime NULL DEFAULT NULL, 公开时间
-        `type` enum('traditional','submit-answer','interaction') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT 'traditional',
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const fileReg = /\[.*\]\((\/problem\/(\d+)\/testdata\/download\/(.*))\)/g;
     const pidMap: Record<string, number> = {};
     const configMap: Record<string, string> = {};

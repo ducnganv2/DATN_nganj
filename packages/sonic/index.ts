@@ -127,8 +127,8 @@ export class SonicService extends Service {
             },
         );
 
-        this.ctx.i18n.load('zh', {
-            'Sonic problem search re-index': '重建题目搜索索引。',
+        this.ctx.i18n.load('vi', {
+            'Sonic problem search re-index': 'Tai tao chi muc tim kiem bai toan.',
         });
     }
 

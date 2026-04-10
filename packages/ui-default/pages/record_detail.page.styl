@@ -1,5 +1,55 @@
 .page--record_detail
 
+  .ai-check-result
+    display: inline-flex
+    align-items: center
+    flex-wrap: wrap
+    gap: rem(6px)
+    padding: rem(4px 10px)
+    border-radius: rem(999px)
+    font-size: rem($font-size-small)
+    font-weight: 600
+    border: 1px solid transparent
+
+    &.is-ai
+      background: #fff1f0
+      border-color: #e38b8b
+      color: #9f2c2c
+
+    &.is-human
+      background: #edf8f1
+      border-color: #6fb38b
+      color: #21633d
+
+    &.is-other
+      background: #f3f5f7
+      border-color: #c7d0d9
+      color: #4b5c6b
+
+    .icon
+      font-size: rem(14px)
+
+  .record-status__meta
+    padding-top: 0
+
+  .record-status__meta-item
+    display: flex
+    align-items: center
+    gap: rem(12px)
+    flex-wrap: wrap
+
+  .record-status__meta-label
+    color: $text-2-color
+    font-size: rem($font-size-small)
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: .04em
+
+  .record-status__ai-score
+    padding-left: rem(6px)
+    border-left: 1px solid currentColor
+    opacity: .9
+
   .compiler-text
     padding: rem(20px 0)
     font-size: rem($font-size-small)
@@ -26,6 +76,9 @@
       padding-bottom: 0 
 
   +mobile()
+    .record-status__meta-item
+      align-items: flex-start
+
     .col--time
       width: rem(70px)
 

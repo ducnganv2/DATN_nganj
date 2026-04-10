@@ -1,9 +1,10 @@
 import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Notification from 'vj/components/notification';
 import { renderLanguageSelect } from 'vj/components/languageselect';
 import { NamedPage } from 'vj/misc/Page';
-import { getAvailableLangs, i18n, tpl } from 'vj/utils';
+import { getAvailableLangs, i18n, request, tpl } from 'vj/utils';
 
 const page = new NamedPage(['problem_submit', 'contest_detail_problem_submit', 'homework_detail_problem_submit'], async () => {
   const { config } = UiContext.pdoc;
@@ -15,7 +16,8 @@ const page = new NamedPage(['problem_submit', 'contest_detail_problem_submit', '
   const mainLangs = {};
   const preferences = [UserContext.codeLang || ''];
   for (const key in availableLangs) {
-    if (config.langs && !config.langs.filter((i) => i === key || i.startsWith(`${key}.`)).length) continue;
+    const base = key.split('.')[0];
+    if (config.langs && !config.langs.filter((i) => i === key || i === base || i.startsWith(`${base}.`)).length) continue;
     if (window.LANGS[key].pretest === preferences[0]) preferences.push(key);
     if (!key.includes('.')) mainLangs[key] = window.LANGS[key].display;
     else {
@@ -24,7 +26,8 @@ const page = new NamedPage(['problem_submit', 'contest_detail_problem_submit', '
     }
   }
   for (const key in availableLangs) {
-    if (config.langs && !config.langs.filter((i) => i === key || i.startsWith(`${key}.`)).length) continue;
+    const base = key.split('.')[0];
+    if (config.langs && !config.langs.filter((i) => i === key || i === base || i.startsWith(`${base}.`)).length) continue;
     if (typeof window.LANGS[key]?.pretest === 'string' && window.LANGS[key].pretest.split('.')[0] === preferences[0].split('.')[0]) {
       preferences.push(key);
     }
@@ -37,6 +40,79 @@ const page = new NamedPage(['problem_submit', 'contest_detail_problem_submit', '
     mainLangs,
     preferences,
   );
+
+  const form = document.querySelector('[data-ai-check-form]') as HTMLFormElement | null;
+  const statusNode = document.querySelector('[data-ai-check-status]') as HTMLDivElement | null;
+  if (form && UiContext.aiCheckUrl) {
+    const buildFallbackPayload = (message: string) => ({
+      state: 'error',
+      isAI: null,
+      score: null,
+      provider: 'client-ai-check',
+      message,
+      checkedAt: new Date().toISOString(),
+    });
+
+    const ensureHiddenInput = (name: string) => {
+      let input = form.querySelector(`[name="${name}"]`) as HTMLInputElement | null;
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+      }
+      return input;
+    };
+
+    const renderStatus = (message: string, state: 'pending' | 'checked' | 'error') => {
+      if (!statusNode) return;
+      statusNode.hidden = false;
+      statusNode.textContent = message;
+      statusNode.dataset.state = state;
+    };
+
+    const setAiCheckPayload = (payload: Record<string, unknown>) => {
+      ensureHiddenInput('aiCheckPayload').value = JSON.stringify(payload);
+    };
+
+    const finalizeSubmit = () => {
+      form.dataset.aiCheckInFlight = 'false';
+      form.dataset.aiCheckReady = 'true';
+      form.submit();
+    };
+
+    $(form).on('submit', async (ev) => {
+      if (form.dataset.aiCheckReady === 'true') return;
+      ev.preventDefault();
+      if (form.dataset.aiCheckInFlight === 'true') return;
+      form.dataset.aiCheckInFlight = 'true';
+      setAiCheckPayload(buildFallbackPayload('Pending'));
+      renderStatus('Pending', 'pending');
+
+      try {
+        const res = await request.postFile(UiContext.aiCheckUrl, new FormData(form));
+        const aiCheck = (res?.aiCheck && typeof res.aiCheck === 'object')
+          ? res.aiCheck
+          : buildFallbackPayload('AI check API returned an invalid response.');
+        const state = aiCheck.state === 'pending'
+          ? 'pending'
+          : aiCheck.state === 'error'
+            ? 'error'
+            : 'checked';
+        setAiCheckPayload(aiCheck);
+        renderStatus(aiCheck.message || 'AI check completed.', state);
+      } catch (error) {
+        const message = error instanceof Error
+          ? `AI check failed before submit. It will retry after submit. ${error.message}`
+          : 'AI check failed before submit. It will retry after submit.';
+        setAiCheckPayload(buildFallbackPayload(message));
+        renderStatus(message, 'error');
+        Notification.error(message);
+      } finally {
+        finalizeSubmit();
+      }
+    });
+  }
 
   if (localStorage.getItem('submit-hint') === 'dismiss') return;
   $(tpl`<div name="hint" class="typo"></div>`).prependTo('[name="submit_section"]');

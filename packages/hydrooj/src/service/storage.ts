@@ -65,17 +65,17 @@ const defaultPath = process.env.CI ? '/tmp/file'
 const FileSetting = Schema.intersect([
     Schema.object({
         type: Schema.union([
-            Schema.const('file').i18n({ en: 'Local Directory', zh: '本地目录' }),
+            Schema.const('file').i18n({ en: 'Local Directory' }),
             Schema.const('s3').description('S3'),
-        ] as const).i18n({ en: 'Storage Provider Type', zh: '存储提供商类型' }),
+        ] as const).i18n({ en: 'Storage Provider Type' }),
         endPointForUser: Schema.string().default('/fs/'),
         endPointForJudge: Schema.string().default('/fs/'),
-    }).i18n({ en: 'File Storage Setting', zh: '文件存储设置' }),
+    }).i18n({ en: 'File Storage Setting' }),
     Schema.union([
         Schema.object({
             type: Schema.const('file'),
-            path: Schema.string().default(defaultPath).i18n({ en: 'Storage path', zh: '存储路径' }),
-            secret: Schema.string().default(nanoid()).i18n({ en: 'Download file sign secret', zh: '下载文件签名密钥' }),
+            path: Schema.string().default(defaultPath).i18n({ en: 'Storage path' }),
+            secret: Schema.string().default(nanoid()).i18n({ en: 'Download file sign secret' }),
         }),
         Schema.object({
             type: Schema.const('s3').required(),

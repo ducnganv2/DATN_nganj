@@ -124,11 +124,11 @@ export const Config = Schema.object({
 export async function apply(ctx: Context) {
     ctx.Route('problem_import_fps', '/problem/import/fps', FpsProblemImportHandler, PERM.PERM_CREATE_PROBLEM);
     ctx.injectUI('ProblemAdd', 'problem_import_fps', { icon: 'copy', text: 'From FPS File' });
-    ctx.i18n.load('zh', {
-        'From FPS File': '从 FPS 文件导入',
-        'problem.import.fps.hint1': '我们推荐的最大导入大小为 64MiB，若文件超出此大小，强烈建议您在本机使用 EasyFPSViewer 等工具将其拆分或是移除测试数据后单独上传。',
-        'problem.import.fps.hint2': '由于 xml 格式无法随机读写，解析需要消耗大量内存，在内存过小的机器上导入大型题目包很可能导致崩溃或死机。',
-        'problem.import.fps.hint3': '若您确有需要，此限制可在系统设置中更改。我们建议您使用 Hydro 自带的 zip 格式存储或是交换题目。',
+    ctx.i18n.load('vi', {
+        'From FPS File': 'Nhap tu FPS file',
+        'problem.import.fps.hint1': 'Kich thuoc toi da khuyen nghi la 64MiB. Neu vuot qua, hay tach file hoac bo testdata lon truoc khi upload.',
+        'problem.import.fps.hint2': 'Dinh dang XML khong doc ngau nhien duoc, nen can nhieu RAM. File lon co the gay treo may tren server RAM thap.',
+        'problem.import.fps.hint3': 'Ban co the doi gioi han nay trong system settings. Khuyen nghi dung dinh dang zip de luu tru/trao doi bo de.',
     });
     ctx.i18n.load('en', {
         'From FPS File': 'Import from FPS File',

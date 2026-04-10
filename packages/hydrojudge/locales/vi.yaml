@@ -1,0 +1,40 @@
+'Error parsing memory: {0}': 'Lỗi phân tích bộ nhớ: {0}'
+'Error parsing time: {0}': 'Lỗi phân tích thời gian: {0}'
+Cannot connect to sandbox service.: Không thể kết nối đến dịch vụ sandbox.
+Cannot find checker {0}.: Không tìm thấy checker {0}.
+Cannot find input file {0}.: Không tìm thấy file input {0}.
+Cannot find judge extra file {0}.: Không tìm thấy file judge extra {0}.
+Cannot find output file {0}.: Không tìm thấy file output {0}.
+Cannot find user extra file {0}.: Không tìm thấy file user extra {0}.
+Cannot parse testdata.: Không thể phân tích testdata.
+Checker returned {0}.: Checker trả về {0}.
+Disable builtin judge: Tắt judge tích hợp
+Executable file not found.: Không tìm thấy file thực thi.
+Found {0} testcases.: Đã tìm thấy {0} testcase.
+Invalid judge_extra_files config.: Cấu hình judge_extra_files không hợp lệ.
+Invalid user_extra_files config.: Cấu hình user_extra_files không hợp lệ.
+Max testcases per problem: Số testcase tối đa cho mỗi bài
+Problem data not found.: Không tìm thấy dữ liệu bài.
+Re-Run testcase if time-limit-exceeded (max per submission): Chạy lại testcase nếu quá thời gian (tối đa cho mỗi lượt nộp)
+Read {0}, expect {1}.: Đọc được {0}, mong đợi {1}.
+Retry delay sec: Độ trễ thử lại (giây)
+Runner parallelism: Số runner chạy song song
+Sandbox Error: Lỗi sandbox
+Sandbox Host: Địa chỉ sandbox
+Standard answer longer than user output.: Đáp án chuẩn dài hơn output của người dùng.
+Stdout/Stderr size: Giới hạn kích thước stdout/stderr
+Strict Memory Mode: Chế độ giới hạn bộ nhớ nghiêm ngặt
+Syncing testdata, please wait...: Đang đồng bộ testdata, vui lòng chờ...
+Temp directory: Thư mục tạm
+Testdata cache directory: Thư mục cache testdata
+Testdata configuration incorrect.: Cấu hình testdata không chính xác.
+Too many files.: Quá nhiều file.
+Too many testcases. Cancelled.: Quá nhiều testcase. Đã hủy.
+Total time limit longer than {0}s. Cancelled.: Tổng giới hạn thời gian lớn hơn {0}s. Đã hủy.
+Total time limit per problem: Tổng giới hạn thời gian tối đa cho mỗi bài
+Unknown checker type {0}.: Không xác định loại checker {0}.
+Unknown language type.: Không xác định loại ngôn ngữ.
+Unsupported language {0}.: Ngôn ngữ {0} không được hỗ trợ.
+User output longer than standard answer.: Kết quả xuất của người dùng dài hơn đáp án chuẩn.
+You did not specify a checker.: Bạn chưa chỉ định checker.
+Your program returned {0}.: Chương trình của bạn trả về {0}.

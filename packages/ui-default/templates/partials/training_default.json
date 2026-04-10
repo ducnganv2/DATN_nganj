@@ -1,13 +1,13 @@
 [
   {
     "_id": 1,
-    "title": "最初的最初 - A+B Problem",
+    "title": "Getting Started - A+B Problem",
     "requireNids": [],
     "pids": ["P1000"]
   },
   {
     "_id": 2,
-    "title": "最初的进阶",
+    "title": "Getting Started - Intermediate",
     "requireNids": [1],
     "pids": [2, 3]
   }

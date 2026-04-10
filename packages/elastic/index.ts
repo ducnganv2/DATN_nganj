@@ -6,8 +6,8 @@ import {
 
 const indexOmit = ['_id', 'docType', 'data', 'additional_file', 'config', 'stats', 'assign'];
 const processDocument = (doc: Partial<ProblemDoc>) => {
-    doc.content &&= doc.content.replace(/[[\]【】()（）]/g, ' ');
-    doc.title &&= doc.title.replace(/[[\]【】()（）]/g, ' ')
+    doc.content &&= doc.content.replace(/[[\]\u3010\u3011()\uFF08\uFF09]/g, ' ');
+    doc.title &&= doc.title.replace(/[[\]\u3010\u3011()\uFF08\uFF09]/g, ' ')
         .replace(/([a-zA-Z]{2,})(\d+)/, '$1$2 $1 $2');
     if (doc.pid?.includes('-')) {
         const ns = doc.pid.split('-')[0];

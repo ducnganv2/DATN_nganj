@@ -1,6 +1,7 @@
 {% extends "layout/basic.html" %}
 {% block content %}
 {{ set(UiContext, 'pdoc', pdoc) }}
+{{ set(UiContext, 'aiCheckUrl', url('problem_submit_ai_check', pid=pdoc.pid|default(pdoc.docId), query={tid:tdoc.docId} if tdoc else {})) }}
 <div class="row">
   <div class="medium-9 columns">
     <div class="section">
@@ -8,7 +9,8 @@
         <h1 class="section__title">{{ _('Submit to Judge') }}</h1>
       </div>
       <div class="section__body typo" name="submit_section">
-        <form method="post" enctype="multipart/form-data">
+        <div class="problem-submit__ai-check-status" data-ai-check-status hidden></div>
+        <form method="post" enctype="multipart/form-data" data-ai-check-form>
           <div class="hasjs--hide">
             {{ form.form_select({
                 label:'Code language',

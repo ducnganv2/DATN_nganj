@@ -22,6 +22,20 @@ function isSchema(v: any): v is Schema {
     return v && typeof v === 'function' && kSchema in v;
 }
 
+function getFirstParameterToken(method: Function) {
+    const signature = method.toString().match(/^[^(]*\(\s*([^,)]*)/);
+    return signature?.[1]?.trim() || '';
+}
+
+function useRawArgsStyle(method: Function) {
+    const firstParam = getFirstParameterToken(method);
+    if (!firstParam) return method.length === 0;
+    return firstParam.startsWith('{')
+        || firstParam.startsWith('[')
+        || firstParam.startsWith('...')
+        || ['_', 'arg', 'args', 'ctx', 'rawArgs', 'request'].includes(firstParam);
+}
+
 function _buildParam(name: string, source: 'get' | 'post' | 'all' | 'route', ...args: Array<Type<any> | boolean | Validator | Converter<any>>) {
     let cursor = 0;
     const v: ParamOption<any> = { name, source };
@@ -62,9 +76,7 @@ function _descriptor(v: ParamOption<any>) {
         target.__param[target.constructor.name] ||= {};
         if (!target.__param[target.constructor.name][funcName]) {
             const originalMethod = obj.value;
-            const val = originalMethod.toString();
-            const firstArg = val.split(')')[0]?.split(',')[0]?.split('(')[1]?.trim() || '';
-            const domainIdStyle = firstArg.toLowerCase().startsWith('domainid');
+            const domainIdStyle = !useRawArgsStyle(originalMethod);
             target.__param[target.constructor.name][funcName] = [];
             obj.value = function validate(this: Handler<T>, rawArgs: any, ...extra: any[]) {
                 if (typeof rawArgs !== 'object' || extra.length) return originalMethod.call(this, rawArgs, ...extra);

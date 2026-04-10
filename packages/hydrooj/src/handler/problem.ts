@@ -20,7 +20,7 @@ import {
     ProblemNotFoundError, RecordNotFoundError, SolutionNotFoundError, ValidationError,
 } from '../error';
 import {
-    ProblemDoc, ProblemSearchOptions, ProblemStatusDoc, RecordDoc, User,
+    ProblemDoc, ProblemSearchOptions, ProblemStatusDoc, RecordDoc, SubmissionAICheck, User,
 } from '../interface';
 import { PERM, PRIV, STATUS } from '../model/builtin';
 import * as contest from '../model/contest';
@@ -35,11 +35,53 @@ import storage from '../model/storage';
 import system from '../model/system';
 import user from '../model/user';
 import {
+    checkSubmissionForAI,
+    createConfiguredPendingSubmissionAICheck,
+    createPendingSubmissionAICheck,
+    shouldDeferSubmissionAICheck,
+} from '../service/submissionAI';
+import {
     Handler, param, post, Query, query, route, Types,
 } from '../service/server';
 import { ContestDetailBaseHandler } from './contest';
 
 export const parseCategory = (value: string) => value.replace(/，/g, ',').split(',').map((e) => e.trim());
+
+const WINDOWS_EOL_REGEX = /\r\n/g;
+
+function resolveSubmissionLanguage(config: ProblemDoc['config'], lang: string) {
+    if (typeof config !== 'object' || config === null) throw new ProblemConfigError();
+    if (['submit_answer', 'objective'].includes(config.type)) return '_';
+    if ((config.langs && !config.langs.includes(lang)) || !setting.langs[lang] || setting.langs[lang].disabled) {
+        throw new ProblemNotAllowLanguageError();
+    }
+    return lang;
+}
+
+function parseSubmissionAICheck(payload?: string): SubmissionAICheck | null {
+    if (!payload) return null;
+    try {
+        const parsed = JSON.parse(payload);
+        if (!parsed || typeof parsed !== 'object') return null;
+        const checkedAt = parsed.checkedAt ? new Date(parsed.checkedAt) : new Date();
+        return {
+            state: ['pending', 'checked', 'skipped', 'error'].includes(parsed.state) ? parsed.state : 'error',
+            isAI: typeof parsed.isAI === 'boolean' ? parsed.isAI : null,
+            score: Number.isFinite(parsed.score) ? parsed.score : null,
+            threshold: Number.isFinite(parsed.threshold) ? parsed.threshold : null,
+            confidence: Number.isFinite(parsed.confidence) ? parsed.confidence : null,
+            provider: typeof parsed.provider === 'string' ? parsed.provider : 'client-ai-check',
+            message: typeof parsed.message === 'string' ? parsed.message : '',
+            checkedAt: Number.isNaN(checkedAt.getTime()) ? new Date() : checkedAt,
+        };
+    } catch {
+        return null;
+    }
+}
+
+function shouldScheduleAsyncSubmissionAICheck(aiCheck?: SubmissionAICheck | null) {
+    return !aiCheck || aiCheck.state === 'pending' || aiCheck.state === 'error';
+}
 
 function buildQuery(udoc: User) {
     const q: Filter<ProblemDoc> = {};
@@ -485,14 +527,13 @@ export class ProblemSubmitHandler extends ProblemDetailHandler {
     @param('pretest', Types.Boolean)
     @param('input', Types.ArrayOf(Types.String, true), true)
     @param('tid', Types.ObjectId, true)
-    async post(domainId: string, lang: string, code: string, pretest = false, input: string[] = [], tid?: ObjectId) {
+    @param('aiCheckPayload', Types.String, true)
+    async post(
+        domainId: string, lang: string, code: string, pretest = false, input: string[] = [], tid?: ObjectId, aiCheckPayload?: string,
+    ) {
         const config = this.pdoc.config;
         if (typeof config === 'string' || config === null) throw new ProblemConfigError();
-        if (['submit_answer', 'objective'].includes(config.type)) {
-            lang = '_';
-        } else if ((config.langs && !config.langs.includes(lang)) || !setting.langs[lang] || setting.langs[lang].disabled) {
-            throw new ProblemNotAllowLanguageError();
-        }
+        lang = resolveSubmissionLanguage(config, lang);
         if (pretest) {
             if (setting.langs[lang]?.pretest) lang = setting.langs[lang].pretest as string;
             if (!['default', 'remote_judge'].includes(this.response.body.pdoc.config?.type)) {
@@ -522,12 +563,20 @@ export class ProblemSubmitHandler extends ProblemDetailHandler {
                 files.code = `${this.user._id}/${id}#${file.originalFilename}`;
             }
         } else {
-            code = code.replace(/\r\n/g, '\n');
+            code = code.replace(WINDOWS_EOL_REGEX, '\n');
             if (code.length > lengthLimit) throw new ValidationError('code');
         }
+        const parsedAiCheck = parseSubmissionAICheck(aiCheckPayload);
+        const shouldScheduleAsyncAiCheck = shouldScheduleAsyncSubmissionAICheck(parsedAiCheck);
+        const aiCheck = shouldScheduleAsyncAiCheck
+            ? createPendingSubmissionAICheck(
+                parsedAiCheck?.provider || 'async-ai-check',
+                parsedAiCheck?.message || 'Pending',
+            )
+            : parsedAiCheck;
         const rid = await record.add(
             domainId, this.pdoc.docId, this.user._id, lang, code, true,
-            pretest ? { input, type: 'pretest' } : { contest: tid, files, type: 'judge' },
+            pretest ? { input, type: 'pretest', aiCheck } : { contest: tid, files, type: 'judge', aiCheck },
         );
         if (!pretest) {
             await Promise.all([
@@ -546,6 +595,39 @@ export class ProblemSubmitHandler extends ProblemDetailHandler {
     }
 }
 
+export class ProblemSubmitAICheckHandler extends ProblemSubmitHandler {
+    @param('lang', Types.Name)
+    @param('code', Types.String, true)
+    @param('tid', Types.ObjectId, true)
+    async post(
+        domainId: string,
+        lang: string,
+        code = '',
+        _pretest = false,
+        _input: string[] = [],
+        _tid?: ObjectId,
+        _aiCheckPayload?: string,
+    ) {
+        lang = resolveSubmissionLanguage(this.pdoc.config, lang);
+        if (shouldDeferSubmissionAICheck()) {
+            this.response.body = {
+                aiCheck: createConfiguredPendingSubmissionAICheck(),
+            };
+            return;
+        }
+        this.response.body = {
+            aiCheck: await checkSubmissionForAI({
+                domainId,
+                pid: this.pdoc.docId,
+                uid: this.user._id,
+                lang,
+                code: code?.replace(WINDOWS_EOL_REGEX, '\n'),
+                hasUpload: !!this.request.files?.file,
+            }),
+        };
+    }
+}
+
 export class ProblemHackHandler extends ProblemDetailHandler {
     rdoc: RecordDoc;
 
@@ -555,7 +637,7 @@ export class ProblemHackHandler extends ProblemDetailHandler {
         if (typeof this.pdoc.config !== 'object' || !this.pdoc.config.hackable) throw new HackFailedError('This problem is not hackable.');
         this.rdoc = await record.get(domainId, rid);
         if (!this.rdoc || this.rdoc.pid !== this.pdoc.docId
-            || this.rdoc.contest?.toString() !== tid?.toString()) throw new RecordNotFoundError(domainId, rid);
+            || this.rdoc.contest?.toString() !== tid?.toString()) throw new RecordNotFoundError(rid?.toString?.() || rid);
         if (tid) {
             if (this.tdoc.rule !== 'codeforces') throw new HackFailedError('This contest is not hackable.');
             if (!contest.isOngoing(this.tdoc, this.tsdoc)) throw new ContestNotLiveError(this.tdoc.docId);
@@ -1064,6 +1146,7 @@ export async function apply(ctx: Context) {
     ctx.Route('problem_main', '/p', ProblemMainHandler, PERM.PERM_VIEW_PROBLEM);
     ctx.Route('problem_random', '/problem/random', ProblemRandomHandler, PERM.PERM_VIEW_PROBLEM);
     ctx.Route('problem_detail', '/p/:pid', ProblemDetailHandler);
+    ctx.Route('problem_submit_ai_check', '/p/:pid/submit/ai-check', ProblemSubmitAICheckHandler, PERM.PERM_SUBMIT_PROBLEM);
     ctx.Route('problem_submit', '/p/:pid/submit', ProblemSubmitHandler, PERM.PERM_SUBMIT_PROBLEM);
     ctx.Route('problem_hack', '/p/:pid/hack/:rid', ProblemHackHandler, PERM.PERM_SUBMIT_PROBLEM);
     ctx.Route('problem_edit', '/p/:pid/edit', ProblemEditHandler);

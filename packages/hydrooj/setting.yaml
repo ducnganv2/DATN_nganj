@@ -10,7 +10,6 @@ homepage:
       ranking: 10
       discussion: 20
     - width: 3
-      hitokoto: true
       starred_problems: 50
       recent_problems: 10
       discussion_nodes: true

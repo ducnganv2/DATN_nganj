@@ -51,21 +51,7 @@ export async function run({
     const target = await DomainModel.get(domainId);
     if (!target) throw new NotFoundError(domainId);
     report({ message: 'Connected to database' });
-    /*
-        user_id     varchar 20	N	用户id（主键）
-        email       varchar 100	Y	用户E-mail
-        submit      int     11	Y	用户提交次数
-        solved      int     11	Y	成功次数
-        defunct     char    1	N	是否屏蔽（Y/N）
-        ip          varchar 20	N	用户注册ip
-        accesstime	datetime	Y	用户注册时间
-        volume      int     11	N	页码（表示用户上次看到第几页）
-        language    int     11	N	语言
-        password    varchar	32	Y	密码（加密）
-        reg_time    datetime	Y	用户注册时间
-        nick        varchar	100	N	昵称
-        school      varchar	100	N	用户所在学校
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const uidMap: Record<string, number> = {};
     const udocs = await query('SELECT *, DECODE(`password`, "PWDforJO2005") as `depass` FROM `users`');
     const precheck = await UserModel.getMulti({ unameLower: { $in: udocs.map((u) => u.user_id.toLowerCase()) } }).toArray();
@@ -103,33 +89,7 @@ export async function run({
     const adminUids = admins.map((admin) => uidMap[admin.user_id]);
     report({ message: 'user finished' });
 
-    /*
-        problem_id	int	11	N	题目编号，主键
-        title	varchar	200	N	标题
-        description	text		Y	题目描述
-        inupt	text		Y	输入说明
-        output	text		Y	输出说明
-        input_path
-        output_path
-        sample_input	text		Y	输入参照
-        sample_output	text		Y	输出参照
-        sample_Program
-        hint	text		Y	暗示
-        source	varchar	100	Y	来源
-        in_date	datetime		Y	加入时间
-        time_limit	int	11	N	限时（ms）
-        memory_limit	int	11	N	空间限制(k)
-        defunct	char	1	N	是否屏蔽（Y/N）
-        contest_id  #ingore
-        accepted	int	11	Y	总ac次数
-        submit	int	11	Y	总提交次数
-        ratio
-        error
-        difficulty
-        submit_user
-        solved	int	11	Y	解答（未用）
-        case_time_limit #ingore
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const pidMap: Record<string, number> = {};
     const [{ 'count(*)': pcount }] = await query('SELECT count(*) FROM `problem`');
     const step = 50;
@@ -186,15 +146,7 @@ memory: ${pdoc.memory_limit}k`,
     }
     report({ message: 'problem finished' });
 
-    /*
-        contest_id	int	11	N	竞赛id（主键）
-        title	varchar	255	Y	竞赛标题
-        start_time	datetime		Y	开始时间(年月日时分)
-        end_time	datatime		Y	结束时间(年月日时分)
-        defunct	char	1	N	是否屏蔽（Y/N）
-        description	text		Y	描述（在此版本中未用）
-        private	tinyint	4		公开/内部（0/1）
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const tidMap: Record<string, string> = {};
     const tdocs = await query('SELECT * FROM `contest`');
     for (const tdoc of tdocs) {
@@ -209,24 +161,7 @@ memory: ${pdoc.memory_limit}k`,
         tidMap[tdoc.contest_id] = tid.toHexString();
     }
     report({ message: 'contest finished' });
-    /*
-        solution	程序运行结果记录
-        字段名	类型	长度	是否允许为空	备注
-        solution_id	int	11	N	运行id（主键）
-        problem_id	int	11	N	问题id
-        user_id	char	20	N	用户id
-        time	int	11	N	用时（秒）
-        memory	int	11	N	所用空间（）
-        className
-        in_date	datetime		N	加入时间
-        result	smallint	6	N	结果（0：AC）
-        language	tinyint	4	N	语言
-        ip	char	15	N	用户ip
-        contest_id	int	11	Y	所属于竞赛组
-        valid	tinyint	4	N	是否有效？？？
-        num	tinyint	4	N	题目在竞赛中的顺序号
-        code_length	int	11	N	代码长度
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const [{ 'count(*)': rcount }] = await query('SELECT count(*) FROM `solution`');
     const rpageCount = Math.ceil(Number(rcount) / step);
     for (let pageId = 0; pageId < rpageCount; pageId++) {

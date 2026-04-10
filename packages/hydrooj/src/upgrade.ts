@@ -266,7 +266,7 @@ export const coreScripts: MigrationScript[] = [
             }
         });
         for (const uid of uids) {
-            await MessageModel.send(1, uid, '我们更新了客观题的配置格式，已有题目已自动转换，查看文档获得更多信息。', MessageModel.FLAG_UNREAD);
+            await MessageModel.send(1, uid, 'Objective problem configuration format has been updated. Existing problems were migrated automatically. See the documentation for details.', MessageModel.FLAG_UNREAD);
         }
         return true;
     },

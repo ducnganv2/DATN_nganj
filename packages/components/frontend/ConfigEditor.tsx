@@ -8,7 +8,7 @@ import { createSchemasteryReact } from 'schemastery-react';
 import { ComponentsContext } from './provider';
 
 const locales = {
-  zh: 'zh-CN',
+  vi: 'vi-VN',
   en: 'en-US',
 };
 

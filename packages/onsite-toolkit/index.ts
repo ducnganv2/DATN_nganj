@@ -212,8 +212,8 @@ export function apply(ctx: Context, config: ReturnType<typeof Config>) {
                     getFeed('languages', {
                         id: 'go', name: 'Go', entry_point_required: true, extensions: ['go'],
                     }),
-                    getFeed('groups', { id: 'participants', name: '正式队伍' }),
-                    getFeed('groups', { id: 'observers', name: '打星队伍' }),
+                    getFeed('groups', { id: 'participants', name: 'Official Teams' }),
+                    getFeed('groups', { id: 'observers', name: 'Unofficial Teams' }),
                     ...relatedGroups.map((i) => getFeed('groups', {
                         id: groupId[i],
                         name: i,

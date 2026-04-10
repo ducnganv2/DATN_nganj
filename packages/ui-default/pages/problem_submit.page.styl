@@ -1,4 +1,24 @@
 .page--problem_submit
+  .problem-submit__ai-check-status
+    margin-bottom: rem(16px)
+    padding: rem(12px 14px)
+    border-radius: rem(8px)
+    border: 1px solid $table-border-color
+    background: #f7f9fc
+    font-size: rem($font-size-small)
+
+    &[data-state='pending']
+      background: #fff7e6
+      border-color: #f0c36d
+
+    &[data-state='checked']
+      background: #edf8f1
+      border-color: #6fb38b
+
+    &[data-state='error']
+      background: #fff1f0
+      border-color: #e38b8b
+
   .col--status
     width: rem(150px)
 

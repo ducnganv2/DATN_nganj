@@ -12,7 +12,6 @@ const logger = new Logger('remote/poj');
 
 const langs = {
     default: 'en',
-    'zh-CN': 'zh',
 };
 
 export default class POJProvider extends BasicFetcher implements IBasicProvider {

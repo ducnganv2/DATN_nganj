@@ -108,21 +108,7 @@ export async function run({
     if (!target) throw new NotFoundError(domainId);
     report({ message: 'Connected to database' });
     await SystemModel.set('migrate.lock', 'hustoj');
-    /*
-        user_id     varchar 20	N	用户id（主键）
-        email       varchar 100	Y	用户E-mail
-        submit      int     11	Y	用户提交次数
-        solved      int     11	Y	成功次数
-        defunct     char    1	N	是否屏蔽（Y/N）
-        ip          varchar 20	N	用户注册ip
-        accesstime	datetime	Y	用户注册时间
-        volume      int     11	N	页码（表示用户上次看到第几页）
-        language    int     11	N	语言
-        password    varchar	32	Y	密码（加密）
-        reg_time    datetime	Y	用户注册时间
-        nick        varchar	100	N	昵称
-        school      varchar	100	N	用户所在学校
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const uidMap: Record<string, number> = {};
     const udocs = await query('SELECT * FROM `users`');
     const precheck = await UserModel.getMulti({ unameLower: { $in: udocs.map((u) => u.user_id.toLowerCase()) } }).toArray();
@@ -170,27 +156,7 @@ export async function run({
     const adminUids = admins.map((admin) => uidMap[admin.user_id]);
     report({ message: 'user finished' });
 
-    /*
-        problem_id	int	11	N	题目编号，主键
-        title	varchar	200	N	标题
-        description	text		Y	题目描述
-        inupt	text		Y	输入说明
-        output	text		Y	输出说明
-        sample_input	text		Y	输入参照
-        sample_output	text		Y	输出参照
-        spj	char	1	N	是否为特别题目
-        hint	text		Y	暗示
-        source	varchar	100	Y	来源
-        in_date	datetime		Y	加入时间
-        time_limit	int	11	N	限时（秒）
-        memory_limit	int	11	N	空间限制(MByte)
-        defunct	char	1	N	是否屏蔽（Y/N）
-        accepted	int	11	Y	总ac次数
-        submit	int	11	Y	总提交次数
-        solved	int	11	Y	解答（未用）
-
-        solution #optional
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const pidMap: Record<string, number> = {};
     const [{ 'count(*)': pcount }] = await query('SELECT count(*) FROM `problem`');
     const step = 50n;
@@ -259,27 +225,15 @@ target: ybtbas/${+pdoc.id - 3000}
     }, { every: 10n, namespace: 'problem', report });
 
     if (remoteUsed) {
-        MessageModel.sendNotification(`您导入的数据中使用了一本通编程启蒙远端测试题目。
-请在迁移脚本运行完成后，在终端中运行
+        MessageModel.sendNotification(`Remote judge problems from YBT BAS were found in the imported data.
+Please run the following command after migration:
 hydrooj install https://hydro.ac/hydroac-client.zip
-安装远端评测所需要的插件。插件安装完成后，请重启 hydrooj，待一分钟后，再次重启 hydrooj。
-在此之后，远端评测应当能够正常进行。
-（注：您无需再使用申请的评测账号）`);
+Then restart hydrooj, wait about one minute, and restart hydrooj again.
+Remote judging should work after that.`);
     }
     report({ message: 'problem finished' });
 
-    /*
-        contest_id	int	11	N	竞赛id（主键）
-        title	varchar	255	Y	竞赛标题
-        start_time	datetime		Y	开始时间(年月日时分)
-        end_time	datatime		Y	结束时间(年月日时分)
-        defunct	char	1	N	是否屏蔽（Y/N）
-        description	text		Y	描述（在此版本中未用）
-        private	tinyint	4		公开/内部（0/1）
-        langmask	int	11		语言
-        password	char(16)			进入比赛的密码
-        user_id	char(48)			允许参加比赛用户列表
-    */
+    /* Legacy source schema notes (translated/omitted). */
     const tidMap: Record<string, string> = {};
     if (withContest) {
         const tdocs = await query('SELECT * FROM `contest`');
@@ -331,28 +285,8 @@ hydrooj install https://hydro.ac/hydroac-client.zip
         }
         report({ message: 'contest finished' });
     }
-    /*
-        solution	程序运行结果记录
-        字段名	类型	长度	是否允许为空	备注
-        solution_id	int	11	N	运行id（主键）
-        problem_id	int	11	N	问题id
-        user_id	char	20	N	用户id
-        time	int	11	N	用时（秒）
-        memory	int	11	N	所用空间（）
-        in_date	datetime		N	加入时间
-        result	smallint	6	N	结果（4：AC）
-        language	tinyint	4	N	语言
-        ip	char	15	N	用户ip
-        contest_id	int	11	Y	所属于竞赛组
-        valid	tinyint	4	N	是否有效？？？
-        num	tinyint	4	N	题目在竞赛中的顺序号
-        code_lenght	int	11	N	代码长度
-        judgetime	datetime		Y	判题时间
-        pass_rate	decimal	2	N	通过百分比（OI模式下可用）
-        lint_error	int		N	？？？
-        judger	char(16)		N	判题机
-    */
-    // 测试运行 problem_id=0 导致非比赛的提交无法确定属于哪个题目,因此跳过测试运行
+    /* Legacy source schema notes (translated/omitted). */
+    // Skip test runs (problem_id = 0) because those submissions cannot be mapped to non-contest problems.
     const [{ 'count(*)': rcount }] = await query('SELECT count(*) FROM `solution` WHERE `problem_id` > 0');
     await iterate(rcount, 50n, async (pageId: bigint) => {
         const rdocs = await query(`SELECT * FROM \`solution\` WHERE \`problem_id\` > 0 LIMIT ${pageId * BigInt(step)}, ${step}`);

@@ -11,6 +11,38 @@
       {% if rdoc.progress %}{{ rdoc.progress|int }}%{% endif %}
     </h1>
   </div>
+  <div class="section__body record-status__meta">
+    <div class="record-status__meta-item">
+      <span class="record-status__meta-label">{{ _('AI Check') }}</span>
+      <span class="ai-check-result record-status__ai{% if rdoc.aiCheck and rdoc.aiCheck.state == 'checked' and rdoc.aiCheck.isAI %} is-ai{% elif rdoc.aiCheck and rdoc.aiCheck.state == 'checked' %} is-human{% else %} is-other{% endif %}">
+        {% if rdoc.aiCheck and rdoc.aiCheck.state == 'pending' %}
+          <span class="icon icon-info"></span>
+          <span>{{ _('Pending') }}</span>
+        {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'checked' %}
+          <span class="icon icon-{{ 'warning' if rdoc.aiCheck.isAI else 'check' }}"></span>
+          <span>{{ _('Potential AI') if rdoc.aiCheck.isAI else _('Not AI') }}</span>
+        {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'skipped' %}
+          <span class="icon icon-info"></span>
+          <span>{{ _('Skipped') }}</span>
+          {% if rdoc.aiCheck.message %}
+            <span class="record-status__ai-score">{{ rdoc.aiCheck.message }}</span>
+          {% endif %}
+        {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'error' %}
+          <span class="icon icon-warning"></span>
+          <span>{{ _('Check failed') }}</span>
+          {% if rdoc.aiCheck.message %}
+            <span class="record-status__ai-score">{{ rdoc.aiCheck.message }}</span>
+          {% endif %}
+        {% elif rdoc.aiCheck and (typeof(rdoc.aiCheck.score) == 'number' or typeof(rdoc.aiCheck.confidence) == 'number') %}
+          <span class="icon icon-info"></span>
+          <span>{{ _('Not checked') }}</span>
+        {% else %}
+          <span class="icon icon-info"></span>
+          <span>{{ _('Not checked') }}</span>
+        {% endif %}
+      </span>
+    </div>
+  </div>
 {% if rdoc.compilerTexts.length %}
   <div class="section__body">
     <pre class="compiler-text">{{ rdoc.compilerTexts|join('\n')|ansi|safe }}<div class="compiler-text-mask"><p><span class="icon icon-expand_more">{{ _('Expand') }}</span></p></div></pre>

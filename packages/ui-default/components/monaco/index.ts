@@ -28,8 +28,8 @@ export const loadThemePromise = customOptions.theme
   ? fetchTheme(customOptions.theme, list[customOptions.theme])
   : Promise.resolve();
 
-// 这破烂 monaco 能不能给个 typings 啊
-// 我翻源码真的很累的好吧
+// Monaco typing coverage is incomplete in some internals.
+// Keep this section isolated and avoid leaking `any` further.
 class ChangeThemeAction extends EditorAction {
   constructor() {
     super({

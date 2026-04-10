@@ -142,7 +142,7 @@ const fontRange = {
   'Microsoft Yahei': 'Microsoft Yahei',
   'WenQuanYi Micro Hei': 'WenQuanYi Micro Hei',
   'sans': 'sans',
-  'XiaoLai SC': '小赖 SC',
+  'XiaoLai SC': 'XiaoLai SC',
 };
 const codeFontRange = {
   'monaco': 'Monaco',

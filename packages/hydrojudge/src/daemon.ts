@@ -7,8 +7,8 @@
   ~   `- -(.-'''- -.    \`._       `.   ~
     _.- '(  .______.'.-' `-.`         `.
    :      `-..____`-.                   ;
-   `.             ````  稻花香里说丰年，  ;   ~
-     `-.__          听取人生经验。  __.-'
+   `.             ````  Keep calm and keep judging.  ;   ~
+     `-.__          Learn from each run.  __.-'
           ````- - -.......- - -'''    ~
        ~                   */
 import './utils';
@@ -26,15 +26,15 @@ const hosts: Record<string, HydroHost | Vj4Host> = {};
 let exit = false;
 
 const terminate = async () => {
-    log.info('正在保存数据');
+    log.info('Saving data...');
     try {
         await Promise.all(Object.values(hosts).map((f) => f.dispose?.()));
         process.exit(1);
     } catch (e) {
         if (exit) process.exit(1);
         log.error(e.stack);
-        log.error('发生了错误。');
-        log.error('再次按下 Ctrl-C 可强制退出。');
+        log.error('An error occurred.');
+        log.error('Press Ctrl-C again to force exit.');
         exit = true;
     }
 };

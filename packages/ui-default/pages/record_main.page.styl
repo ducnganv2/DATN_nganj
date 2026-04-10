@@ -18,8 +18,49 @@
     width: rem(95px)
     text-align: center
 
-  .col--status, .col--submit-by, .col--lang
+  .col--ai-check
+    width: rem(120px)
+    text-align: center
+
+  .col--status, .col--submit-by, .col--lang, .col--ai-check
     border-right: 1px solid $table-border-color
+
+  .record-ai-check
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    min-width: rem(84px)
+    padding: rem(4px 8px)
+    border-radius: rem(999px)
+    border: 1px solid transparent
+    font-size: rem($font-size-small)
+    font-weight: 600
+    line-height: 1.2
+
+    &.is-ai
+      background: #fff1f0
+      border-color: #e38b8b
+      color: #9f2c2c
+
+    &.is-human
+      background: #edf8f1
+      border-color: #6fb38b
+      color: #21633d
+
+    &.is-pending
+      background: #fff7e6
+      border-color: #f0c36d
+      color: #8f5b00
+
+    &.is-error
+      background: #fff1f0
+      border-color: #e38b8b
+      color: #9f2c2c
+
+    &.is-other
+      background: #f3f5f7
+      border-color: #c7d0d9
+      color: #4b5c6b
 
   .col--status__text
     position: relative
@@ -43,7 +84,8 @@
   +tablet()
     .col--time,
     .col--memory,
-    .col--lang
+    .col--lang,
+    .col--ai-check
       display: none
 
   +mobile()
@@ -51,5 +93,6 @@
     .col--submit-at,
     .col--time,
     .col--memory,
-    .col--lang
+    .col--lang,
+    .col--ai-check
       display: none

@@ -156,7 +156,7 @@ class UiConstantsHandler extends Handler {
 
   @param('name', Types.Filename)
   async all(domainId: string, name: string) {
-    this.response.type = 'application/javascript';
+    this.response.type = 'application/javascript; charset=utf-8';
     if (!vfs[name]) throw new NotFoundError(name);
     this.response.addHeader('ETag', hashes[name]);
     this.response.body = vfs[name];

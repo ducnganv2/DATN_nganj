@@ -123,11 +123,11 @@ export function apply(ctx: Context) {
     ctx.provideModule('hash', 'uoj', (password, salt, { uname }) => md5(`${uname}${crypto.createHmac('md5', salt).update(password).digest('hex')}`));
     ctx.provideModule('hash', 'jnoj', (password, salt) => compareSync(password, salt));
 
-    ctx.i18n.load('zh', {
-        'migrate from hustoj': '从 HustOJ 导入',
-        'migrate from vijos': '从 Vijos 导入',
-        'migrate from syzoj': '从 SYZOJ 导入',
-        'migrate from universaloj': '从 UniversalOJ 导入',
-        'migrate from poj': '从 POJ 导入',
+    ctx.i18n.load('vi', {
+        'migrate from hustoj': 'Di chuyen du lieu tu HustOJ',
+        'migrate from vijos': 'Di chuyen du lieu tu Vijos',
+        'migrate from syzoj': 'Di chuyen du lieu tu SYZOJ',
+        'migrate from universaloj': 'Di chuyen du lieu tu UniversalOJ',
+        'migrate from poj': 'Di chuyen du lieu tu POJ',
     });
 }

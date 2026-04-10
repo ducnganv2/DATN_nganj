@@ -2,6 +2,13 @@ import 'streamsaver/examples/zip-stream';
 
 import { request } from './base';
 
+const FRONTEND_ALLOWED_LANGS = new Set(['c', 'cc', 'py']);
+
+function matchesLangOrVariant(key: string, langsList?: string[]) {
+  const base = key.split('.')[0];
+  return !(langsList instanceof Array) || langsList.some((lang) => lang === key || lang === base || lang.startsWith(`${base}.`));
+}
+
 export async function api(method: string, args: Record<string, any>, projection: any) {
   const res = await request.post(`/d/${UiContext.domainId}/api/${encodeURIComponent(method)}`, { args, projection });
   if (res.error) throw new Error(res.error);
@@ -9,12 +16,14 @@ export async function api(method: string, args: Record<string, any>, projection:
 }
 
 export function getAvailableLangs(langsList?: string[]) {
-  const prefixes = new Set(Object.keys(window.LANGS).filter((i) => i.includes('.')).map((i) => i.split('.')[0]));
+  const filteredKeys = Object.keys(window.LANGS).filter((key) => FRONTEND_ALLOWED_LANGS.has(key.split('.')[0]));
+  const prefixes = new Set(filteredKeys.filter((i) => i.includes('.')).map((i) => i.split('.')[0]));
   const Langs = {};
-  for (const key in window.LANGS) {
+  for (const key of filteredKeys) {
+    const explicitlyAllowed = (langsList instanceof Array) && matchesLangOrVariant(key, langsList);
     if (prefixes.has(key)) continue;
-    if ((langsList instanceof Array) && !langsList.includes(key)) continue;
-    if (window.LANGS[key].hidden && !langsList?.includes(key)) continue;
+    if ((langsList instanceof Array) && !explicitlyAllowed) continue;
+    if (window.LANGS[key].hidden && !explicitlyAllowed) continue;
     if (window.LANGS[key].disabled) continue;
     Langs[key] = window.LANGS[key];
   }

@@ -208,16 +208,16 @@ export async function load() {
                 console.warn(' and keep all copyright notice');
                 console.warn(' unless you have got another license from the original author.');
                 console.warn('');
-                console.warn('声明：');
-                console.warn(' 你正在运行开发者模式。');
-                console.warn(' Hydro 项目基于 AGPL3 协议开源，');
-                console.warn(' 这意味着除非你获得了原作者的其他授权，');
-                console.warn(' 你需要同样以 AGPL3 协议开源所有的修改，');
-                console.warn(' 并保留所有的版权声明。');
+                console.warn('Notice:');
+                console.warn(' You are running in developer mode.');
+                console.warn(' Hydro is open-sourced under AGPL-3.0.');
+                console.warn(' Unless you have additional authorization from the original authors,');
+                console.warn(' you must open-source your modifications under AGPL-3.0 as well');
+                console.warn(' and retain all copyright notices.');
                 console.warn('\x1B[39m');
                 console.log('');
                 console.log('Hydro will start in 5s.');
-                console.log('Hydro 将在五秒后继续启动。');
+                console.log('Hydro will continue startup in 5 seconds.');
                 await sleep(5000);
             }
         }

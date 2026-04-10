@@ -184,11 +184,23 @@ export const request = {
 };
 
 export async function withTransitionCallback(callback: () => (Promise<void> | void)) {
+  const runCallback = () => callback?.();
   // @ts-ignore
-  if (!document.startViewTransition) return callback?.();
-  // @ts-ignore
-  const transition = document.startViewTransition(callback);
-  return await transition.finished;
+  if (!document.startViewTransition || document.hidden || document.visibilityState !== 'visible') {
+    return runCallback();
+  }
+  let callbackRan = false;
+  try {
+    // @ts-ignore
+    const transition = document.startViewTransition(() => {
+      callbackRan = true;
+      return runCallback();
+    });
+    return await transition.finished;
+  } catch (error) {
+    if (!callbackRan && `${error}`.includes('document being hidden')) return runCallback();
+    throw error;
+  }
 }
 
 export async function setTemporaryViewTransitionNames(entries, vtPromise: Promise<void>) {

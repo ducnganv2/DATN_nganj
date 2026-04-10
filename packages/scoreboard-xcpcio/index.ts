@@ -168,8 +168,8 @@ export async function apply(ctx: Context, config: ReturnType<typeof Config>) {
                 problem_quantity: tdoc.pids.length,
                 problem_id: tdoc.pids.map((i, idx) => getAlphabeticId(idx)),
                 group: {
-                    official: '正式队伍',
-                    unofficial: '打星队伍',
+                    official: 'Official Teams',
+                    unofficial: 'Unofficial Teams',
                     ...Object.fromEntries(cfg.groups?.filter((i) => relatedGroups.includes(i.name)).map((i) => [i.name, i.name]) || []),
                 },
                 ...(cfg.badge ? { badge: 'Badge' } : {}),

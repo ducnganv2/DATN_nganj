@@ -128,12 +128,12 @@ export default class VJ4 implements Session {
         let location: string;
         await this.ensureLogin();
         const res = await this.get(`d/${domainId}/p/${pid}/data`).redirects(0).ok((r) => r.status === 302 || r.status === 404);
-        if (res.status === 404) throw new FormatError(`没有找到测试数据 ${domainId}/${pid}`);
+        if (res.status === 404) throw new FormatError(`Test data not found ${domainId}/${pid}`);
         if (res.status === 302) {
             location = res.headers.location;
             if (!location.includes('/fs/')) {
                 const _res = await this.get(location).redirects(0).ok((r) => r.status === 302 || r.status === 404);
-                if (_res.status === 404) throw new FormatError(`没有找到测试数据 ${domainId}/${pid}`);
+                if (_res.status === 404) throw new FormatError(`Test data not found ${domainId}/${pid}`);
                 if (_res.status === 302) {
                     location = _res.headers.location;
                     if (!location.includes('/fs/')) throw new Error();
@@ -147,7 +147,7 @@ export default class VJ4 implements Session {
     async problemData(domainId: string, pid: string, savePath: string, retry = 3, next?) {
         log.info(`Getting problem data: ${this.config.host}/${domainId}/${pid}`);
         await this.ensureLogin();
-        if (next) next({ judge_text: '正在同步测试数据，请稍后' });
+        if (next) next({ judge_text: 'Syncing test data, please wait' });
         const tmpFilePath = path.resolve(getConfig('cache_dir'), `download_${this.config.host}_${domainId}_${pid}`);
         try {
             await pipeRequest(
@@ -186,7 +186,7 @@ export default class VJ4 implements Session {
     }
 
     async consume(queue: PQueue<any>) {
-        log.info('正在连接 %sjudge/consume-conn', this.config.server_url);
+        log.info('Connecting to %sjudge/consume-conn', this.config.server_url);
         const res = await this.get('judge/consume-conn/info');
         this.ws = new WebSocket(`${this.config.server_url.replace(/^http/i, 'ws')}judge/consume-conn/websocket?t=${res.body.entropy}`, {
             headers: { cookie: this.config.cookie },
@@ -204,13 +204,13 @@ export default class VJ4 implements Session {
             }
         });
         this.ws.on('close', (data, reason) => {
-            log.warn(`[${this.config.host}] Websocket 断开:`, data, reason);
+            log.warn(`[${this.config.host}] Websocket disconnected:`, data, reason);
             setTimeout(() => {
                 this.retry(queue);
             }, 30000);
         });
         this.ws.on('error', (e) => {
-            log.error(`[${this.config.host}] Websocket 错误:`, e);
+            log.error(`[${this.config.host}] Websocket error:`, e);
             setTimeout(() => {
                 this.retry(queue);
             }, 30000);
@@ -218,7 +218,7 @@ export default class VJ4 implements Session {
         await new Promise((resolve) => {
             this.ws.once('open', () => { resolve(null); });
         });
-        log.info(`[${this.config.host}] 已连接`);
+        log.info(`[${this.config.host}] Connected`);
     }
 
     async setCookie(cookie: string) {

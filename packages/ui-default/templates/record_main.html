@@ -73,9 +73,11 @@
         {{ nothing.render('Oh, there are no tasks that match the filter!') }}
         {% endif %}
       {% else %}
+        {% set showAiCheckColumn = true %}
         <table class="data-table record_main__table">
           <colgroup>
             <col class="col--status">
+            <col class="col--ai-check">
             <col class="col--problem">
             <col class="col--submit-by">
             <col class="col--time">
@@ -86,6 +88,7 @@
           <thead>
             <tr>
               <th class="col--status record-status--border">{{ _('Status') }}</th>
+              <th class="col--ai-check">{{ _('AI Check') }}</th>
               <th class="col--problem">{{ _('Problem') }}</th>
               <th class="col--submit-by">{{ _('Submit By') }}</th>
               <th class="col--time">{{ _('Time') }}</th>

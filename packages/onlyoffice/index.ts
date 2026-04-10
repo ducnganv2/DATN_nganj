@@ -47,7 +47,7 @@ class OnlyofficeJWTHandler extends Handler {
                 },
             },
             editorConfig: {
-                lang: this.user.viewLang?.includes('_') ? this.user.viewLang.split('_')[0] : this.user.viewLang || 'zh',
+                lang: this.user.viewLang?.includes('_') ? this.user.viewLang.split('_')[0] : this.user.viewLang || 'en',
                 mode: 'view',
                 user: {
                     group: 'Hydro',
@@ -77,9 +77,9 @@ export function apply(ctx: Context) {
             'onlyoffice.not_configured': 'Onlyoffice API not configured.',
             'onlyoffice.initialize_fail': 'Failed to initialize onlyoffice: {0}',
         });
-        c.i18n.load('zh', {
-            'onlyoffice.not_configured': 'Onlyoffice 未配置。自行安装 onlyoffice 软件或是使用外部提供的 API。',
-            'onlyoffice.initialize_fail': '初始化 onlyoffice 失败: {0}',
+        c.i18n.load('vi', {
+            'onlyoffice.not_configured': 'Onlyoffice API chua duoc cau hinh.',
+            'onlyoffice.initialize_fail': 'Khoi tao onlyoffice that bai: {0}',
         });
     });
 

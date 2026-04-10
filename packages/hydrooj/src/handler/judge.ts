@@ -27,11 +27,59 @@ import task, { Consumer } from '../model/task';
 import user from '../model/user';
 import bus from '../service/bus';
 import { updateJudge } from '../service/monitor';
+import { checkSubmissionForAI, createErrorSubmissionAICheck } from '../service/submissionAI';
 import {
     ConnectionHandler, Handler, post, subscribe, Types,
 } from '../service/server';
 
 const logger = new Logger('judge');
+
+function shouldRunPostAcceptedAICheck(rdoc: RecordDoc) {
+    return rdoc.status === STATUS.STATUS_ACCEPTED
+        && (!rdoc.aiCheck || rdoc.aiCheck.state === 'pending' || rdoc.aiCheck.state === 'error');
+}
+
+async function markNonAcceptedAICheckSkipped(rdoc: RecordDoc) {
+    if (rdoc.status === STATUS.STATUS_ACCEPTED) return;
+    if (!rdoc.aiCheck || !['pending', 'error'].includes(rdoc.aiCheck.state)) return;
+    const latest = await record.update(rdoc.domainId, rdoc._id, {
+        aiCheck: {
+            state: 'skipped',
+            isAI: null,
+            score: null,
+            confidence: null,
+            provider: rdoc.aiCheck.provider || 'post-accepted-ai-check',
+            message: '',
+            checkedAt: new Date(),
+        },
+    });
+    if (latest) app.broadcast('record/change', latest);
+}
+
+function schedulePostAcceptedAICheck(rdoc: RecordDoc) {
+    if (!shouldRunPostAcceptedAICheck(rdoc)) return;
+    void (async () => {
+        try {
+            const aiCheck = await checkSubmissionForAI({
+                domainId: rdoc.domainId,
+                pid: rdoc.pid,
+                uid: rdoc.uid,
+                lang: rdoc.lang,
+                code: rdoc.code?.replace(/\r\n/g, '\n'),
+                hasUpload: !!rdoc.files?.code,
+            });
+            const latest = await record.update(rdoc.domainId, rdoc._id, { aiCheck });
+            if (latest) app.broadcast('record/change', latest);
+        } catch (error) {
+            const latest = await record.update(rdoc.domainId, rdoc._id, {
+                aiCheck: createErrorSubmissionAICheck(
+                    error instanceof Error ? error.message : 'Failed to call AI check API.',
+                ),
+            });
+            if (latest) app.broadcast('record/change', latest);
+        }
+    })();
+}
 
 function parseCaseResult(body: TestCase): Required<TestCase> {
     return {
@@ -137,6 +185,8 @@ export class JudgeResultCallbackContext {
                 problem.inc(pdoc.domainId, pdoc.docId, `stats.s${Math.floor(rdoc.score)}`, 1),
             ]);
         }
+        await markNonAcceptedAICheckSkipped(rdoc);
+        schedulePostAcceptedAICheck(rdoc);
         await app.parallel('record/judge', rdoc, updated, pdoc, context);
     }
 

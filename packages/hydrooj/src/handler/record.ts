@@ -135,7 +135,7 @@ export class RecordDetailHandler extends ContestDetailBaseHandler {
     @param('rid', Types.ObjectId)
     async prepare(domainId: string, rid: ObjectId) {
         this.rdoc = await record.get(domainId, rid);
-        if (!this.rdoc) throw new RecordNotFoundError(rid);
+        if (!this.rdoc) throw new RecordNotFoundError(rid?.toString?.() || rid);
         if (this.rdoc.uid !== this.user._id) this.checkPerm(PERM.PERM_VIEW_RECORD);
     }
 
@@ -361,7 +361,7 @@ export class RecordMainConnectionHandler extends ConnectionHandler {
         } else {
             this.queueSend(rdoc._id.toHexString(), async () => ({
                 html: await this.renderHTML('record_main_tr.html', {
-                    rdoc, udoc, pdoc, tdoc, allDomain: this.allDomain,
+                    rdoc, udoc, pdoc, tdoc, allDomain: this.allDomain, showAiCheckColumn: true,
                 }),
             }));
         }

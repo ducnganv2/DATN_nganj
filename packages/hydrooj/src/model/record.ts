@@ -7,7 +7,7 @@ import {
 import { ProblemConfigFile, STATUS_TEXTS } from '@hydrooj/common';
 import { Context } from '../context';
 import { ProblemNotFoundError } from '../error';
-import { JudgeMeta, RecordDoc } from '../interface';
+import { JudgeMeta, RecordDoc, SubmissionAICheck } from '../interface';
 import db from '../service/db';
 import { MaybeArray, NumberKeys } from '../typeutils';
 import { ArgMethod, buildProjection, Time } from '../utils';
@@ -25,7 +25,7 @@ export default class RecordModel {
     static PROJECTION_LIST: (keyof RecordDoc)[] = [
         '_id', 'score', 'time', 'memory', 'lang',
         'uid', 'pid', 'rejudged', 'progress', 'domainId',
-        'contest', 'judger', 'judgeAt', 'status', 'source',
+        'contest', 'judger', 'judgeAt', 'status', 'source', 'aiCheck',
         'files', 'hackTarget',
     ];
 
@@ -52,8 +52,11 @@ export default class RecordModel {
     static async get(_id: ObjectId): Promise<RecordDoc | null>;
     static async get(domainId: string, _id: ObjectId): Promise<RecordDoc | null>;
     static async get(arg0: string | ObjectId, arg1?: any) {
-        const _id = arg1 || arg0;
+        const rawId = arg1 || arg0;
         const domainId = arg1 ? arg0 : null;
+        const idString = typeof rawId === 'string' ? rawId : rawId?.toString?.();
+        if (!idString || !ObjectId.isValid(idString)) return null;
+        const _id = new ObjectId(idString);
         const res = await RecordModel.coll.findOne({ _id });
         if (!res) return null;
         if (res.domainId === (domainId || res.domainId)) return res;
@@ -134,6 +137,7 @@ export default class RecordModel {
             input?: string[];
             files?: Record<string, string>;
             hackTarget?: ObjectId;
+            aiCheck?: SubmissionAICheck;
             type: 'judge' | 'rejudge' | 'pretest' | 'hack' | 'generate';
             notify?: boolean;
         } = { type: 'judge' },
@@ -160,6 +164,7 @@ export default class RecordModel {
         if (args.contest) data.contest = args.contest;
         if (args.files) data.files = args.files;
         if (args.hackTarget) data.hackTarget = args.hackTarget;
+        if (args.aiCheck) data.aiCheck = args.aiCheck;
         if (args.notify) data.notify = true;
         if (args.type === 'rejudge') {
             args.type = 'judge';

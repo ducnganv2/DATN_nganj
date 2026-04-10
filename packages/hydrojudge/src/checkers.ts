@@ -130,10 +130,10 @@ const checkers: Record<string, Checker> = new Proxy({
     strict: getDefaultChecker(true),
 
     /*
-     * argv[1]：输入
-     * argv[2]：标准输出
-     * argv[3]：选手输出
-     * exit code：返回判断结果
+     * argv[1]: input
+     * argv[2]: standard output
+     * argv[3]: user output
+     * exit code: checker result status
      */
     async hustoj(config) {
         const { code, stdout } = await runQueued(`${config.execute} input answer usrout`, {
@@ -153,12 +153,12 @@ const checkers: Record<string, Checker> = new Proxy({
     },
 
     /*
-     * argv[1]：输入文件
-     * argv[2]：选手输出文件
-     * argv[3]：标准输出文件
-     * argv[4]：单个测试点分值
-     * argv[5]：输出最终得分的文件
-     * argv[6]：输出错误报告的文件
+     * argv[1]: input file
+     * argv[2]: user output file
+     * argv[3]: standard output file
+     * argv[4]: testcase score
+     * argv[5]: output file for final score
+     * argv[6]: output file for checker report
      */
     async lemon(config) {
         const { files, code } = await runQueued(`${config.execute} input usrout answer ${config.score} score message`, {
@@ -189,9 +189,9 @@ const checkers: Record<string, Checker> = new Proxy({
     },
 
     /*
-     * argv[1]：输入
-     * argv[2]：选手输出
-     * exit code：返回判断结果
+     * argv[1]: input
+     * argv[2]: user output
+     * exit code: checker result status
      */
     async qduoj(config) {
         const { status, stdout } = await runQueued(`${config.execute} input usrout`, {
@@ -211,12 +211,12 @@ const checkers: Record<string, Checker> = new Proxy({
     },
 
     /*
-     * input：输入
-     * user_out：选手输出
-     * answer：标准输出
-     * code：选手代码
-     * stdout：输出最终得分
-     * stderr：输出错误报告
+     * input: input
+     * user_out: user output
+     * answer: standard output
+     * code: submitted code
+     * stdout: final score output
+     * stderr: checker report output
      */
     async syzoj(config) {
         let { status, stdout, stderr } = await runQueued(config.execute, {

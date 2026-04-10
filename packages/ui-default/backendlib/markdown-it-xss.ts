@@ -28,26 +28,26 @@ const tagCheck = new FilterXSS({
     if (html.endsWith('/>') || voidTags.includes(tag)) return html;
     if (!options.isClosing) {
       if (depedentTags[tag] && !stack.find((i) => depedentTags[tag].includes(i))) {
-        return html.replace(/</g, '&lt;').replace(/>/g, '&gt;'); // 标签不可出现在该位置
+        return html.replace(/</g, '&lt;').replace(/>/g, '&gt;'); // Tag is not allowed at this position
       }
       stack.push(tag);
       return html;
     }
     if (stack.length === 0) {
-      return html.replace(/</g, '&lt;').replace(/>/g, '&gt;'); // 没有标签可供闭合
+      return html.replace(/</g, '&lt;').replace(/>/g, '&gt;'); // No tag to close
     }
     if (stack[stack.length - 1] === tag) {
-      stack.pop(); // 正常关闭
+      stack.pop(); // Normal close
       return html;
     }
     if (stack.length - 2 >= 0 && stack[stack.length - 2] === tag) {
-      // 可能丢失了一个结束标签
+      // A closing tag may be missing
       html = `</${stack[stack.length - 1]}>${html}`;
       stack.pop();
       stack.pop();
       return html;
     }
-    return html.replace(/</g, '&lt;').replace(/>/g, '&gt;'); // 可能多出了一个结束标签
+    return html.replace(/</g, '&lt;').replace(/>/g, '&gt;'); // An extra closing tag may exist
   },
   onIgnoreTagAttr(tag, name, value) {
     return value;

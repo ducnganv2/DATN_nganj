@@ -1,0 +1,119 @@
+__flag: "🇻🇳"
+__id: vi
+__interface: yes
+__langname: Tiếng Việt
+Can be Extended For: Có thể gia hạn thêm
+contest_create: Tạo cuộc thi
+contest_detail_problem_submit: Nộp bài trong cuộc thi
+contest_detail_problem: Chi tiết bài tập
+contest_detail: Chi tiết cuộc thi
+contest_edit: Chỉnh sửa cuộc thi
+contest_main: Cuộc thi
+contest_manage: Quản lý cuộc thi
+contest_print: In
+contest_problemlist: Danh sách bài tập
+contest_scoreboard: Bảng xếp hạng
+contest_user: Quản lý người tham gia
+discussion_create: Tạo thảo luận
+discussion_detail: Chi tiết thảo luận
+discussion_edit: Chỉnh sửa thảo luận
+discussion_main: Thảo luận
+discussion_node: Thảo luận
+display_name: Tên hiển thị
+domain_create: Tạo miền
+domain_dashboard: Bảng điều khiển
+domain_discussion: Nút thảo luận
+domain_edit: Chỉnh sửa thông tin
+domain_group: Quản lý nhóm
+domain_join_applications: Đơn xin tham gia
+domain_main: Trang chính
+domain_permission: Quyền hệ thống
+domain_role: Vai trò hệ thống
+domain_user: Người dùng hệ thống
+fs_upload: Tải file lên
+home_account: Cài đặt tài khoản
+home_domain_account: Hồ sơ @ miền
+home_domain_create: Tạo miền
+home_domain: Miền của tôi
+home_messages: Tin nhắn
+home_preference: Tùy chọn
+home_security: Bảo mật
+homepage: Trang chủ
+homework_create: Tạo bài tập về nhà
+homework_detail_problem_submit: Nộp bài trong bài tập về nhà
+homework_edit: Chỉnh sửa bài tập về nhà
+homework_main: Bài tập về nhà
+homework_scoreboard: Bảng xếp hạng
+judge_playground: Judge Playground
+main: Trang chủ
+manage_config: Cấu hình hệ thống
+manage_dashboard: Hệ thống
+manage_module: Quản lý module
+manage_script: Scripts
+manage_setting: Cài đặt hệ thống
+manage_user_import: Nhập người dùng
+manage_user_priv: Quyền người dùng
+manage: Quản trị hệ thống
+no_translation_warn: <blockquote class="warn">Phần nội dung này đang được dịch.</blockquote>
+page.problem_detail.sidebar.show_category: Bấm để hiển thị
+page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập khi chưa ghi danh.
+page.training_detail.see_other_user_detail: Bạn đang xem chi tiết khóa luyện tập của người dùng {0}.
+pager_first: « Đầu
+pager_last: Cuối »
+pager_next: Tiếp ›
+pager_previous: ‹ Trước
+perm_contest: Cuộc thi
+perm_discussion: Thảo luận
+perm_general: Chung
+perm_homework: Bài tập về nhà
+perm_problem_solution: Lời giải bài tập
+perm_problem: Bài tập
+perm_ranking: Xếp hạng
+perm_record: Lượt nộp
+perm_training: Luyện tập
+problem_create: Tạo bài tập
+problem_detail: Chi tiết bài tập
+problem_edit: Chỉnh sửa bài tập
+problem_files: File của bài tập
+problem_hack: Hack
+problem_import: Nhập bài tập
+problem_main: Kho bài tập
+problem_solution: Lời giải bài tập
+problem_statistics: Thống kê bài tập
+problem_submit: Nộp bài
+problem-category-delim: '|'
+problem-subcategory-delim: ', '
+problem.import.additional_file: '## File bổ sung'
+problem.import.hint: '## Gợi ý'
+problem.import.input_format: '## Định dạng đầu vào'
+problem.import.limit_and_hint: '## Giới hạn'
+problem.import.output_format: '## Định dạng đầu ra'
+problem.import.problem_description: '## Mô tả'
+ranking: Xếp hạng
+record_detail: Chi tiết lượt nộp
+record_main: Lượt nộp
+setting_customize: Tùy biến
+setting_display: Tùy chọn hiển thị
+setting_function: Tính năng
+setting_info_domain: Thông tin cá nhân
+setting_info: Thông tin cá nhân
+setting_preference: Tùy chọn
+setting_privacy: Quyền riêng tư
+setting_server: Cài đặt server
+setting_session: Cài đặt session
+setting_smtp: Cài đặt SMTP
+setting_usage: Tùy chọn sử dụng
+timeago_locale: vi
+training_create: Tạo khóa luyện tập
+training_detail: Chi tiết khóa luyện tập
+training_edit: Chỉnh sửa khóa luyện tập
+training_main: Luyện tập
+Unknown address: Không xác định địa chỉ
+user_detail: Chi tiết người dùng
+user_login: Đăng nhập
+user_logout: Đăng xuất
+user_lostpass: Quên mật khẩu
+user_register: Đăng ký
+user_sudo: Vào chế độ Sudo
+wiki_about: Giới thiệu
+wiki_help: Trợ giúp

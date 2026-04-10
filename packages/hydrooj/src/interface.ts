@@ -234,9 +234,9 @@ export interface RecordStatDoc {
 
 export interface ScoreboardNode {
     type: 'string' | 'rank' | 'user' | 'email' | 'record' | 'records' | 'problem' | 'solved' | 'time' | 'total_score';
-    value: string; // 显示分数
+    value: string; // displayed score
     raw?: any;
-    score?: number; // 原始分数（100，不含赛制加成）
+    score?: number; // raw score (100, without contest-specific bonus)
     style?: string;
     hover?: string;
 }
@@ -279,7 +279,8 @@ export interface Tdoc extends Document {
 
     /**
      * In hours
-     * 在比赛有效时间内选择特定的 X 小时参加比赛（从首次打开比赛算起）
+     * Select a fixed X-hour window within contest validity
+     * (counting from the first time the participant opens the contest).
      */
     duration: number;
 

@@ -184,18 +184,28 @@ export class TemplateService extends Service {
       getSource(name) {
         const src = that.registry[name];
         const ref = that.registry[`${name}.source`];
-        if (!process.env.DEV) {
-          if (!src) throw new Error(`Cannot get template ${name}`);
-          return {
-            src,
-            path: name,
-            noCache: false,
-          };
-        }
         let fullpath: string | null = null;
         const p = path.resolve(template, name);
         if (fs.existsSync(p)) fullpath = p;
         if (!fullpath && ref && fs.existsSync(ref)) fullpath = ref;
+        if (!process.env.DEV) {
+          if (src) {
+            return {
+              src,
+              path: name,
+              noCache: false,
+            };
+          }
+          // Allow early renders during startup before the template registry is initialized.
+          if (fullpath) {
+            return {
+              src: fs.readFileSync(fullpath, 'utf-8'),
+              path: fullpath,
+              noCache: false,
+            };
+          }
+          throw new Error(`Cannot get template ${name}`);
+        }
         if (!fullpath) {
           if (src) {
             return {

@@ -4,6 +4,23 @@
 <tr data-rid="{{ rdoc['_id'] }}">
   {% set _isPretest = rdoc.contest and rdoc.contest.toString() == '000000000000000000000000' %}
   {{ record.render_status_td(rdoc, allDomain = allDomain) }}
+  {% if showAiCheckColumn %}
+  <td class="col--ai-check">
+    <span class="record-ai-check{% if rdoc.aiCheck and rdoc.aiCheck.state == 'checked' and rdoc.aiCheck.isAI %} is-ai{% elif rdoc.aiCheck and rdoc.aiCheck.state == 'checked' %} is-human{% elif rdoc.aiCheck and rdoc.aiCheck.state == 'pending' %} is-pending{% elif rdoc.aiCheck and rdoc.aiCheck.state == 'error' %} is-error{% else %} is-other{% endif %}">
+      {% if rdoc.aiCheck and rdoc.aiCheck.state == 'checked' %}
+        {{ _('Potential AI') if rdoc.aiCheck.isAI else _('Not AI') }}
+      {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'pending' %}
+        {{ _('Pending') }}
+      {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'skipped' %}
+        {{ _('Skipped') }}
+      {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'error' %}
+        {{ _('Check failed') }}
+      {% else %}
+        {{ _('Not checked') }}
+      {% endif %}
+    </span>
+  </td>
+  {% endif %}
   <td class="col--problem col--problem-name">
   {% if handler.user.hasPerm(perm.PERM_REJUDGE) and not rdoc.files.hack and not _isPretest %}
     <form class="form--inline" method="post" action="{{ url('record_detail', rid=rdoc._id, domainId=rdoc.domainId) }}">

@@ -9,7 +9,7 @@ import { VERDICT } from '../verdict';
 //       You may find it just works, or you may not.
 //       Feel free to open a pull request if you want to fix any issue.
 
-// WARN: https://github.com/zhblue/hustoj/pull/932/files
+// WARN: Known upstream HustOJ issue may return incorrect remote results.
 //       The remote result might be incorrect.
 //       possible fix1: submit every submission twice and compare the results.
 //       however it consumes more resources and time.
@@ -247,7 +247,7 @@ export class XJOI extends HUSTOJ {
             idField: 'proid',
             langField: 'language',
             codeField: 'source',
-            tooFrequent: '请稍后再提交',
+            tooFrequent: '\u8bf7\u7a0d\u540e\u518d\u63d0\u4ea4',
             extra: {},
             rid: /<tr class="table-bordered"><td class="status-table-text"> <a href="\/detail\/([0-9]+)"/gi,
         };

@@ -1,0 +1,81 @@
+__id: vi
+__langname: Tiếng Việt
+'File IO: {0}': 'File IO: {0}'
+'Tip: You are entering sudo mode.': 'Mẹo: bạn đang vào <a href="https://docs.github.com/articles/sudo-mode">sudo mode</a>.'
+Can be Extended For: Có thể gia hạn thêm
+Current Status: Trạng thái hiện tại
+Handled Requests: Yêu cầu đã xử lý
+Hint::icon::difficulty: Độ khó của bài tập trong Hydro được tính bằng thuật toán dựa trên các lượt nộp hiện tại, vì vậy đôi khi có thể chưa thật sự chính xác.
+Hint::icon::switch_account: Với quyền superadmin, bạn có thể chuyển sang tài khoản của bất kỳ ai.
+manage: Quản trị hệ thống
+no_translation_warn: <blockquote class="warn">Phần nội dung này đang được dịch.</blockquote>
+page.problem_detail.sidebar.show_category: Bấm để hiển thị
+page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập khi chưa ghi danh.
+pager_first: « Đầu
+pager_last: Cuối »
+pager_next: Tiếp ›
+pager_previous: ‹ Trước
+perm_contest: Cuộc thi
+perm_discussion: Thảo luận
+perm_general: Chung
+perm_problem_solution: Lời giải bài tập
+perm_problem: Bài tập
+perm_record: Lượt nộp
+perm_training: Luyện tập
+preferredPrefix_hint: Dùng để sắp xếp lại ID của bài tập. Ví dụ, nếu các bài tập trong kho bài tập có ID là P1001, P1002, P1003 và bạn đặt tiền tố là "T", chúng sẽ được nhập thành T1001, T1002 và T1003.
+problem_create: Tạo bài tập
+problem_edit: Chỉnh sửa bài tập
+problem_import: Nhập bài tập
+problem_main: Kho bài tập
+problem_solution: Lời giải bài tập
+problem_submit: Nộp bài
+problem_type.communication: 'Loại: Giao tiếp'
+problem_type.default: 'Loại: Mặc định'
+problem_type.interactive: 'Loại: Tương tác'
+problem_type.objective: 'Loại: Trắc nghiệm'
+problem_type.remote_judge: 'Loại: RemoteJudge'
+problem_type.submit_answer: 'Loại: SubmitAnswer'
+problem-category-delim: '|'
+problem-subcategory-delim: ', '
+problem.import.additional_file: '## File bổ sung'
+problem.import.hint: '## Gợi ý'
+problem.import.input_format: '## Định dạng đầu vào'
+problem.import.limit_and_hint: '## Giới hạn'
+problem.import.output_format: '## Định dạng đầu ra'
+problem.import.problem_description: '## Mô tả'
+ranking: Xếp hạng
+record_detail: Chi tiết lượt nộp
+record_main: Lượt nộp
+AI Check: Kiểm tra AI
+AI Suspicion: Nghi ngờ AI
+Potential AI: Có khả năng là AI
+Not AI: Không phải AI
+Pending: Đang chờ
+Skipped: Đã bỏ qua
+Check failed: Kiểm tra thất bại
+Not checked: Chưa kiểm tra
+rpDetailText_contest: Cuộc thi
+rpDetailText_problem: Bài tập
+setting_customize: Tùy biến
+setting_display: Tùy chọn hiển thị
+setting_function: Tính năng
+setting_info_domain: Thông tin cá nhân
+setting_info: Thông tin cá nhân
+setting_preference: Tùy chọn
+setting_privacy: Quyền riêng tư
+setting_usage: Tùy chọn sử dụng
+sort::default: Mặc định
+sort::recent: Gần đây
+tasks_list: Danh sách tác vụ
+timeago_locale: vi
+training_create: Tạo khóa luyện tập
+training_edit: Chỉnh sửa khóa luyện tập
+training_main: Luyện tập
+UI Language: Ngôn ngữ giao diện
+user_detail: Chi tiết người dùng
+user_login: Đăng nhập
+user_logout: Đăng xuất
+user_lostpass: Quên mật khẩu
+user_register: Đăng ký
+wiki_help: Trợ giúp
+You can also upload your avatar to Gravatar and it will be automatically updated here.: Bạn cũng có thể tải avatar lên <a href="https://gravatar.com/">Gravatar</a> và avatar sẽ tự động được cập nhật tại đây.

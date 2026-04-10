@@ -74,8 +74,8 @@ export default class GoogleOAuthService extends Service {
                 this.response.redirect = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${config.id}&response_type=code&redirect_uri=${url}oauth/google/callback&scope=${scope}&state=${state}`;
             },
         });
-        ctx.i18n.load('zh', {
-            'Login With Google': '使用 Google 登录',
+        ctx.i18n.load('vi', {
+            'Login With Google': 'Dang nhap bang Google',
         });
     }
 }

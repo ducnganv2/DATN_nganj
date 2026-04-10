@@ -71,8 +71,8 @@ export default class LoginWithGithubService extends Service {
                 this.response.redirect = `https://github.com/login/oauth/authorize?client_id=${config.id}&state=${state}&scope=read:user,user:email`;
             },
         });
-        ctx.i18n.load('zh', {
-            'Login With GitHub': '使用 GitHub 登录',
+        ctx.i18n.load('vi', {
+            'Login With GitHub': 'Dang nhap bang GitHub',
         });
     }
 }
