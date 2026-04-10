@@ -1,7 +1,5 @@
 ﻿# Hệ thống Online Judge tích hợp phát hiện mã nguồn sinh bởi AI
 
-[English Version](./README-EN.md)
-
 ## Giới thiệu
 
 Repository này phục vụ đồ án tốt nghiệp tại Trường Đại học Nha Trang, phát triển trên nền tảng [Hydro](https://github.com/hydro-dev/Hydro) và mở rộng thêm khả năng phát hiện mã nguồn có dấu hiệu được sinh bởi AI qua provider Kaggle.
@@ -31,8 +29,7 @@ Repository này phục vụ đồ án tốt nghiệp tại Trường Đại họ
 
 ## Ghi chú về AI check
 
-- README này chỉ mô tả luồng Kaggle bất đồng bộ.
-- Tài liệu chi tiết hơn nằm ở [README\_KAGGLE\_AI.md](./README_KAGGLE_AI.md).
+- README này mô tả trực tiếp luồng Kaggle bất đồng bộ đang dùng trong dự án.
 
 ## Hướng dẫn chạy dự án (luồng Kaggle)
 
@@ -224,13 +221,13 @@ $env:HYDRO_KAGGLE_ATC_INFER_TASK="true"
 $env:HYDRO_KAGGLE_ATC_PROMPT_STYLE="regular"
 $env:HYDRO_KAGGLE_ATC_PATTERN_WEIGHTS="comments:0,docstrings:0"
 $env:HYDRO_KAGGLE_ATC_THRESHOLD="-0.18"
-$env:HYDRO_KAGGLE_ATC_MIN_NONEMPTY_LINES="8"
+$env:HYDRO_KAGGLE_ATC_MIN_NONEMPTY_LNES="8"
 $env:HYDRO_KAGGLE_ATC_MIN_NONWHITESPACE_CHARS="120"
 $env:HYDRO_KAGGLE_TIMEOUT_MS="3600000"
 
 cd C:\DATN\test\Hydro-master
 corepack yarn dev:judge:kaggle-ai
-# Script tren da set san HYDRO_KAGGLE_KERNEL_ID va cac bien Kaggle mac dinh trong package.json.
+
 ```
 
 1. Chỉ chạy judge Docker sau khi backend local mở được `http://127.0.0.1:2333/status`.

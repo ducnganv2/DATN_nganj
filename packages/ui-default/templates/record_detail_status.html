@@ -21,6 +21,9 @@
         {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'checked' %}
           <span class="icon icon-{{ 'warning' if rdoc.aiCheck.isAI else 'check' }}"></span>
           <span>{{ _('Potential AI') if rdoc.aiCheck.isAI else _('Not AI') }}</span>
+          {% if typeof(rdoc.aiCheck.confidence) == 'number' %}
+            <span class="record-status__ai-confidence">AI {{ rdoc.aiCheck.confidence|round|int }}%</span>
+          {% endif %}
         {% elif rdoc.aiCheck and rdoc.aiCheck.state == 'skipped' %}
           <span class="icon icon-info"></span>
           <span>{{ _('Skipped') }}</span>

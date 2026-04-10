@@ -1,0 +1,19 @@
+{
+  "id": "tranducngan/atcv1",
+  "id_no": 114539554,
+  "title": "Atcv1",
+  "code_file": "atcv1.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "tranducngan/atcv1-source"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}
