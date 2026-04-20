@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Notification from 'vj/components/notification';
 import { renderLanguageSelect } from 'vj/components/languageselect';
+import Notification from 'vj/components/notification';
 import { NamedPage } from 'vj/misc/Page';
 import { getAvailableLangs, i18n, request, tpl } from 'vj/utils';
 
@@ -75,6 +75,11 @@ const page = new NamedPage(['problem_submit', 'contest_detail_problem_submit', '
       ensureHiddenInput('aiCheckPayload').value = JSON.stringify(payload);
     };
 
+    const hasSelectedUploadFile = () => {
+      const input = form.querySelector('input[type="file"][name="file"]') as HTMLInputElement | null;
+      return !!input?.files?.length;
+    };
+
     const finalizeSubmit = () => {
       form.dataset.aiCheckInFlight = 'false';
       form.dataset.aiCheckReady = 'true';
@@ -88,6 +93,21 @@ const page = new NamedPage(['problem_submit', 'contest_detail_problem_submit', '
       form.dataset.aiCheckInFlight = 'true';
       setAiCheckPayload(buildFallbackPayload('Pending'));
       renderStatus('Pending', 'pending');
+
+      if (hasSelectedUploadFile()) {
+        const payload = {
+          state: 'pending',
+          isAI: null,
+          score: null,
+          provider: 'post-accepted-ai-check',
+          message: 'AI check deferred because this submission was uploaded as a file.',
+          checkedAt: new Date().toISOString(),
+        };
+        setAiCheckPayload(payload);
+        renderStatus(payload.message, 'pending');
+        finalizeSubmit();
+        return;
+      }
 
       try {
         const res = await request.postFile(UiContext.aiCheckUrl, new FormData(form));

@@ -30,6 +30,7 @@ Repository này phục vụ đồ án tốt nghiệp tại Trường Đại họ
 ## Ghi chú về AI check
 
 - README này mô tả trực tiếp luồng Kaggle bất đồng bộ đang dùng trong dự án.
+- Prebuilt worker checklist: `README_KAGGLE_PREBUILT.md`
 
 ## Hướng dẫn chạy dự án (luồng Kaggle)
 

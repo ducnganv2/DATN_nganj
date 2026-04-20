@@ -407,6 +407,14 @@ export interface TokenDoc {
     [key: string]: any;
 }
 
+export interface AICheckCacheDoc {
+    _id: string;
+    key: string;
+    aiCheck: SubmissionAICheck;
+    updateAt: Date;
+    expireAt: Date;
+}
+
 export interface OplogDoc extends Record<string, any> {
     _id: ObjectId;
     type: string;
@@ -566,6 +574,7 @@ declare module './service/db' {
         check: System;
         message: MessageDoc;
         token: TokenDoc;
+        'aiCheck.cache': AICheckCacheDoc;
         status: any;
         oauth: OauthMap;
         system: System;

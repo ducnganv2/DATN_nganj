@@ -41,7 +41,7 @@ $env:HYDRO_KAGGLE_ATC_DATASET_SOURCE="tranducngan/atcv1-source"
 
 ```powershell
 $env:HYDRO_KAGGLE_ATC_PROJECT_DIR="ATC-main"
-$env:HYDRO_KAGGLE_ATC_BASE_MODEL="google/codegemma-7b-it"
+$env:HYDRO_KAGGLE_ATC_BASE_MODEL="codellama/CodeLlama-7b-Instruct-hf"
 $env:HYDRO_KAGGLE_ATC_METHOD="entropy"
 $env:HYDRO_KAGGLE_ATC_INFER_TASK="true"
 $env:HYDRO_KAGGLE_ATC_PROMPT_STYLE="regular"
