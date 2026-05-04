@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-05-04T06:56:35.747138+00:00",
+  "human_count": 1000,
+  "ai_count": 28,
+  "total_sample_count": 56,
+  "language": "cpp",
+  "ai_model": "gemini-2.5-flash",
+  "human_source": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection-gpt-gemini\\data\\human_1000.jsonl",
+  "openai_batch_request_file": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection-gpt-gemini\\requests\\openai_batch_requests_1000_oldest_gemini_2_5_flash.jsonl",
+  "status": "partial_ai",
+  "batch_output": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection-gpt-gemini\\requests\\gemini_batch_output_1000_oldest_2_5_flash.jsonl",
+  "paired_dataset_json": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection-gpt-gemini\\data\\pairs_1000.json",
+  "labeled_samples_csv": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection-gpt-gemini\\data\\samples_2000.csv",
+  "missing_ai_count": 972
+}

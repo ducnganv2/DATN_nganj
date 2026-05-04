@@ -52,6 +52,7 @@ modules/
 
 # Data files
 *.mmdb
+evaluation/**/*.zip
 
 # Base
 node_modules/

@@ -1,0 +1,29 @@
+[
+  {
+    "experiment_name": "hydro_atc_prod_qwen1000",
+    "decision_source": "production",
+    "threshold_strategy": null,
+    "selected_threshold": null,
+    "selected_raw_threshold": null,
+    "score_direction": "higher_ai",
+    "num_input_rows": 2000,
+    "num_missing_predictions": 0,
+    "metrics": {
+      "num_samples": 1946,
+      "accuracy": 0.8299075025693731,
+      "f1": 0.8105323411562679,
+      "precision": 0.932806324110672,
+      "recall": 0.7165991902834008,
+      "fpr": 0.05323590814196242,
+      "tpr": 0.7165991902834008,
+      "tp": 708,
+      "tn": 907,
+      "fp": 51,
+      "fn": 280,
+      "auc": 0.9348687380085099,
+      "pr_auc": 0.9310062595577574,
+      "auc_num_samples": 1946,
+      "random_auc_baseline": 0.5
+    }
+  }
+]

@@ -7,9 +7,9 @@
     <h1 class="section__title" id="domain" data-heading>{{ _('Domain') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Each user can create domains. A domain can be used for classes, teams, or organizations.</p>
-    <p>You can control visibility and permissions by configuring roles.</p>
-    <p>The default domain is <code>system</code>. Clicking the Hydro logo returns to this domain.</p>
+    <p>{{ _('Each user can create domains. A domain can be used for classes, teams, or organizations.') }}</p>
+    <p>{{ _('You can control visibility and permissions by configuring roles.') }}</p>
+    <p>{{ _('The default domain is {0}. Clicking the Hydro logo returns to this domain.').format('<code>system</code>')|safe }}</p>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
     <h1 class="section__title" id="compiler" data-heading>{{ _("Compilers' Version and Parameters") }}</h1>
   </div>
   <div class="section__body typo">
-    <p>{{ name }} uses <a href="https://github.com/hydro-dev/Hydro/tree/master/packages/hydrojudge">HydroJudge</a> for judging. See the status page for compiler versions and flags.</p>
+    <p>{{ _('{0} uses {1} for judging. See the status page for compiler versions and flags.').format(name, '<a href="https://github.com/hydro-dev/Hydro/tree/master/packages/hydrojudge">HydroJudge</a>')|safe }}</p>
   </div>
 </div>
 
@@ -27,8 +27,8 @@
     <h1 class="section__title" id="limits" data-heading>{{ _('Limitations') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Time usage is measured by CPU time. Memory usage is measured by the process memory footprint.</p>
-    <p>Default memory limit is 256MiB unless a problem states a different limit.</p>
+    <p>{{ _('Time usage is measured by CPU time. Memory usage is measured by the process memory footprint.') }}</p>
+    <p>{{ _('Default memory limit is 256MiB unless a problem states a different limit.') }}</p>
   </div>
 </div>
 
@@ -37,7 +37,7 @@
     <h1 class="section__title" id="io" data-heading>{{ _('IO') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Unless stated otherwise, use standard input and standard output (STD I/O).</p>
+    <p>{{ _('Unless stated otherwise, use standard input and standard output (STD I/O).') }}</p>
   </div>
 </div>
 
@@ -47,20 +47,20 @@
   </div>
   <div class="section__body typo">
     <ul>
-      <li><span class="record-status--text pending">Waiting</span>: queued and waiting for judge worker.</li>
-      <li><span class="record-status--text progress">Fetched</span>: picked by judge worker, preparing.</li>
-      <li><span class="record-status--text progress">Compiling</span>: source code is compiling.</li>
-      <li><span class="record-status--text progress">Judging</span>: running testcases.</li>
-      <li><span class="record-status--text pass">Accepted</span>: output is correct.</li>
-      <li><span class="record-status--text fail">Wrong Answer</span>: output differs from expected answer.</li>
-      <li><span class="record-status--text fail">Time Limit Exceeded</span>: runtime exceeded limit.</li>
-      <li><span class="record-status--text fail">Memory Limit Exceeded</span>: memory usage exceeded limit.</li>
-      <li><span class="record-status--text fail">Runtime Error</span>: runtime failure (e.g. crash or invalid operation).</li>
-      <li><span class="record-status--text fail">Compile Error</span>: compilation failed.</li>
-      <li><span class="record-status--text fail">System Error</span>: internal judge/platform error.</li>
-      <li><span class="record-status--text ignored">Canceled</span>: judging was canceled.</li>
-      <li><span class="record-status--text fail">Unknown Error</span>: unknown failure reason.</li>
-      <li><span class="record-status--text ignored">Ignored</span>: record was ignored.</li>
+      <li><span class="record-status--text pending">{{ _('Waiting') }}</span>: {{ _('queued and waiting for judge worker.') }}</li>
+      <li><span class="record-status--text progress">{{ _('Fetched') }}</span>: {{ _('picked by judge worker, preparing.') }}</li>
+      <li><span class="record-status--text progress">{{ _('Compiling') }}</span>: {{ _('source code is compiling.') }}</li>
+      <li><span class="record-status--text progress">{{ _('Judging') }}</span>: {{ _('running testcases.') }}</li>
+      <li><span class="record-status--text pass">{{ _('Accepted') }}</span>: {{ _('output is correct.') }}</li>
+      <li><span class="record-status--text fail">{{ _('Wrong Answer') }}</span>: {{ _('output differs from expected answer.') }}</li>
+      <li><span class="record-status--text fail">{{ _('Time Limit Exceeded') }}</span>: {{ _('runtime exceeded limit.') }}</li>
+      <li><span class="record-status--text fail">{{ _('Memory Limit Exceeded') }}</span>: {{ _('memory usage exceeded limit.') }}</li>
+      <li><span class="record-status--text fail">{{ _('Runtime Error') }}</span>: {{ _('runtime failure (e.g. crash or invalid operation).') }}</li>
+      <li><span class="record-status--text fail">{{ _('Compile Error') }}</span>: {{ _('compilation failed.') }}</li>
+      <li><span class="record-status--text fail">{{ _('System Error') }}</span>: {{ _('internal judge/platform error.') }}</li>
+      <li><span class="record-status--text ignored">{{ _('Canceled') }}</span>: {{ _('judging was canceled.') }}</li>
+      <li><span class="record-status--text fail">{{ _('Unknown Error') }}</span>: {{ _('unknown failure reason.') }}</li>
+      <li><span class="record-status--text ignored">{{ _('Ignored') }}</span>: {{ _('record was ignored.') }}</li>
     </ul>
   </div>
 </div>
@@ -70,11 +70,11 @@
     <h1 class="section__title" id="ce" data-heading>{{ _('Compile Error') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Common causes:</p>
+    <p>{{ _('Common causes:') }}</p>
     <ul>
-      <li>Selected language does not match your code.</li>
-      <li>Java main class is not named <code>Main</code>.</li>
-      <li>General syntax or build issues.</li>
+      <li>{{ _('Selected language does not match your code.') }}</li>
+      <li>{{ _('Java main class is not named {0}.').format('<code>Main</code>')|safe }}</li>
+      <li>{{ _('General syntax or build issues.') }}</li>
     </ul>
   </div>
 </div>
@@ -84,7 +84,7 @@
     <h1 class="section__title" id="training" data-heading>{{ _('Training') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Training plans are curated problem sequences for structured practice.</p>
+    <p>{{ _('Training plans are curated problem sequences for structured practice.') }}</p>
   </div>
 </div>
 
@@ -93,8 +93,8 @@
     <h1 class="section__title" id="contest" data-heading>{{ _('Contest') }}</h1>
   </div>
   <div class="section__body typo richmedia">
-    <p>Different rulesets use different ranking and scoring logic.</p>
-    <p>Refer to each contest page for exact rules and penalty behavior.</p>
+    <p>{{ _('Different rulesets use different ranking and scoring logic.') }}</p>
+    <p>{{ _('Refer to each contest page for exact rules and penalty behavior.') }}</p>
   </div>
 </div>
 
@@ -103,7 +103,7 @@
     <h1 class="section__title" id="acratio" data-heading>{{ _('Accepted Ratio') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Accepted ratio can be noisy and is not always a reliable indicator of difficulty.</p>
+    <p>{{ _('Accepted ratio can be noisy and is not always a reliable indicator of difficulty.') }}</p>
   </div>
 </div>
 
@@ -112,7 +112,7 @@
     <h1 class="section__title" id="rp" data-heading>{{ _('RP Algorithm') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>RP can be obtained from problems, activities, and contests based on platform rules.</p>
+    <p>{{ _('RP can be obtained from problems, activities, and contests based on platform rules.') }}</p>
   </div>
 </div>
 
@@ -121,11 +121,11 @@
     <h1 class="section__title" id="pbmdiff" data-heading>{{ _('Difficulty Algorithm') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Problem difficulty is estimated from submissions, acceptance behavior, and evaluation history.</p>
+    <p>{{ _('Problem difficulty is estimated from submissions, acceptance behavior, and evaluation history.') }}</p>
     <ul>
-      <li>New problems may have unstable difficulty values.</li>
-      <li>Difficulty becomes more stable with more submissions.</li>
-      <li>Algorithmic estimation may still be imperfect.</li>
+      <li>{{ _('New problems may have unstable difficulty values.') }}</li>
+      <li>{{ _('Difficulty becomes more stable with more submissions.') }}</li>
+      <li>{{ _('Algorithmic estimation may still be imperfect.') }}</li>
     </ul>
   </div>
 </div>
@@ -135,7 +135,7 @@
     <h1 class="section__title" id="upload" data-heading>{{ _('Dataset Format') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>See <a href="https://hydro.js.org/docs/Hydro/user/testdata">testdata documentation</a>.</p>
+    <p>{{ _('See {0}.').format('<a href="https://hydro.js.org/docs/Hydro/user/testdata">' + _('testdata documentation') + '</a>')|safe }}</p>
   </div>
 </div>
 
@@ -144,8 +144,8 @@
     <h1 class="section__title" id="lostpass" data-heading>{{ _('Forgot Password and/or Username') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>If you cannot sign in, verify your username carefully first.</p>
-    <p>If needed, use <a href="{{ url('user_lostpass') }}">{{ _('Reset Password or Find Username') }}</a>.</p>
+    <p>{{ _('If you cannot sign in, verify your username carefully first.') }}</p>
+    <p>{{ _('If needed, use {0}.').format('<a href="' + url('user_lostpass') + '">' + _('Reset Password or Find Username') + '</a>')|safe }}</p>
   </div>
 </div>
 
@@ -154,7 +154,7 @@
     <h1 class="section__title" id="markdown" data-heading>{{ _('Markdown') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>Hydro uses CommonMark and supports extra features such as formulas, mentions, media embeds, and file references.</p>
+    <p>{{ _('Hydro uses CommonMark and supports extra features such as formulas, mentions, media embeds, and file references.') }}</p>
   </div>
 </div>
 

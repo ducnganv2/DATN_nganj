@@ -1,0 +1,16 @@
+{
+  "id": "tranducngan/hydro-ai-eval-gemini25flash-oldest1000",
+  "title": "Hydro AI Eval Gemini25flash Oldest1000",
+  "code_file": "generate_ai_dataset_gemini.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

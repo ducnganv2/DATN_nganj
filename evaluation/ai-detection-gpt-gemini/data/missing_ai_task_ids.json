@@ -1,0 +1,2918 @@
+[
+  {
+    "task_id": "2_15_B._Laser"
+  },
+  {
+    "task_id": "2_16_C._Monitor"
+  },
+  {
+    "task_id": "2_16_E._Fish"
+  },
+  {
+    "task_id": "2_17_C._Balance"
+  },
+  {
+    "task_id": "2_17_D._Notepad"
+  },
+  {
+    "task_id": "2_18_A._Triangle"
+  },
+  {
+    "task_id": "2_19_A._World_Football_Cup"
+  },
+  {
+    "task_id": "2_20_A._BerOS_file_system"
+  },
+  {
+    "task_id": "2_20_C._Dijkstra?"
+  },
+  {
+    "task_id": "2_21_A._Jabber_ID"
+  },
+  {
+    "task_id": "2_21_C._Stripe_2"
+  },
+  {
+    "task_id": "2_22_C._System_Administrator"
+  },
+  {
+    "task_id": "2_22_E._Scheme"
+  },
+  {
+    "task_id": "2_23_B._Party"
+  },
+  {
+    "task_id": "2_23_E._Tree"
+  },
+  {
+    "task_id": "2_24_A._Ring_road"
+  },
+  {
+    "task_id": "2_24_C._Sequence_of_points"
+  },
+  {
+    "task_id": "2_24_D._Broken_robot"
+  },
+  {
+    "task_id": "2_25_C._Roads_in_Berland"
+  },
+  {
+    "task_id": "2_25_E._Test"
+  },
+  {
+    "task_id": "2_26_B._Regular_Bracket_Sequence"
+  },
+  {
+    "task_id": "2_26_E._Multithreading"
+  },
+  {
+    "task_id": "2_27_B._Tournament"
+  },
+  {
+    "task_id": "2_27_C._Unordered_Subsequence"
+  },
+  {
+    "task_id": "2_27_D._Ring_Road_2"
+  },
+  {
+    "task_id": "2_27_E._Number_With_The_Given_Amount_Of_Divisors"
+  },
+  {
+    "task_id": "2_28_B._pSort"
+  },
+  {
+    "task_id": "2_28_C._Bath_Queue"
+  },
+  {
+    "task_id": "2_28_E._DravDe_saves_the_world"
+  },
+  {
+    "task_id": "2_29_B._Traffic_Lights"
+  },
+  {
+    "task_id": "2_29_C._Mail_Stamps"
+  },
+  {
+    "task_id": "2_29_D._Ant_on_the_Tree"
+  },
+  {
+    "task_id": "2_30_A._Accounting"
+  },
+  {
+    "task_id": "2_30_B._Codeforces_World_Finals"
+  },
+  {
+    "task_id": "2_30_D._King's_Problem?"
+  },
+  {
+    "task_id": "2_31_A._Worms_Evolution"
+  },
+  {
+    "task_id": "2_31_C._Schedule"
+  },
+  {
+    "task_id": "2_32_B._Borze"
+  },
+  {
+    "task_id": "2_32_C._Flea"
+  },
+  {
+    "task_id": "2_32_D._Constellation"
+  },
+  {
+    "task_id": "2_32_E._Hide-and-Seek"
+  },
+  {
+    "task_id": "2_33_A._What_is_for_dinner?"
+  },
+  {
+    "task_id": "2_33_C._Wonderful_Randomized_Sum"
+  },
+  {
+    "task_id": "2_34_B._Sale"
+  },
+  {
+    "task_id": "2_34_E._Collisions"
+  },
+  {
+    "task_id": "2_35_B._Warehouse"
+  },
+  {
+    "task_id": "2_35_C._Fire_Again"
+  },
+  {
+    "task_id": "2_35_D._Animals"
+  },
+  {
+    "task_id": "2_37_A._Towers"
+  },
+  {
+    "task_id": "2_38_A._Army"
+  },
+  {
+    "task_id": "2_38_B._Chess"
+  },
+  {
+    "task_id": "2_38_G._Queue"
+  },
+  {
+    "task_id": "2_39_D._Cubical_Planet"
+  },
+  {
+    "task_id": "2_39_F._Pacifist_frogs"
+  },
+  {
+    "task_id": "2_39_G._Inverse_Function"
+  },
+  {
+    "task_id": "2_39_I._Tram"
+  },
+  {
+    "task_id": "2_40_A._Find_Color"
+  },
+  {
+    "task_id": "2_41_A._Translation"
+  },
+  {
+    "task_id": "2_41_B._Martian_Dollar"
+  },
+  {
+    "task_id": "2_41_D._Pawn"
+  },
+  {
+    "task_id": "2_41_E._3-cycles"
+  },
+  {
+    "task_id": "2_42_B._Game_of_chess_unfinished"
+  },
+  {
+    "task_id": "2_42_D._Strange_town"
+  },
+  {
+    "task_id": "2_43_A._Football"
+  },
+  {
+    "task_id": "2_43_C._Lucky_Tickets"
+  },
+  {
+    "task_id": "2_43_D._Journey"
+  },
+  {
+    "task_id": "2_44_A._Indian_Summer"
+  },
+  {
+    "task_id": "2_44_C._Holidays"
+  },
+  {
+    "task_id": "2_44_F._BerPaint"
+  },
+  {
+    "task_id": "2_44_G._Shooting_Gallery"
+  },
+  {
+    "task_id": "2_44_I._Toys"
+  },
+  {
+    "task_id": "2_45_A._Codecraft_III"
+  },
+  {
+    "task_id": "2_45_D._Event_Dates"
+  },
+  {
+    "task_id": "2_45_F._Goats_and_Wolves"
+  },
+  {
+    "task_id": "2_45_G._Prime_Problem"
+  },
+  {
+    "task_id": "2_46_D._Parking_Lot"
+  },
+  {
+    "task_id": "2_46_E._Comb"
+  },
+  {
+    "task_id": "2_47_B._Coins"
+  },
+  {
+    "task_id": "2_47_E._Cannon"
+  },
+  {
+    "task_id": "2_48_A._Rock-paper-scissors"
+  },
+  {
+    "task_id": "2_48_C._The_Race"
+  },
+  {
+    "task_id": "2_48_F._Snow_sellers"
+  },
+  {
+    "task_id": "2_48_G._Galaxy_Union"
+  },
+  {
+    "task_id": "2_48_H._Black_and_White"
+  },
+  {
+    "task_id": "2_49_A._Sleuth"
+  },
+  {
+    "task_id": "2_49_B._Sum"
+  },
+  {
+    "task_id": "2_49_C._Disposition"
+  },
+  {
+    "task_id": "2_49_E._Common_ancestor"
+  },
+  {
+    "task_id": "2_50_B._Choosing_Symbol_Pairs"
+  },
+  {
+    "task_id": "2_51_A._Cheaterius's_Problem"
+  },
+  {
+    "task_id": "2_51_B._bHTML_Tables_Analisys"
+  },
+  {
+    "task_id": "2_51_D._Geometrical_problem"
+  },
+  {
+    "task_id": "2_52_B._Right_Triangles"
+  },
+  {
+    "task_id": "2_53_A._Autocomplete"
+  },
+  {
+    "task_id": "2_53_D._Physical_Education"
+  },
+  {
+    "task_id": "2_53_E._Dead_Ends"
+  },
+  {
+    "task_id": "2_54_A._Presents"
+  },
+  {
+    "task_id": "2_54_B._Cutting_Jigsaw_Puzzle"
+  },
+  {
+    "task_id": "2_54_C._First_Digit_Law"
+  },
+  {
+    "task_id": "2_54_E._Vacuum_Сleaner"
+  },
+  {
+    "task_id": "2_55_C._Pie_or_die"
+  },
+  {
+    "task_id": "2_55_D._Beautiful_numbers"
+  },
+  {
+    "task_id": "2_56_A._Bar"
+  },
+  {
+    "task_id": "2_57_B._Martian_Architecture"
+  },
+  {
+    "task_id": "2_57_E._Chess"
+  },
+  {
+    "task_id": "2_58_A._Chat_room"
+  },
+  {
+    "task_id": "2_58_C._Trees"
+  },
+  {
+    "task_id": "2_58_D._Calendar"
+  },
+  {
+    "task_id": "2_58_E._Expression"
+  },
+  {
+    "task_id": "2_59_B._Fortune_Telling"
+  },
+  {
+    "task_id": "2_60_E._Mushroom_Gnomes"
+  },
+  {
+    "task_id": "2_61_A._Ultra-Fast_Mathematician"
+  },
+  {
+    "task_id": "2_61_D._Eternal_Victory"
+  },
+  {
+    "task_id": "2_61_E._Enemy_is_weak"
+  },
+  {
+    "task_id": "2_62_A._A_Student's_Dream"
+  },
+  {
+    "task_id": "2_62_C._Inquisition"
+  },
+  {
+    "task_id": "2_62_D._Wormhouse"
+  },
+  {
+    "task_id": "2_62_E._World_Evil"
+  },
+  {
+    "task_id": "2_63_C._Bulls_and_Cows"
+  },
+  {
+    "task_id": "2_63_D._Dividing_Island"
+  },
+  {
+    "task_id": "2_63_E._Sweets_Game"
+  },
+  {
+    "task_id": "2_65_A._Harry_Potter_and_Three_Spells"
+  },
+  {
+    "task_id": "2_65_B._Harry_Potter_and_the_History_of_Magic"
+  },
+  {
+    "task_id": "2_65_C._Harry_Potter_and_the_Golden_Snitch"
+  },
+  {
+    "task_id": "2_65_E._Harry_Potter_and_Moving_Staircases"
+  },
+  {
+    "task_id": "2_66_A._Petya_and_Java"
+  },
+  {
+    "task_id": "2_66_C._Petya_and_File_System"
+  },
+  {
+    "task_id": "2_67_B._Restoration_of_the_Permutation"
+  },
+  {
+    "task_id": "2_67_C._Sequence_of_Balls"
+  },
+  {
+    "task_id": "2_67_D._Optical_Experiment"
+  },
+  {
+    "task_id": "2_68_A._Irrational_problem"
+  },
+  {
+    "task_id": "2_68_D._Half-decay_tree"
+  },
+  {
+    "task_id": "2_68_E._Contact"
+  },
+  {
+    "task_id": "2_69_D._Dot"
+  },
+  {
+    "task_id": "2_70_A._Cookies"
+  },
+  {
+    "task_id": "2_70_B._Text_Messaging"
+  },
+  {
+    "task_id": "2_70_D._Professor's_task"
+  },
+  {
+    "task_id": "2_71_A._Way_Too_Long_Words"
+  },
+  {
+    "task_id": "2_71_D._Solitaire"
+  },
+  {
+    "task_id": "2_73_A._The_Elder_Trolls_IV:_Oblivon"
+  },
+  {
+    "task_id": "2_73_D._FreeDiv"
+  },
+  {
+    "task_id": "2_74_A._Room_Leader"
+  },
+  {
+    "task_id": "2_74_B._Train"
+  },
+  {
+    "task_id": "2_74_C._Chessboard_Billiard"
+  },
+  {
+    "task_id": "2_74_D._Hanger"
+  },
+  {
+    "task_id": "2_74_E._Shift_It!"
+  },
+  {
+    "task_id": "2_75_A._Life_Without_Zeros"
+  },
+  {
+    "task_id": "2_75_B._Facetook_Priority_Wall"
+  },
+  {
+    "task_id": "2_75_D._Big_Maximum_Sum"
+  },
+  {
+    "task_id": "2_75_E._Ship's_Shortest_Path"
+  },
+  {
+    "task_id": "2_76_A._Gift"
+  },
+  {
+    "task_id": "2_76_C._Mutation"
+  },
+  {
+    "task_id": "2_76_D._Plus_and_xor"
+  },
+  {
+    "task_id": "2_76_E._Points"
+  },
+  {
+    "task_id": "2_77_A._Heroes"
+  },
+  {
+    "task_id": "2_77_D._Domino_Carpet"
+  },
+  {
+    "task_id": "2_77_E._Martian_Food"
+  },
+  {
+    "task_id": "2_78_B._Easter_Eggs"
+  },
+  {
+    "task_id": "2_79_C._Beaver"
+  },
+  {
+    "task_id": "2_79_E._Security_System"
+  },
+  {
+    "task_id": "2_80_A._Panoramix's_Prediction"
+  },
+  {
+    "task_id": "2_80_B._Depression"
+  },
+  {
+    "task_id": "2_81_A._Plug-in"
+  },
+  {
+    "task_id": "2_81_E._Pairs"
+  },
+  {
+    "task_id": "2_82_B._Sets"
+  },
+  {
+    "task_id": "2_83_A._Magical_Array"
+  },
+  {
+    "task_id": "2_83_B._Doctor"
+  },
+  {
+    "task_id": "2_83_D._Numbers"
+  },
+  {
+    "task_id": "2_83_E._Two_Subsequences"
+  },
+  {
+    "task_id": "2_84_B._Magical_Array"
+  },
+  {
+    "task_id": "2_84_C._Biathlon"
+  },
+  {
+    "task_id": "2_84_D._Doctor"
+  },
+  {
+    "task_id": "2_85_A._Domino"
+  },
+  {
+    "task_id": "2_85_B._Embassy_Queue"
+  },
+  {
+    "task_id": "2_85_C._Petya_and_Tree"
+  },
+  {
+    "task_id": "2_85_E._Guard_Towers"
+  },
+  {
+    "task_id": "2_86_A._Reflection"
+  },
+  {
+    "task_id": "2_86_D._Powerful_array"
+  },
+  {
+    "task_id": "2_86_E._Long_sequence"
+  },
+  {
+    "task_id": "2_87_A._Trains"
+  },
+  {
+    "task_id": "2_88_A._Chord"
+  },
+  {
+    "task_id": "2_88_B._Keyboard"
+  },
+  {
+    "task_id": "2_88_C._Trains"
+  },
+  {
+    "task_id": "2_88_E._Interesting_Game"
+  },
+  {
+    "task_id": "2_89_D._Space_mines"
+  },
+  {
+    "task_id": "2_89_E._Fire_and_Ice"
+  },
+  {
+    "task_id": "2_90_A._Cableway"
+  },
+  {
+    "task_id": "2_91_A._Newspaper_Headline"
+  },
+  {
+    "task_id": "2_91_C._Ski_Base"
+  },
+  {
+    "task_id": "2_91_D._Grocer's_Problem"
+  },
+  {
+    "task_id": "2_92_A._Chips"
+  },
+  {
+    "task_id": "2_92_E._Ski_Base"
+  },
+  {
+    "task_id": "2_93_A._Frames"
+  },
+  {
+    "task_id": "2_93_D._Flags"
+  },
+  {
+    "task_id": "2_93_E._Lostborn"
+  },
+  {
+    "task_id": "2_94_C._Frames"
+  },
+  {
+    "task_id": "2_94_E._Azembler"
+  },
+  {
+    "task_id": "2_95_A._Hockey"
+  },
+  {
+    "task_id": "2_95_D._Horse_Races"
+  },
+  {
+    "task_id": "2_95_E._Lucky_Country"
+  },
+  {
+    "task_id": "2_96_A._Football"
+  },
+  {
+    "task_id": "2_96_D._Volleyball"
+  },
+  {
+    "task_id": "2_97_A._Domino"
+  },
+  {
+    "task_id": "2_97_C._Winning_Strategy"
+  },
+  {
+    "task_id": "2_98_A._Help_Victoria_the_Wise"
+  },
+  {
+    "task_id": "2_98_B._Help_King"
+  },
+  {
+    "task_id": "2_99_A._Help_Far_Away_Kingdom"
+  },
+  {
+    "task_id": "2_99_C._Help_Victoria_the_Wise"
+  },
+  {
+    "task_id": "2_101_D._Castle"
+  },
+  {
+    "task_id": "2_101_E._Candies_and_Stones"
+  },
+  {
+    "task_id": "2_102_D._Buses"
+  },
+  {
+    "task_id": "2_102_E._Vectors"
+  },
+  {
+    "task_id": "2_103_B._Cthulhu"
+  },
+  {
+    "task_id": "2_103_D._Time_to_Raid_Cowavans"
+  },
+  {
+    "task_id": "2_104_A._Blackjack"
+  },
+  {
+    "task_id": "2_104_B._Testing_Pants_for_Sadness"
+  },
+  {
+    "task_id": "2_104_E._Time_to_Raid_Cowavans"
+  },
+  {
+    "task_id": "2_105_B._Dark_Assembly"
+  },
+  {
+    "task_id": "2_105_D._Entertaining_Geodetics"
+  },
+  {
+    "task_id": "2_105_E._Lift_and_Throw"
+  },
+  {
+    "task_id": "2_106_A._Card_Game"
+  },
+  {
+    "task_id": "2_106_D._Treasure_Island"
+  },
+  {
+    "task_id": "2_107_A._Dorm_Water_Supply"
+  },
+  {
+    "task_id": "2_107_B._Basketball_Team"
+  },
+  {
+    "task_id": "2_107_D._Crime_Management"
+  },
+  {
+    "task_id": "2_108_B._Datatypes"
+  },
+  {
+    "task_id": "2_108_E._Arrangement"
+  },
+  {
+    "task_id": "2_109_A._Lucky_Sum_of_Digits"
+  },
+  {
+    "task_id": "2_109_C._Lucky_Tree"
+  },
+  {
+    "task_id": "2_110_A._Nearly_Lucky_Number"
+  },
+  {
+    "task_id": "2_110_C._Lucky_Sum_of_Digits"
+  },
+  {
+    "task_id": "2_111_B._Petya_and_Divisors"
+  },
+  {
+    "task_id": "2_111_C._Petya_and_Spiders"
+  },
+  {
+    "task_id": "2_111_D._Petya_and_Coloring"
+  },
+  {
+    "task_id": "2_111_E._Petya_and_Rectangle"
+  },
+  {
+    "task_id": "2_112_C._Petya_and_Inequiations"
+  },
+  {
+    "task_id": "2_112_D._Petya_and_Divisors"
+  },
+  {
+    "task_id": "2_113_C._Double_Happiness"
+  },
+  {
+    "task_id": "2_113_E._Sleeping"
+  },
+  {
+    "task_id": "2_114_A._Cifera"
+  },
+  {
+    "task_id": "2_114_D._Petr#"
+  },
+  {
+    "task_id": "2_114_E._Double_Happiness"
+  },
+  {
+    "task_id": "2_115_D._Unambiguous_Arithmetic_Expression"
+  },
+  {
+    "task_id": "2_116_A._Tram"
+  },
+  {
+    "task_id": "2_116_B._Little_Pigs_and_Wolves"
+  },
+  {
+    "task_id": "2_117_A._Elevator"
+  },
+  {
+    "task_id": "2_117_C._Cycle"
+  },
+  {
+    "task_id": "2_118_A._String_Task"
+  },
+  {
+    "task_id": "2_118_B._Present_from_Lena"
+  },
+  {
+    "task_id": "2_118_D._Caesar's_Legions"
+  },
+  {
+    "task_id": "2_119_C._Education_Reform"
+  },
+  {
+    "task_id": "2_119_E._Alternative_Reality"
+  },
+  {
+    "task_id": "2_120_B._Quiz_League"
+  },
+  {
+    "task_id": "2_120_E._Put_Knight!"
+  },
+  {
+    "task_id": "2_120_J._Minimum_Sum"
+  },
+  {
+    "task_id": "2_121_A._Lucky_Sum"
+  },
+  {
+    "task_id": "2_121_B._Lucky_Transformation"
+  },
+  {
+    "task_id": "2_122_A._Lucky_Division"
+  },
+  {
+    "task_id": "2_122_C._Lucky_Sum"
+  },
+  {
+    "task_id": "2_122_E._Lucky_Permutation"
+  },
+  {
+    "task_id": "2_123_C._Brackets"
+  },
+  {
+    "task_id": "2_123_E._Maze"
+  },
+  {
+    "task_id": "2_124_C._Prime_Permutation"
+  },
+  {
+    "task_id": "2_124_E._Brackets"
+  },
+  {
+    "task_id": "2_125_D._Two_progressions"
+  },
+  {
+    "task_id": "2_126_A._Hot_Bath"
+  },
+  {
+    "task_id": "2_126_D._Fibonacci_Sums"
+  },
+  {
+    "task_id": "2_126_E._Pills"
+  },
+  {
+    "task_id": "2_127_A._Wasted_Time"
+  },
+  {
+    "task_id": "2_127_D._Password"
+  },
+  {
+    "task_id": "2_128_B._String"
+  },
+  {
+    "task_id": "2_129_B._Students_and_Shoelaces"
+  },
+  {
+    "task_id": "2_129_E._Games_with_Rectangle"
+  },
+  {
+    "task_id": "2_131_A._cAPS_lOCK"
+  },
+  {
+    "task_id": "2_131_B._Opposites_Attract"
+  },
+  {
+    "task_id": "2_131_C._The_World_is_a_Theatre"
+  },
+  {
+    "task_id": "2_131_E._Yet_Another_Task_with_Queens"
+  },
+  {
+    "task_id": "2_131_F._Present_to_Mom"
+  },
+  {
+    "task_id": "2_132_D._Constants_in_the_language_of_Shakespeare"
+  },
+  {
+    "task_id": "2_133_E._Logo_Turtle"
+  },
+  {
+    "task_id": "2_134_B._Pairs_of_Numbers"
+  },
+  {
+    "task_id": "2_135_A._Replacement"
+  },
+  {
+    "task_id": "2_135_D._Cycle"
+  },
+  {
+    "task_id": "2_136_A._Presents"
+  },
+  {
+    "task_id": "2_137_B._Permutation"
+  },
+  {
+    "task_id": "2_137_E._Last_Chance"
+  },
+  {
+    "task_id": "2_138_B._Digits_Permutations"
+  },
+  {
+    "task_id": "2_138_C._Mushroom_Gnomes_-_2"
+  },
+  {
+    "task_id": "2_138_E._Hellish_Constraints"
+  },
+  {
+    "task_id": "2_139_A._Petr_and_Book"
+  },
+  {
+    "task_id": "2_139_C._Literature_Lesson"
+  },
+  {
+    "task_id": "2_139_E._Mushroom_Gnomes_-_2"
+  },
+  {
+    "task_id": "2_140_B._New_Year_Cards"
+  },
+  {
+    "task_id": "2_140_F._New_Year_Snowflake"
+  },
+  {
+    "task_id": "2_141_D._Take-off_Ramps"
+  },
+  {
+    "task_id": "2_141_E._Clearing_Up"
+  },
+  {
+    "task_id": "2_142_A._Help_Farmer"
+  },
+  {
+    "task_id": "2_142_E._Help_Greg_the_Dwarf_2"
+  },
+  {
+    "task_id": "2_143_B._Help_Kingdom_of_Far_Far_Away_2"
+  },
+  {
+    "task_id": "2_143_E._Help_Caretaker"
+  },
+  {
+    "task_id": "2_144_B._Meeting"
+  },
+  {
+    "task_id": "2_144_E._Competition"
+  },
+  {
+    "task_id": "2_145_A._Lucky_Conversion"
+  },
+  {
+    "task_id": "2_145_D._Lucky_Pair"
+  },
+  {
+    "task_id": "2_145_E._Lucky_Queries"
+  },
+  {
+    "task_id": "2_146_A._Lucky_Ticket"
+  },
+  {
+    "task_id": "2_146_C._Lucky_Conversion"
+  },
+  {
+    "task_id": "2_146_D._Lucky_Number_2"
+  },
+  {
+    "task_id": "2_147_A._Punctuation"
+  },
+  {
+    "task_id": "2_148_C._Terse_princess"
+  },
+  {
+    "task_id": "2_148_D._Bag_of_mice"
+  },
+  {
+    "task_id": "2_149_C._Division_into_Teams"
+  },
+  {
+    "task_id": "2_149_E._Martian_Strings"
+  },
+  {
+    "task_id": "2_150_A._Win_or_Freeze"
+  },
+  {
+    "task_id": "2_150_D._Mission_Impassable"
+  },
+  {
+    "task_id": "2_150_E._Freezing_with_Style"
+  },
+  {
+    "task_id": "2_151_D._Quantity_of_Strings"
+  },
+  {
+    "task_id": "2_151_E._Smart_Cheater"
+  },
+  {
+    "task_id": "2_152_B._Steps"
+  },
+  {
+    "task_id": "2_152_C._Pocket_Book"
+  },
+  {
+    "task_id": "2_152_D._Frames"
+  },
+  {
+    "task_id": "2_154_A._Hometask"
+  },
+  {
+    "task_id": "2_154_C._Double_Profiles"
+  },
+  {
+    "task_id": "2_155_B._Combination"
+  },
+  {
+    "task_id": "2_155_D._Colliders"
+  },
+  {
+    "task_id": "2_156_B._Suspects"
+  },
+  {
+    "task_id": "2_156_D._Clues"
+  },
+  {
+    "task_id": "2_156_E._Mrs._Hudson's_Pancakes"
+  },
+  {
+    "task_id": "2_157_E._Cipher"
+  },
+  {
+    "task_id": "2_158_B._Taxi"
+  },
+  {
+    "task_id": "2_159_A._Friends_or_Not"
+  },
+  {
+    "task_id": "2_159_C._String_Manipulation_1.0"
+  },
+  {
+    "task_id": "2_159_D._Palindrome_pairs"
+  },
+  {
+    "task_id": "2_160_A._Twins"
+  },
+  {
+    "task_id": "2_160_B._Unlucky_Ticket"
+  },
+  {
+    "task_id": "2_160_D._Edges_in_MST"
+  },
+  {
+    "task_id": "2_160_E._Buses_and_People"
+  },
+  {
+    "task_id": "2_161_A._Dress'em_in_Vests!"
+  },
+  {
+    "task_id": "2_161_C._Abracadabra"
+  },
+  {
+    "task_id": "2_161_D._Distance_in_Tree"
+  },
+  {
+    "task_id": "2_161_E._Polycarpus_the_Safecracker"
+  },
+  {
+    "task_id": "2_163_A._Substring_and_Subsequence"
+  },
+  {
+    "task_id": "2_163_B._Lemmings"
+  },
+  {
+    "task_id": "2_163_C._Conveyor"
+  },
+  {
+    "task_id": "2_163_D._Large_Refrigerator"
+  },
+  {
+    "task_id": "2_164_A._Variable,_or_There_and_Back_Again"
+  },
+  {
+    "task_id": "2_164_B._Ancient_Berland_Hieroglyphs"
+  },
+  {
+    "task_id": "2_164_C._Machine_Programming"
+  },
+  {
+    "task_id": "2_164_D._Minimum_Diameter"
+  },
+  {
+    "task_id": "2_164_E._Polycarpus_and_Tasks"
+  },
+  {
+    "task_id": "2_165_B._Burning_Midnight_Oil"
+  },
+  {
+    "task_id": "2_166_B._Polygons"
+  },
+  {
+    "task_id": "2_166_C._Median"
+  },
+  {
+    "task_id": "2_167_B._Wizards_and_Huge_Prize"
+  },
+  {
+    "task_id": "2_167_D._Wizards_and_Roads"
+  },
+  {
+    "task_id": "2_167_E._Wizards_and_Bets"
+  },
+  {
+    "task_id": "2_168_B._Wizards_and_Minimal_Spell"
+  },
+  {
+    "task_id": "2_168_E._Wizards_and_Numbers"
+  },
+  {
+    "task_id": "2_169_A._Chores"
+  },
+  {
+    "task_id": "2_169_C._Substring_and_Subsequence"
+  },
+  {
+    "task_id": "2_171_B._Star"
+  },
+  {
+    "task_id": "2_171_D._Broken_checker"
+  },
+  {
+    "task_id": "2_171_F._ucyhf"
+  },
+  {
+    "task_id": "2_172_A._Phone_Code"
+  },
+  {
+    "task_id": "2_172_D._Calendar_Reform"
+  },
+  {
+    "task_id": "2_172_E._BHTML+BCSS"
+  },
+  {
+    "task_id": "2_173_A._Rock-Paper-Scissors"
+  },
+  {
+    "task_id": "2_173_C._Spiral_Maximum"
+  },
+  {
+    "task_id": "2_173_D._Deputies"
+  },
+  {
+    "task_id": "2_174_A._Problem_About_Equation"
+  },
+  {
+    "task_id": "2_175_A._Robot_Bicorn_Attack"
+  },
+  {
+    "task_id": "2_175_B._Plane_of_Tanks:_Pro"
+  },
+  {
+    "task_id": "2_175_E._Power_Defence"
+  },
+  {
+    "task_id": "2_176_A._Trading_Business"
+  },
+  {
+    "task_id": "2_176_E._Archaeology"
+  },
+  {
+    "task_id": "2_177_B1._Rectangular_Game"
+  },
+  {
+    "task_id": "2_177_C2._Party"
+  },
+  {
+    "task_id": "2_177_D2._Encrypting_Messages"
+  },
+  {
+    "task_id": "2_177_F1._Script_Generation"
+  },
+  {
+    "task_id": "2_177_G1._Fibonacci_Strings"
+  },
+  {
+    "task_id": "2_177_G2._Fibonacci_Strings"
+  },
+  {
+    "task_id": "2_178_B2._Greedy_Merchants"
+  },
+  {
+    "task_id": "2_178_C1._Smart_Beaver_and_Resolving_Collisions"
+  },
+  {
+    "task_id": "2_178_D2._Magic_Squares"
+  },
+  {
+    "task_id": "2_178_E1._The_Beaver's_Problem_-_2"
+  },
+  {
+    "task_id": "2_178_E2._The_Beaver's_Problem_-_2"
+  },
+  {
+    "task_id": "2_178_F2._Representative_Sampling"
+  },
+  {
+    "task_id": "2_180_A._Defragmentation"
+  },
+  {
+    "task_id": "2_180_B._Divisibility_Rules"
+  },
+  {
+    "task_id": "2_180_C._Letter"
+  },
+  {
+    "task_id": "2_180_E._Cubes"
+  },
+  {
+    "task_id": "2_180_F._Mathematical_Analysis_Rocks!"
+  },
+  {
+    "task_id": "2_181_A._Series_of_Crimes"
+  },
+  {
+    "task_id": "2_182_B._Vasya's_Calendar"
+  },
+  {
+    "task_id": "2_182_D._Common_Divisors"
+  },
+  {
+    "task_id": "2_183_B._Zoo"
+  },
+  {
+    "task_id": "2_183_C._Cyclic_Coloring"
+  },
+  {
+    "task_id": "2_183_D._T-shirt"
+  },
+  {
+    "task_id": "2_183_E._Candy_Shop"
+  },
+  {
+    "task_id": "2_185_B._Mushroom_Scientists"
+  },
+  {
+    "task_id": "2_185_C._Clever_Fat_Rat"
+  },
+  {
+    "task_id": "2_185_D._Visit_of_the_Great"
+  },
+  {
+    "task_id": "2_185_E._Soap_Time!_-_2"
+  },
+  {
+    "task_id": "2_186_A._Comparing_Strings"
+  },
+  {
+    "task_id": "2_186_C._Plant"
+  },
+  {
+    "task_id": "2_187_C._Weak_Memory"
+  },
+  {
+    "task_id": "2_187_D._BRT_Contract"
+  },
+  {
+    "task_id": "2_189_C._Permutations"
+  },
+  {
+    "task_id": "2_189_D._AlgoRace"
+  },
+  {
+    "task_id": "2_190_A._Vasya_and_the_Bus"
+  },
+  {
+    "task_id": "2_190_C._STL"
+  },
+  {
+    "task_id": "2_190_E._Counter_Attack"
+  },
+  {
+    "task_id": "2_191_B._Demonstration"
+  },
+  {
+    "task_id": "2_191_D._Metro_Scheme"
+  },
+  {
+    "task_id": "2_192_B._Walking_in_the_Rain"
+  },
+  {
+    "task_id": "2_192_E._Fools_and_Roads"
+  },
+  {
+    "task_id": "2_193_A._Cutting_Figure"
+  },
+  {
+    "task_id": "2_193_B._Xor"
+  },
+  {
+    "task_id": "2_193_D._Two_Segments"
+  },
+  {
+    "task_id": "2_193_E._Fibonacci_Number"
+  },
+  {
+    "task_id": "2_194_B._Square"
+  },
+  {
+    "task_id": "2_195_B._After_Training"
+  },
+  {
+    "task_id": "2_195_C._Try_and_Catch"
+  },
+  {
+    "task_id": "2_196_A._Lexicographically_Maximum_Subsequence"
+  },
+  {
+    "task_id": "2_196_C._Paint_Tree"
+  },
+  {
+    "task_id": "2_197_B._Limit"
+  },
+  {
+    "task_id": "2_197_E._Paint_Tree"
+  },
+  {
+    "task_id": "2_198_C._Delivering_Carcinogen"
+  },
+  {
+    "task_id": "2_198_E._Gripping_Story"
+  },
+  {
+    "task_id": "2_199_C._About_Bacteria"
+  },
+  {
+    "task_id": "2_199_E._Delivering_Carcinogen"
+  },
+  {
+    "task_id": "2_200_D._Programming_Language"
+  },
+  {
+    "task_id": "2_201_A._Clear_Symmetry"
+  },
+  {
+    "task_id": "2_201_B._Guess_That_Car!"
+  },
+  {
+    "task_id": "2_201_E._Thoroughly_Bureaucratic_Organization"
+  },
+  {
+    "task_id": "2_202_D._Guess_That_Car!"
+  },
+  {
+    "task_id": "2_202_E._Fragile_Bridges"
+  },
+  {
+    "task_id": "2_203_B._Game_on_Paper"
+  },
+  {
+    "task_id": "2_203_C._Photographer"
+  },
+  {
+    "task_id": "2_203_D._Hit_Ball"
+  },
+  {
+    "task_id": "2_204_A._Little_Elephant_and_Interval"
+  },
+  {
+    "task_id": "2_204_B._Little_Elephant_and_Cards"
+  },
+  {
+    "task_id": "2_204_C._Little_Elephant_and_Furik_and_Rubik"
+  },
+  {
+    "task_id": "2_205_D._Little_Elephant_and_Cards"
+  },
+  {
+    "task_id": "2_207_A1._Beaver's_Calculator_1.0"
+  },
+  {
+    "task_id": "2_207_B1._Military_Trainings"
+  },
+  {
+    "task_id": "2_207_B2._Military_Trainings"
+  },
+  {
+    "task_id": "2_207_B3._Military_Trainings"
+  },
+  {
+    "task_id": "2_207_C1._Game_with_Two_Trees"
+  },
+  {
+    "task_id": "2_207_C3._Game_with_Two_Trees"
+  },
+  {
+    "task_id": "2_207_D1._The_Beaver's_Problem_-_3"
+  },
+  {
+    "task_id": "2_207_D10._The_Beaver's_Problem_-_3"
+  },
+  {
+    "task_id": "2_207_D2._The_Beaver's_Problem_-_3"
+  },
+  {
+    "task_id": "2_207_D3._The_Beaver's_Problem_-_3"
+  },
+  {
+    "task_id": "2_207_D5._The_Beaver's_Problem_-_3"
+  },
+  {
+    "task_id": "2_208_A._Dubstep"
+  },
+  {
+    "task_id": "2_208_B._Solitaire"
+  },
+  {
+    "task_id": "2_209_A._Multicolored_Marbles"
+  },
+  {
+    "task_id": "2_209_C._Trails_and_Glades"
+  },
+  {
+    "task_id": "2_212_C._Cowboys"
+  },
+  {
+    "task_id": "2_212_D._Cutting_a_Fence"
+  },
+  {
+    "task_id": "2_213_A._Game"
+  },
+  {
+    "task_id": "2_214_A._System_of_Equations"
+  },
+  {
+    "task_id": "2_214_E._Relay_Race"
+  },
+  {
+    "task_id": "2_215_B._Olympic_Medal"
+  },
+  {
+    "task_id": "2_215_D._Hot_Days"
+  },
+  {
+    "task_id": "2_216_B._Forming_Teams"
+  },
+  {
+    "task_id": "2_216_E._Martian_Luck"
+  },
+  {
+    "task_id": "2_217_A._Ice_Skating"
+  },
+  {
+    "task_id": "2_217_B._Blackboard_Fibonacci"
+  },
+  {
+    "task_id": "2_217_D._Bitonix'_Patrol"
+  },
+  {
+    "task_id": "2_217_E._Alien_DNA"
+  },
+  {
+    "task_id": "2_218_B._Airport"
+  },
+  {
+    "task_id": "2_219_B._Special_Offer!_Super_Price_999_Bourles!"
+  },
+  {
+    "task_id": "2_219_C._Color_Stripe"
+  },
+  {
+    "task_id": "2_220_C._Little_Elephant_and_Shifts"
+  },
+  {
+    "task_id": "2_221_A._Little_Elephant_and_Function"
+  },
+  {
+    "task_id": "2_221_D._Little_Elephant_and_Array"
+  },
+  {
+    "task_id": "2_222_A._Shooshuns_and_Sequence"
+  },
+  {
+    "task_id": "2_222_D._Olympiad"
+  },
+  {
+    "task_id": "2_223_A._Bracket_Sequence"
+  },
+  {
+    "task_id": "2_223_B._Two_Strings"
+  },
+  {
+    "task_id": "2_224_B._Array"
+  },
+  {
+    "task_id": "2_224_D._Two_Strings"
+  },
+  {
+    "task_id": "2_225_C._Barcode"
+  },
+  {
+    "task_id": "2_225_E._Unsolvable"
+  },
+  {
+    "task_id": "2_226_A._Flying_Saucer_Segments"
+  },
+  {
+    "task_id": "2_226_D._The_table"
+  },
+  {
+    "task_id": "2_227_C._Flying_Saucer_Segments"
+  },
+  {
+    "task_id": "2_227_D._Naughty_Stone_Piles"
+  },
+  {
+    "task_id": "2_228_A._Is_your_horseshoe_on_the_other_hoof?"
+  },
+  {
+    "task_id": "2_228_B._Two_Tables"
+  },
+  {
+    "task_id": "2_228_C._Fractal_Detector"
+  },
+  {
+    "task_id": "2_228_E._The_Road_to_Berland_is_Paved_With_Good_Intentions"
+  },
+  {
+    "task_id": "2_229_A._Shifts"
+  },
+  {
+    "task_id": "2_229_B._Planets"
+  },
+  {
+    "task_id": "2_230_C._Shifts"
+  },
+  {
+    "task_id": "2_230_D._Planets"
+  },
+  {
+    "task_id": "2_230_E._Triangles"
+  },
+  {
+    "task_id": "2_231_A._Team"
+  },
+  {
+    "task_id": "2_231_C._To_Add_or_Not_to_Add"
+  },
+  {
+    "task_id": "2_231_D._Magic_Box"
+  },
+  {
+    "task_id": "2_231_E._Cactus"
+  },
+  {
+    "task_id": "2_232_A._Cycles"
+  },
+  {
+    "task_id": "2_232_B._Table"
+  },
+  {
+    "task_id": "2_232_D._Fence"
+  },
+  {
+    "task_id": "2_233_D._Table"
+  },
+  {
+    "task_id": "2_233_E._Doe_Graphs"
+  },
+  {
+    "task_id": "2_234_E._Champions'_League"
+  },
+  {
+    "task_id": "2_235_B._Let's_Play_Osu!"
+  },
+  {
+    "task_id": "2_235_C._Cyclical_Quest"
+  },
+  {
+    "task_id": "2_235_E._Number_Challenge"
+  },
+  {
+    "task_id": "2_236_C._LCM_Challenge"
+  },
+  {
+    "task_id": "2_236_D._Let's_Play_Osu!"
+  },
+  {
+    "task_id": "2_237_A._Free_Cash"
+  },
+  {
+    "task_id": "2_238_A._Not_Wool_Sequences"
+  },
+  {
+    "task_id": "2_238_E._Meeting_Her"
+  },
+  {
+    "task_id": "2_239_B._Easy_Tape_Programming"
+  },
+  {
+    "task_id": "2_239_D._Boring_Partition"
+  },
+  {
+    "task_id": "2_241_A._Old_Peykan"
+  },
+  {
+    "task_id": "2_241_C._Mirror_Box"
+  },
+  {
+    "task_id": "2_241_D._Numbers"
+  },
+  {
+    "task_id": "2_241_F._Race"
+  },
+  {
+    "task_id": "2_242_D._Dispute"
+  },
+  {
+    "task_id": "2_242_E._XOR_on_Segment"
+  },
+  {
+    "task_id": "2_243_C._Colorado_Potato_Beetle"
+  },
+  {
+    "task_id": "2_243_E._Matrix"
+  },
+  {
+    "task_id": "2_244_D._Hydra"
+  },
+  {
+    "task_id": "2_245_B._Internet_Address"
+  },
+  {
+    "task_id": "2_245_E._Mishap_in_Club"
+  },
+  {
+    "task_id": "2_245_G._Suggested_Friends"
+  },
+  {
+    "task_id": "2_246_B._Increase_and_Decrease"
+  },
+  {
+    "task_id": "2_246_D._Colorful_Graph"
+  },
+  {
+    "task_id": "2_246_E._Blood_Cousins_Return"
+  },
+  {
+    "task_id": "2_248_E._Piglet's_Birthday"
+  },
+  {
+    "task_id": "2_249_B._Sweets_for_Everyone!"
+  },
+  {
+    "task_id": "2_250_B._Restoring_IPv6"
+  },
+  {
+    "task_id": "2_251_A._Points_on_Line"
+  },
+  {
+    "task_id": "2_251_B._Playing_with_Permutations"
+  },
+  {
+    "task_id": "2_251_D._Two_Sets"
+  },
+  {
+    "task_id": "2_251_E._Tree_and_Table"
+  },
+  {
+    "task_id": "2_252_A._Little_Xor"
+  },
+  {
+    "task_id": "2_252_C._Points_on_Line"
+  },
+  {
+    "task_id": "2_252_D._Playing_with_Permutations"
+  },
+  {
+    "task_id": "2_252_E._Number_Transformation"
+  },
+  {
+    "task_id": "2_255_B._Code_Parsing"
+  },
+  {
+    "task_id": "2_255_D._Mr._Bender_and_Square"
+  },
+  {
+    "task_id": "2_256_B._Mr._Bender_and_Square"
+  },
+  {
+    "task_id": "2_256_C._Furlo_and_Rublo_and_Game"
+  },
+  {
+    "task_id": "2_256_D._Liars_and_Serge"
+  },
+  {
+    "task_id": "2_256_E._Lucky_Arrays"
+  },
+  {
+    "task_id": "2_257_B._Playing_Cubes"
+  },
+  {
+    "task_id": "2_257_C._View_Angle"
+  },
+  {
+    "task_id": "2_257_D._Sum"
+  },
+  {
+    "task_id": "2_257_E._Greedy_Elevator"
+  },
+  {
+    "task_id": "2_258_A._Little_Elephant_and_Bits"
+  },
+  {
+    "task_id": "2_258_C._Little_Elephant_and_LCM"
+  },
+  {
+    "task_id": "2_259_C._Little_Elephant_and_Bits"
+  },
+  {
+    "task_id": "2_259_D._Little_Elephant_and_Elections"
+  },
+  {
+    "task_id": "2_260_A._Adding_Digits"
+  },
+  {
+    "task_id": "2_260_C._Balls_and_Boxes"
+  },
+  {
+    "task_id": "2_261_A._Maxim_and_Discounts"
+  },
+  {
+    "task_id": "2_261_B._Maxim_and_Restaurant"
+  },
+  {
+    "task_id": "2_261_D._Maxim_and_Increasing_Subsequence"
+  },
+  {
+    "task_id": "2_262_D._Maxim_and_Restaurant"
+  },
+  {
+    "task_id": "2_263_C._Circle_of_Numbers"
+  },
+  {
+    "task_id": "2_263_E._Rhombus"
+  },
+  {
+    "task_id": "2_264_B._Good_Sequences"
+  },
+  {
+    "task_id": "2_264_E._Roadside_Trees"
+  },
+  {
+    "task_id": "2_265_C._Escape_from_Stones"
+  },
+  {
+    "task_id": "2_265_D._Good_Sequences"
+  },
+  {
+    "task_id": "2_265_E._Choosing_Balls"
+  },
+  {
+    "task_id": "2_266_B._Queue_at_the_School"
+  },
+  {
+    "task_id": "2_266_C._Below_the_Diagonal"
+  },
+  {
+    "task_id": "2_266_E._More_Queries_to_Array..."
+  },
+  {
+    "task_id": "2_268_B._Buttons"
+  },
+  {
+    "task_id": "2_268_C._Beautiful_Sets_of_Points"
+  },
+  {
+    "task_id": "2_269_A._Magical_Boxes"
+  },
+  {
+    "task_id": "2_269_C._Flawed_Flow"
+  },
+  {
+    "task_id": "2_270_C._Magical_Boxes"
+  },
+  {
+    "task_id": "2_270_E._Flawed_Flow"
+  },
+  {
+    "task_id": "2_271_C._Secret"
+  },
+  {
+    "task_id": "2_271_E._Three_Horses"
+  },
+  {
+    "task_id": "2_272_A._Dima_and_Friends"
+  },
+  {
+    "task_id": "2_273_A._Dima_and_Staircase"
+  },
+  {
+    "task_id": "2_273_C._Dima_and_Horses"
+  },
+  {
+    "task_id": "2_274_B._Zero_Tree"
+  },
+  {
+    "task_id": "2_274_D._Lovely_Matrix"
+  },
+  {
+    "task_id": "2_274_E._Mirror_Room"
+  },
+  {
+    "task_id": "2_275_C._k-Multiple_Free_Set"
+  },
+  {
+    "task_id": "2_276_B._Little_Girl_and_Game"
+  },
+  {
+    "task_id": "2_276_C._Little_Girl_and_Maximum_Sum"
+  },
+  {
+    "task_id": "2_276_E._Little_Girl_and_Problem_on_Trees"
+  },
+  {
+    "task_id": "2_277_A._Learning_Languages"
+  },
+  {
+    "task_id": "2_277_B._Set_of_Points"
+  },
+  {
+    "task_id": "2_277_D._Google_Code_Jam"
+  },
+  {
+    "task_id": "2_277_E._Binary_Tree_on_Plane"
+  },
+  {
+    "task_id": "2_278_A._Circle_Line"
+  },
+  {
+    "task_id": "2_279_B._Books"
+  },
+  {
+    "task_id": "2_279_D._The_Minimum_Number_of_Variables"
+  },
+  {
+    "task_id": "2_280_B._Maximum_Xor_Secondary"
+  },
+  {
+    "task_id": "2_280_C._Game_on_Tree"
+  },
+  {
+    "task_id": "2_280_D._k-Maximum_Subsequence_Sum"
+  },
+  {
+    "task_id": "2_280_E._Sequence_Transformation"
+  },
+  {
+    "task_id": "2_281_A._Word_Capitalization"
+  },
+  {
+    "task_id": "2_281_C._Rectangle_Puzzle"
+  },
+  {
+    "task_id": "2_282_C._XOR_and_OR"
+  },
+  {
+    "task_id": "2_282_D._Yet_Another_Number_Game"
+  },
+  {
+    "task_id": "2_283_C._Coin_Troubles"
+  },
+  {
+    "task_id": "2_283_E._Cow_Tennis_Tournament"
+  },
+  {
+    "task_id": "2_284_A._Cows_and_Primitive_Roots"
+  },
+  {
+    "task_id": "2_284_C._Cows_and_Sequence"
+  },
+  {
+    "task_id": "2_285_A._Slightly_Decreasing_Permutations"
+  },
+  {
+    "task_id": "2_285_B._Find_Marble"
+  },
+  {
+    "task_id": "2_285_D._Permutation_Sum"
+  },
+  {
+    "task_id": "2_286_D._Tourists"
+  },
+  {
+    "task_id": "2_287_C._Lucky_Permutation"
+  },
+  {
+    "task_id": "2_287_E._Main_Sequence"
+  },
+  {
+    "task_id": "2_288_B._Polo_the_Penguin_and_Houses"
+  },
+  {
+    "task_id": "2_288_E._Polo_the_Penguin_and_Lucky_Numbers"
+  },
+  {
+    "task_id": "2_289_C._Polo_the_Penguin_and_Strings"
+  },
+  {
+    "task_id": "2_289_D._Polo_the_Penguin_and_Houses"
+  },
+  {
+    "task_id": "2_289_E._Polo_the_Penguin_and_XOR_operation"
+  },
+  {
+    "task_id": "2_290_E._HQ"
+  },
+  {
+    "task_id": "2_290_F._Greedy_Petya"
+  },
+  {
+    "task_id": "2_291_C._Network_Mask"
+  },
+  {
+    "task_id": "2_291_E._Tree-String_Problem"
+  },
+  {
+    "task_id": "2_292_D._Connected_Components"
+  },
+  {
+    "task_id": "2_293_B._Distinct_Paths"
+  },
+  {
+    "task_id": "2_293_E._Close_Vertices"
+  },
+  {
+    "task_id": "2_294_B._Shaass_and_Bookshelf"
+  },
+  {
+    "task_id": "2_294_E._Shaass_the_Great"
+  },
+  {
+    "task_id": "2_295_B._Greg_and_Graph"
+  },
+  {
+    "task_id": "2_295_C._Greg_and_Friends"
+  },
+  {
+    "task_id": "2_296_C._Greg_and_Array"
+  },
+  {
+    "task_id": "2_296_E._Greg_and_Friends"
+  },
+  {
+    "task_id": "2_297_D._Color_the_Carpet"
+  },
+  {
+    "task_id": "2_298_A._Snow_Footprints"
+  },
+  {
+    "task_id": "2_298_B._Sail"
+  },
+  {
+    "task_id": "2_298_E._Splitting_the_Uniqueness"
+  },
+  {
+    "task_id": "2_299_D._Distinct_Paths"
+  },
+  {
+    "task_id": "2_299_E._Cube_Problem"
+  },
+  {
+    "task_id": "2_301_A._Yaroslav_and_Sequence"
+  },
+  {
+    "task_id": "2_301_C._Yaroslav_and_Algorithm"
+  },
+  {
+    "task_id": "2_302_A._Eugeny_and_Array"
+  },
+  {
+    "task_id": "2_302_B._Eugeny_and_Play_List"
+  },
+  {
+    "task_id": "2_302_C._Yaroslav_and_Sequence"
+  },
+  {
+    "task_id": "2_302_D._Yaroslav_and_Time"
+  },
+  {
+    "task_id": "2_303_A._Lucky_Permutation_Triple"
+  },
+  {
+    "task_id": "2_303_B._Rectangle_Puzzle_II"
+  },
+  {
+    "task_id": "2_303_C._Minimum_Modular"
+  },
+  {
+    "task_id": "2_303_D._Rotatable_Number"
+  },
+  {
+    "task_id": "2_303_E._Random_Ranking"
+  },
+  {
+    "task_id": "2_304_B._Calendar"
+  },
+  {
+    "task_id": "2_305_B._Continued_Fractions"
+  },
+  {
+    "task_id": "2_305_C._Ivan_and_Powers_of_Two"
+  },
+  {
+    "task_id": "2_306_B._Optimizer"
+  },
+  {
+    "task_id": "2_306_D._Polygon"
+  },
+  {
+    "task_id": "2_309_A._Morning_run"
+  },
+  {
+    "task_id": "2_309_C._Memory_for_Arrays"
+  },
+  {
+    "task_id": "2_311_D._Interval_Cubing"
+  },
+  {
+    "task_id": "2_312_C._The_Closest_Pair"
+  },
+  {
+    "task_id": "2_312_E._Fetch_the_Treasure"
+  },
+  {
+    "task_id": "2_313_B._Ilya_and_Queries"
+  },
+  {
+    "task_id": "2_313_E._Ilya_and_Two_Numbers"
+  },
+  {
+    "task_id": "2_314_C._Sereja_and_Subsequences"
+  },
+  {
+    "task_id": "2_314_D._Sereja_and_Straight_Lines"
+  },
+  {
+    "task_id": "2_314_E._Sereja_and_Squares"
+  },
+  {
+    "task_id": "2_315_B._Sereja_and_Array"
+  },
+  {
+    "task_id": "2_315_C._Sereja_and_Contest"
+  },
+  {
+    "task_id": "2_315_E._Sereja_and_Subsequences"
+  },
+  {
+    "task_id": "2_316_C1._Tidying_Up"
+  },
+  {
+    "task_id": "2_316_C2._Tidying_Up"
+  },
+  {
+    "task_id": "2_316_D3._PE_Lesson"
+  },
+  {
+    "task_id": "2_316_E2._Summer_Homework"
+  },
+  {
+    "task_id": "2_316_F3._Suns_and_Rays"
+  },
+  {
+    "task_id": "2_316_G3._Good_Substrings"
+  },
+  {
+    "task_id": "2_317_C._Balance"
+  },
+  {
+    "task_id": "2_317_E._Princess_and_Her_Shadow"
+  },
+  {
+    "task_id": "2_318_C._Perfect_Pair"
+  },
+  {
+    "task_id": "2_318_E._Balance"
+  },
+  {
+    "task_id": "2_319_A._Malek_Dance_Club"
+  },
+  {
+    "task_id": "2_320_B._Ping-Pong_(Easy_Version)"
+  },
+  {
+    "task_id": "2_320_D._Psychos_in_a_Line"
+  },
+  {
+    "task_id": "2_320_E._Kalila_and_Dimna_in_the_Logging_Industry"
+  },
+  {
+    "task_id": "2_321_C._Ciel_the_Commander"
+  },
+  {
+    "task_id": "2_322_B._Ciel_and_Flowers"
+  },
+  {
+    "task_id": "2_322_C._Ciel_and_Robot"
+  },
+  {
+    "task_id": "2_322_E._Ciel_the_Commander"
+  },
+  {
+    "task_id": "2_323_A._Black-and-White_Cube"
+  },
+  {
+    "task_id": "2_323_B._Tournament-graph"
+  },
+  {
+    "task_id": "2_325_A._Square_and_Rectangles"
+  },
+  {
+    "task_id": "2_325_B._Stadium_and_Games"
+  },
+  {
+    "task_id": "2_325_C._Monsters_and_Diamonds"
+  },
+  {
+    "task_id": "2_327_D._Block_Tower"
+  },
+  {
+    "task_id": "2_328_A._IQ_Test"
+  },
+  {
+    "task_id": "2_329_B._Biridian_Forest"
+  },
+  {
+    "task_id": "2_329_C._Graph_Reconstruction"
+  },
+  {
+    "task_id": "2_329_D._The_Evil_Temple_and_the_Moving_Rocks"
+  },
+  {
+    "task_id": "2_329_E._Evil"
+  },
+  {
+    "task_id": "2_330_A._Cakeminator"
+  },
+  {
+    "task_id": "2_330_C._Purification"
+  },
+  {
+    "task_id": "2_331_B1._Shave_Beaver!"
+  },
+  {
+    "task_id": "2_331_B2._Shave_Beaver!"
+  },
+  {
+    "task_id": "2_331_D1._Escaping_on_Beaveractor"
+  },
+  {
+    "task_id": "2_331_D3._Escaping_on_Beaveractor"
+  },
+  {
+    "task_id": "2_331_E1._Deja_Vu"
+  },
+  {
+    "task_id": "2_332_A._Down_the_Hatch!"
+  },
+  {
+    "task_id": "2_332_D._Theft_of_Blueprints"
+  },
+  {
+    "task_id": "2_332_E._Binary_Key"
+  },
+  {
+    "task_id": "2_333_B._Chips"
+  },
+  {
+    "task_id": "2_334_B._Eight_Point_Sets"
+  },
+  {
+    "task_id": "2_335_A._Banana"
+  },
+  {
+    "task_id": "2_335_C._More_Reclamation"
+  },
+  {
+    "task_id": "2_335_E._Counting_Skyscrapers"
+  },
+  {
+    "task_id": "2_336_B._Vasily_the_Bear_and_Fly"
+  },
+  {
+    "task_id": "2_336_E._Vasily_the_Bear_and_Painting_Square"
+  },
+  {
+    "task_id": "2_337_A._Puzzles"
+  },
+  {
+    "task_id": "2_337_B._Routine_Problem"
+  },
+  {
+    "task_id": "2_337_D._Book_of_Evil"
+  },
+  {
+    "task_id": "2_337_E._Divisor_Tree"
+  },
+  {
+    "task_id": "2_338_B._Book_of_Evil"
+  },
+  {
+    "task_id": "2_339_B._Xenia_and_Ringroad"
+  },
+  {
+    "task_id": "2_339_C._Xenia_and_Weights"
+  },
+  {
+    "task_id": "2_340_B._Maximal_Area_Quadrilateral"
+  },
+  {
+    "task_id": "2_340_E._Iahub_and_Permutations"
+  },
+  {
+    "task_id": "2_341_C._Iahub_and_Permutations"
+  },
+  {
+    "task_id": "2_341_E._Candies_Game"
+  },
+  {
+    "task_id": "2_342_C._Cupboard_and_Balloons"
+  },
+  {
+    "task_id": "2_342_E._Xenia_and_Tree"
+  },
+  {
+    "task_id": "2_343_A._Rational_Resistance"
+  },
+  {
+    "task_id": "2_344_A._Magnets"
+  },
+  {
+    "task_id": "2_344_C._Rational_Resistance"
+  },
+  {
+    "task_id": "2_346_A._Alice_and_Bob"
+  },
+  {
+    "task_id": "2_346_E._Doodle_Jump"
+  },
+  {
+    "task_id": "2_347_A._Difference_Row"
+  },
+  {
+    "task_id": "2_347_C._Alice_and_Bob"
+  },
+  {
+    "task_id": "2_347_D._Lucky_Common_Subsequence"
+  },
+  {
+    "task_id": "2_347_E._Number_Transformation_II"
+  },
+  {
+    "task_id": "2_348_B._Apple_Tree"
+  },
+  {
+    "task_id": "2_348_C._Subset_Sums"
+  },
+  {
+    "task_id": "2_348_D._Turtles"
+  },
+  {
+    "task_id": "2_349_E._Subset_Sums"
+  },
+  {
+    "task_id": "2_350_A._TL"
+  },
+  {
+    "task_id": "2_350_B._Resort"
+  },
+  {
+    "task_id": "2_350_C._Bombs"
+  },
+  {
+    "task_id": "2_350_E._Wrong_Floyd"
+  },
+  {
+    "task_id": "2_351_A._Jeff_and_Rounding"
+  },
+  {
+    "task_id": "2_351_B._Jeff_and_Furik"
+  },
+  {
+    "task_id": "2_351_C._Jeff_and_Brackets"
+  },
+  {
+    "task_id": "2_351_D._Jeff_and_Removing_Periods"
+  },
+  {
+    "task_id": "2_352_A._Jeff_and_Digits"
+  },
+  {
+    "task_id": "2_353_A._Domino"
+  },
+  {
+    "task_id": "2_353_B._Two_Heaps"
+  },
+  {
+    "task_id": "2_354_A._Vasya_and_Robot"
+  },
+  {
+    "task_id": "2_354_C._Vasya_and_Beautiful_Arrays"
+  },
+  {
+    "task_id": "2_354_D._Transferring_Pyramid"
+  },
+  {
+    "task_id": "2_355_A._Vasya_and_Digital_Root"
+  },
+  {
+    "task_id": "2_355_D._Game_with_Strings"
+  },
+  {
+    "task_id": "2_355_E._Vasya_and_Beautiful_Arrays"
+  },
+  {
+    "task_id": "2_356_B._Xenia_and_Hamming"
+  },
+  {
+    "task_id": "2_357_B._Flag_Day"
+  },
+  {
+    "task_id": "2_358_A._Dima_and_Continuous_Line"
+  },
+  {
+    "task_id": "2_358_C._Dima_and_Containers"
+  },
+  {
+    "task_id": "2_358_E._Dima_and_Kicks"
+  },
+  {
+    "task_id": "2_359_C._Prime_Number"
+  },
+  {
+    "task_id": "2_360_A._Levko_and_Array_Recovery"
+  },
+  {
+    "task_id": "2_360_B._Levko_and_Array"
+  },
+  {
+    "task_id": "2_360_D._Levko_and_Sets"
+  },
+  {
+    "task_id": "2_361_D._Levko_and_Array"
+  },
+  {
+    "task_id": "2_361_E._Levko_and_Strings"
+  },
+  {
+    "task_id": "2_362_C._Insertion_Sort"
+  },
+  {
+    "task_id": "2_362_E._Petya_and_Pipes"
+  },
+  {
+    "task_id": "2_363_D._Renting_Bikes"
+  },
+  {
+    "task_id": "2_364_B._Free_Market"
+  },
+  {
+    "task_id": "2_364_E._Empty_Rectangles"
+  },
+  {
+    "task_id": "2_365_B._The_Fibonacci_Segment"
+  },
+  {
+    "task_id": "2_365_E._Beautiful_Set"
+  },
+  {
+    "task_id": "2_366_B._Dima_and_To-do_List"
+  },
+  {
+    "task_id": "2_366_C._Dima_and_Salad"
+  },
+  {
+    "task_id": "2_367_C._Sereja_and_the_Arrangement_of_Numbers"
+  },
+  {
+    "task_id": "2_367_E._Sereja_and_Intervals"
+  },
+  {
+    "task_id": "2_368_D._Sereja_ans_Anagrams"
+  },
+  {
+    "task_id": "2_369_A._Valera_and_Plates"
+  },
+  {
+    "task_id": "2_369_B._Valera_and_Contest"
+  },
+  {
+    "task_id": "2_369_E._Valera_and_Queries"
+  },
+  {
+    "task_id": "2_370_A._Rook,_Bishop_and_King"
+  },
+  {
+    "task_id": "2_370_B._Berland_Bingo"
+  },
+  {
+    "task_id": "2_370_D._Broken_Monitor"
+  },
+  {
+    "task_id": "2_370_E._Summer_Reading"
+  },
+  {
+    "task_id": "2_371_A._K-Periodic_Array"
+  },
+  {
+    "task_id": "2_371_C._Hamburgers"
+  },
+  {
+    "task_id": "2_371_D._Vessels"
+  },
+  {
+    "task_id": "2_371_E._Subway_Innovation"
+  },
+  {
+    "task_id": "2_373_A._Collecting_Beats_is_Fun"
+  },
+  {
+    "task_id": "2_373_C._Counting_Kangaroos_is_Fun"
+  },
+  {
+    "task_id": "2_374_A._Inna_and_Pink_Pony"
+  },
+  {
+    "task_id": "2_374_B._Inna_and_Nine"
+  },
+  {
+    "task_id": "2_374_C._Inna_and_Dima"
+  },
+  {
+    "task_id": "2_374_D._Inna_and_Sequence"
+  },
+  {
+    "task_id": "2_375_A._Divisible_by_Seven"
+  },
+  {
+    "task_id": "2_375_B._Maximum_Submatrix_2"
+  },
+  {
+    "task_id": "2_375_C._Circling_Round_Treasures"
+  },
+  {
+    "task_id": "2_375_D._Tree_and_Queries"
+  },
+  {
+    "task_id": "2_375_E._Red_and_Black_Tree"
+  },
+  {
+    "task_id": "2_376_B._I.O.U."
+  },
+  {
+    "task_id": "2_377_B._Preparing_for_the_Contest"
+  },
+  {
+    "task_id": "2_377_C._Captains_Mode"
+  },
+  {
+    "task_id": "2_378_B._Semifinals"
+  },
+  {
+    "task_id": "2_378_D._Preparing_for_the_Contest"
+  },
+  {
+    "task_id": "2_378_E._Captains_Mode"
+  },
+  {
+    "task_id": "2_379_B._New_Year_Present"
+  },
+  {
+    "task_id": "2_379_E._New_Year_Tree_Decorations"
+  },
+  {
+    "task_id": "2_379_F._New_Year_Tree"
+  },
+  {
+    "task_id": "2_380_A._Sereja_and_Prefixes"
+  },
+  {
+    "task_id": "2_380_E._Sereja_and_Dividing"
+  },
+  {
+    "task_id": "2_381_B._Sereja_and_Stairs"
+  },
+  {
+    "task_id": "2_381_D._Sereja_and_Tree"
+  },
+  {
+    "task_id": "2_382_B._Number_Busters"
+  },
+  {
+    "task_id": "2_382_E._Ksenia_and_Combinatorics"
+  },
+  {
+    "task_id": "2_383_A._Milking_cows"
+  },
+  {
+    "task_id": "2_383_B._Volcanoes"
+  },
+  {
+    "task_id": "2_383_D._Antimatter"
+  },
+  {
+    "task_id": "2_383_E._Vowels"
+  },
+  {
+    "task_id": "2_384_B._Multitasking"
+  },
+  {
+    "task_id": "2_385_B._Bear_and_Strings"
+  },
+  {
+    "task_id": "2_385_C._Bear_and_Prime_Numbers"
+  },
+  {
+    "task_id": "2_386_A._Second-Price_Auction"
+  },
+  {
+    "task_id": "2_386_C._Diverse_Substrings"
+  },
+  {
+    "task_id": "2_387_C._George_and_Number"
+  },
+  {
+    "task_id": "2_388_A._Fox_and_Box_Accumulation"
+  },
+  {
+    "task_id": "2_388_D._Fox_and_Perfect_Sets"
+  },
+  {
+    "task_id": "2_389_A._Fox_and_Number_Game"
+  },
+  {
+    "task_id": "2_389_D._Fox_and_Minimal_path"
+  },
+  {
+    "task_id": "2_390_A._Inna_and_Alarm_Clock"
+  },
+  {
+    "task_id": "2_390_E._Inna_and_Large_Sweet_Matrix"
+  },
+  {
+    "task_id": "2_391_B._Word_Folding"
+  },
+  {
+    "task_id": "2_391_C1._The_Tournament"
+  },
+  {
+    "task_id": "2_391_D1._Supercollider"
+  },
+  {
+    "task_id": "2_391_F1._Stock_Trading"
+  },
+  {
+    "task_id": "2_391_F2._Stock_Trading"
+  },
+  {
+    "task_id": "2_392_A._Blocked_Points"
+  },
+  {
+    "task_id": "2_392_B._Tower_of_Hanoi"
+  },
+  {
+    "task_id": "2_392_C._Yet_Another_Number_Sequence"
+  },
+  {
+    "task_id": "2_392_E._Deleting_Substrings"
+  },
+  {
+    "task_id": "2_393_A._Nineteen"
+  },
+  {
+    "task_id": "2_393_B._Three_matrices"
+  },
+  {
+    "task_id": "2_394_C._Dominoes"
+  },
+  {
+    "task_id": "2_394_E._Lightbulb_for_Minister"
+  },
+  {
+    "task_id": "2_396_C._On_Changing_Tree"
+  },
+  {
+    "task_id": "2_396_D._On_Sum_of_Number_of_Inversions_in_Permutations"
+  },
+  {
+    "task_id": "2_396_E._On_Iteration_of_One_Well-Known_Function"
+  },
+  {
+    "task_id": "2_397_A._On_Segment's_Own_Points"
+  },
+  {
+    "task_id": "2_397_C._On_Number_of_Decompositions_into_Multipliers"
+  },
+  {
+    "task_id": "2_397_D._On_Sum_of_Fractions"
+  },
+  {
+    "task_id": "2_397_E._On_Changing_Tree"
+  },
+  {
+    "task_id": "2_398_A._Cards"
+  },
+  {
+    "task_id": "2_398_B._Painting_The_Wall"
+  },
+  {
+    "task_id": "2_398_D._Instant_Messanger"
+  },
+  {
+    "task_id": "2_399_D._Painting_The_Wall"
+  },
+  {
+    "task_id": "2_399_E._Tree_and_Array"
+  },
+  {
+    "task_id": "2_400_E._Inna_and_Binary_Logic"
+  },
+  {
+    "task_id": "2_401_D._Roman_and_Numbers"
+  },
+  {
+    "task_id": "2_402_A._Nuts"
+  },
+  {
+    "task_id": "2_402_C._Searching_for_Graph"
+  },
+  {
+    "task_id": "2_403_A._Searching_for_Graph"
+  },
+  {
+    "task_id": "2_403_D._Beautiful_Pairs_of_Numbers"
+  },
+  {
+    "task_id": "2_403_E._Two_Rooted_Trees"
+  },
+  {
+    "task_id": "2_404_A._Valera_and_X"
+  },
+  {
+    "task_id": "2_404_C._Restore_Graph"
+  },
+  {
+    "task_id": "2_404_D._Minesweeper_1D"
+  },
+  {
+    "task_id": "2_405_A._Gravity_Flip"
+  },
+  {
+    "task_id": "2_406_A._Unusual_Product"
+  },
+  {
+    "task_id": "2_406_B._Toy_Sum"
+  },
+  {
+    "task_id": "2_406_E._Hamming_Triples"
+  },
+  {
+    "task_id": "2_407_B._Long_Path"
+  },
+  {
+    "task_id": "2_408_A._Line_to_Cashier"
+  },
+  {
+    "task_id": "2_408_D._Long_Path"
+  },
+  {
+    "task_id": "2_409_B._Mysterious_Language"
+  },
+  {
+    "task_id": "2_409_D._Big_Data"
+  },
+  {
+    "task_id": "2_409_G._On_a_plane"
+  },
+  {
+    "task_id": "2_409_I._Feed_the_Golorp"
+  },
+  {
+    "task_id": "2_411_A._Password_Check"
+  },
+  {
+    "task_id": "2_411_C._Kicker"
+  },
+  {
+    "task_id": "2_412_D._Giving_Awards"
+  },
+  {
+    "task_id": "2_413_A._Data_Recovery"
+  },
+  {
+    "task_id": "2_413_B._Spyke_Chatting"
+  },
+  {
+    "task_id": "2_413_E._Maze_2D"
+  },
+  {
+    "task_id": "2_414_D._Mashmokh_and_Water_Tanks"
+  },
+  {
+    "task_id": "2_414_E._Mashmokh's_Designed_Problem"
+  },
+  {
+    "task_id": "2_415_B._Mashmokh_and_Tokens"
+  },
+  {
+    "task_id": "2_415_C._Mashmokh_and_Numbers"
+  },
+  {
+    "task_id": "2_415_D._Mashmokh_and_ACM"
+  },
+  {
+    "task_id": "2_416_A._Guess_a_number!"
+  },
+  {
+    "task_id": "2_416_B._Art_Union"
+  },
+  {
+    "task_id": "2_416_C._Booking_System"
+  },
+  {
+    "task_id": "2_417_D._Cunning_Gena"
+  },
+  {
+    "task_id": "2_418_A._Football"
+  },
+  {
+    "task_id": "2_418_D._Big_Problems_for_Organizers"
+  },
+  {
+    "task_id": "2_418_E._Tricky_Password"
+  },
+  {
+    "task_id": "2_420_A._Start_Up"
+  },
+  {
+    "task_id": "2_420_B._Online_Meeting"
+  },
+  {
+    "task_id": "2_420_C._Bug_in_Code"
+  },
+  {
+    "task_id": "2_420_E._Playing_the_ball"
+  },
+  {
+    "task_id": "2_421_E._Cup_Trick"
+  },
+  {
+    "task_id": "2_424_A._Squats"
+  },
+  {
+    "task_id": "2_424_E._Colored_Jenga"
+  },
+  {
+    "task_id": "2_425_B._Sereja_and_Table"
+  },
+  {
+    "task_id": "2_425_C._Sereja_and_Two_Sequences"
+  },
+  {
+    "task_id": "2_425_E._Sereja_and_Sets"
+  },
+  {
+    "task_id": "2_426_C._Sereja_and_Swaps"
+  },
+  {
+    "task_id": "2_426_D._Sereja_and_Table"
+  },
+  {
+    "task_id": "2_427_A._Police_Recruits"
+  },
+  {
+    "task_id": "2_429_A._Xor-tree"
+  },
+  {
+    "task_id": "2_429_E._Points_and_Segments"
+  },
+  {
+    "task_id": "2_430_B._Balls_Game"
+  },
+  {
+    "task_id": "2_430_E._Guess_the_Tree"
+  },
+  {
+    "task_id": "2_431_A._Black_Square"
+  },
+  {
+    "task_id": "2_431_B._Shower_Line"
+  },
+  {
+    "task_id": "2_431_D._Random_Task"
+  },
+  {
+    "task_id": "2_431_E._Chemistry_Experiment"
+  },
+  {
+    "task_id": "2_432_B._Football_Kit"
+  },
+  {
+    "task_id": "2_433_B._Kuriyama_Mirai's_Stones"
+  },
+  {
+    "task_id": "2_433_C._Ryouko's_Memory_Note"
+  },
+  {
+    "task_id": "2_434_A._Ryouko's_Memory_Note"
+  },
+  {
+    "task_id": "2_434_C._Tachibana_Kanade's_Tofu"
+  },
+  {
+    "task_id": "2_435_B._Pasha_Maximizes"
+  },
+  {
+    "task_id": "2_435_E._Special_Graph"
+  },
+  {
+    "task_id": "2_436_C._Dungeons_and_Candies"
+  },
+  {
+    "task_id": "2_436_E._Cardboard_Box"
+  },
+  {
+    "task_id": "2_437_B._The_Child_and_Set"
+  },
+  {
+    "task_id": "2_437_D._The_Child_and_Zoo"
+  },
+  {
+    "task_id": "2_437_E._The_Child_and_Polygon"
+  },
+  {
+    "task_id": "2_438_E._The_Child_and_Binary_Tree"
+  },
+  {
+    "task_id": "2_439_B._Devu,_the_Dumb_Guy"
+  },
+  {
+    "task_id": "2_440_B._Balancer"
+  },
+  {
+    "task_id": "2_441_B._Valera_and_Fruits"
+  },
+  {
+    "task_id": "2_441_C._Valera_and_Tubes"
+  },
+  {
+    "task_id": "2_441_E._Valera_and_Number"
+  },
+  {
+    "task_id": "2_442_A._Borya_and_Hanabi"
+  },
+  {
+    "task_id": "2_442_B._Andrey_and_Problem"
+  },
+  {
+    "task_id": "2_442_D._Adam_and_Tree"
+  },
+  {
+    "task_id": "2_442_E._Gena_and_Second_Distance"
+  },
+  {
+    "task_id": "2_443_A._Anton_and_Letters"
+  },
+  {
+    "task_id": "2_444_B._DZY_Loves_FFT"
+  },
+  {
+    "task_id": "2_444_D._DZY_Loves_Strings"
+  },
+  {
+    "task_id": "2_445_B._DZY_Loves_Chemistry"
+  },
+  {
+    "task_id": "2_445_C._DZY_Loves_Physics"
+  },
+  {
+    "task_id": "2_445_D._DZY_Loves_FFT"
+  },
+  {
+    "task_id": "2_445_E._DZY_Loves_Colors"
+  },
+  {
+    "task_id": "2_446_B._DZY_Loves_Modification"
+  },
+  {
+    "task_id": "2_446_C._DZY_Loves_Fibonacci_Numbers"
+  },
+  {
+    "task_id": "2_446_D._DZY_Loves_Games"
+  },
+  {
+    "task_id": "2_446_E._DZY_Loves_Bridges"
+  },
+  {
+    "task_id": "2_447_A._DZY_Loves_Hash"
+  },
+  {
+    "task_id": "2_447_C._DZY_Loves_Sequences"
+  },
+  {
+    "task_id": "2_448_C._Painting_Fence"
+  },
+  {
+    "task_id": "2_448_D._Multiplication_Table"
+  },
+  {
+    "task_id": "2_449_C._Jzzhu_and_Apples"
+  },
+  {
+    "task_id": "2_449_E._Jzzhu_and_Squares"
+  },
+  {
+    "task_id": "2_450_D._Jzzhu_and_Cities"
+  },
+  {
+    "task_id": "2_451_C._Predict_Outcome_of_the_Game"
+  },
+  {
+    "task_id": "2_451_E._Devu_and_Flowers"
+  },
+  {
+    "task_id": "2_452_B._4-point_polyline"
+  },
+  {
+    "task_id": "2_452_E._Three_strings"
+  },
+  {
+    "task_id": "2_453_B._Little_Pony_and_Harmony_Chest"
+  },
+  {
+    "task_id": "2_453_C._Little_Pony_and_Summer_Sun_Celebration"
+  },
+  {
+    "task_id": "2_453_D._Little_Pony_and_Elements_of_Harmony"
+  },
+  {
+    "task_id": "2_454_A._Little_Pony_and_Crystal_Mine"
+  },
+  {
+    "task_id": "2_454_B._Little_Pony_and_Sort_by_Shift"
+  },
+  {
+    "task_id": "2_454_D._Little_Pony_and_Harmony_Chest"
+  },
+  {
+    "task_id": "2_455_D._Serega_and_Fun"
+  }
+]

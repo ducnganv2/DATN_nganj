@@ -46,6 +46,859 @@ problem.import.problem_description: '## Mô tả'
 ranking: Xếp hạng
 record_detail: Chi tiết lượt nộp
 record_main: Lượt nộp
+All Languages: Tất cả ngôn ngữ
+All Submissions: Tất cả lượt nộp
+By Contest: Theo cuộc thi
+By Language: Theo ngôn ngữ
+By Problem: Theo bài tập
+By Status: Theo trạng thái
+By Username / UID: Theo tên người dùng / UID
+Filter: Lọc
+Language: Ngôn ngữ
+Memory: Bộ nhớ
+Problem: Bài tập
+Status: Trạng thái
+Submit At: Nộp lúc
+Submit By: Người nộp
+Time: Thời gian
+'(None)': '(Không có)'
+'(Not changed)': '(Không thay đổi)'
+'(leave blank if none)': '(để trống nếu không có)'
+'(missing)': '(thiếu)'
+'A domain ID cannot be changed after creation. It is supposed to be:': 'ID miền không thể thay đổi sau khi tạo. ID nên là:'
+About: Giới thiệu
+Aborted: Đã hủy
+Accept: Chấp nhận
+Accepted: Đã chấp nhận
+Accepted Problems: Bài đã giải đúng
+Accepted Ratio: Tỉ lệ AC
+Action: Thao tác
+Actions: Thao tác
+Active Sessions: Phiên đang hoạt động
+Add Authenticator: Thêm trình xác thực
+Add User: Thêm người dùng
+Add new subtask: Thêm subtask mới
+Add prefix: Thêm tiền tố
+Add prefix/suffix: Thêm tiền tố/hậu tố
+Add suffix: Thêm hậu tố
+Add testcase: Thêm testcase
+Additional Files: File bổ sung
+All: Tất cả
+All Contests: Tất cả cuộc thi
+All Homeworks: Tất cả bài tập về nhà
+All Training Plans: Tất cả khóa luyện tập
+All Users: Tất cả người dùng
+'All changes will be lost. Are you sure to clear all answers?': 'Mọi thay đổi sẽ bị mất. Bạn chắc chắn muốn xóa toàn bộ câu trả lời?'
+'All {0} Contests': 'Tất cả cuộc thi {0}'
+'Allow to maintain this {0}': 'Cho phép quản lý {0} này'
+Allow user to print during contest: Cho phép người dùng in trong cuộc thi
+Allow user view others code after contest: Cho phép người dùng xem code của người khác sau cuộc thi
+Arguments: Tham số
+Assign User or Group: Gán người dùng hoặc nhóm
+At least 4 characters: Ít nhất 4 ký tự
+Attend Contest: Tham gia cuộc thi
+Attended: Đã tham gia
+Attendee Manage: Quản lý người tham gia
+Authenticator: Trình xác thực
+Authenticators: Trình xác thực
+Auto configure: Tự động cấu hình
+Auto detect: Tự động nhận diện
+Auto hide problems during the contest: Tự động ẩn bài trong cuộc thi
+Auto organize input: Tự động chuẩn hóa đầu vào
+Avatar: Ảnh đại diện
+Avatar URL: URL ảnh đại diện
+Awards: Giải thưởng
+Balloon Status: Trạng thái bóng
+Basic: Cơ bản
+Basic Info: Thông tin cơ bản
+Batch replacement: Thay thế hàng loạt
+Begin Time: Thời gian bắt đầu
+Bio: Giới thiệu
+Browser: Trình duyệt
+Built-in: Tích hợp sẵn
+'By clicking the button, you will become a member of the domain {0}.': 'Bấm nút này để trở thành thành viên của miền {0}.'
+Calendar View: Xem lịch
+Cancel: Hủy
+Cancel Score: Hủy điểm
+Cannot get hitokoto.: Không thể lấy hitokoto.
+Cannot preview this file. Download now?: Không thể xem trước file này. Tải xuống ngay?
+Categories: Danh mục
+Change: Thay đổi
+Change Email: Đổi email
+Change Password: Đổi mật khẩu
+Change Theme: Đổi giao diện
+Change avatar: Đổi ảnh đại diện
+Changes saved successfully: Đã lưu thay đổi thành công
+CheckerType: Loại checker
+Chinese: Tiếng Trung
+Choose Authenticator Type: Chọn loại trình xác thực
+Claim Homework: Nhận bài tập về nhà
+Claimed: Đã nhận
+Clear: Xóa
+Clear Marks: Xóa đánh dấu
+Clear answers: Xóa câu trả lời
+Click to show secret: Bấm để hiện mã bí mật
+Click to view detailed instructions.: Bấm để xem hướng dẫn chi tiết.
+Clone: Sao chép
+Code: Mã nguồn
+Code Length: Độ dài code
+Code blocks: Khối code
+Code language: Ngôn ngữ code
+Color: Màu
+Comments: Bình luận
+CommonMark Syntax: Cú pháp CommonMark
+Compile Commands: Lệnh biên dịch
+Compile Error: Lỗi biên dịch
+Compiler Versions: Phiên bản trình biên dịch
+"Compilers' Version and Parameters": 'Phiên bản và tham số trình biên dịch'
+Complete: Hoàn thành
+Completed: Đã hoàn thành
+Config: Cấu hình
+Confirm: Xác nhận
+Confirm Access: Xác nhận truy cập
+Confirm deleting the selected groups?: Xác nhận xóa các nhóm đã chọn?
+Confirm deleting the selected roles?: Xác nhận xóa các vai trò đã chọn?
+Confirm deleting this domain? This action cannot be undone.: Xác nhận xóa miền này? Thao tác này không thể hoàn tác.
+Confirm deleting this problem? Its files, submissions, discussions and solutions will be deleted as well.: Xác nhận xóa bài này? File, lượt nộp, thảo luận và lời giải liên quan cũng sẽ bị xóa.
+Confirm rejudge this problem?: Xác nhận chấm lại bài này?
+Confirm removing the selected users?: Xác nhận xóa các người dùng đã chọn?
+Confirm to delete the file?: Xác nhận xóa file?
+Confirm to delete the selected files?: Xác nhận xóa các file đã chọn?
+Confirm to delete the selected problems?: Xác nhận xóa các bài đã chọn?
+Confirmation mail has been sent to your new email.: Email xác nhận đã được gửi đến email mới của bạn.
+Contact Us: Liên hệ
+Content: Nội dung
+Content copied to clipboard!: Đã sao chép nội dung vào clipboard!
+Contest: Cuộc thi
+Contest Clarifications: Hỏi đáp cuộc thi
+Contest Management: Quản lý cuộc thi
+Contest Settings: Cài đặt cuộc thi
+Copy: Sao chép
+'Copy "{data}" failed :(': 'Sao chép "{data}" thất bại :('
+'"{data}" copied to clipboard!': 'Đã sao chép "{data}" vào clipboard!'
+Copy Email: Sao chép email
+Copy IDs: Sao chép ID
+Copy Link: Sao chép liên kết
+Copy Problem: Sao chép bài
+Copy Problems: Sao chép bài
+Copy QQ Number: Sao chép số QQ
+Copy Selected: Sao chép mục đã chọn
+Copy WeChat Account: Sao chép tài khoản WeChat
+Copy failed :(: Sao chép thất bại :(
+Copy pids: Sao chép PID
+Copyright Complaint: Khiếu nại bản quyền
+Correction: Chỉnh sửa sau thi
+Create: Tạo
+Create Contest: Tạo cuộc thi
+Create Discussion: Tạo thảo luận
+'Create Discussion in {0}': 'Tạo thảo luận trong {0}'
+Create Domain: Tạo miền
+Create Group: Tạo nhóm
+Create Homework: Tạo bài tập về nhà
+Create Problem: Tạo bài tập
+Create Role: Tạo vai trò
+Create Training Plan: Tạo khóa luyện tập
+Create a Discussion: Tạo thảo luận
+Create a contest: Tạo cuộc thi
+Created By: Tạo bởi
+'Created {0} users.': 'Đã tạo {0} người dùng.'
+Current Email: Email hiện tại
+Current Password: Mật khẩu hiện tại
+Custom: Tùy chỉnh
+Dark: Tối
+Dataset Format: Định dạng dữ liệu
+Day: Ngày
+Deadline: Hạn chót
+Delete: Xóa
+Delete Domain: Xóa miền
+Delete Selected Roles: Xóa vai trò đã chọn
+Dependencies: Phụ thuộc
+Description: Mô tả
+Difficulty: Độ khó
+Difficulty Algorithm: Thuật toán tính độ khó
+Discussion: Thảo luận
+Discussion Nodes: Mục thảo luận
+Discussions: Thảo luận
+Dismiss: Bỏ qua
+Domain: Miền
+Domain ID: ID miền
+"Don't have an account?": 'Chưa có tài khoản?'
+"Don't show again": 'Không hiển thị lại'
+Done: Xong
+Download: Tải xuống
+Download All: Tải tất cả
+'Download Error: {0} {1}': 'Lỗi tải xuống: {0} {1}'
+'Download Error: {0} {1}, retry in 3 secs...': 'Lỗi tải xuống: {0} {1}, thử lại sau 3 giây...'
+Download Hack Input: Tải input hack
+Download Selected: Tải mục đã chọn
+Downloading...: Đang tải xuống...
+Downvote: Bỏ phiếu xuống
+'Drag and drop testcases here:': 'Kéo thả testcase vào đây:'
+Duration: Thời lượng
+Edit: Chỉnh sửa
+Edit Contest: Chỉnh sửa cuộc thi
+Edit Homework: Chỉnh sửa bài tập về nhà
+Edit Profile: Chỉnh sửa hồ sơ
+Edited: Đã chỉnh sửa
+Edited at: Chỉnh sửa lúc
+Email: Email
+Email Account: Tài khoản email
+Enable Print Kiosk: Bật kiosk in
+End Time: Thời gian kết thúc
+End at: Kết thúc lúc
+English: Tiếng Anh
+Enroll Training: Ghi danh luyện tập
+Enrolled: Đã ghi danh
+Enrollees: Người ghi danh
+Enter Edit Mode: Vào chế độ chỉnh sửa
+'Enter a new name for the file: ': 'Nhập tên mới cho file: '
+Errors detected in the config. Confirm save?: Phát hiện lỗi trong cấu hình. Vẫn lưu?
+Exit: Thoát
+Expand: Mở rộng
+Export All Code: Xuất toàn bộ code
+'Export as {0}': 'Xuất dạng {0}'
+Extension Score Penalty: Phạt điểm khi gia hạn
+Failed to fetch registration data.: Không thể tải dữ liệu đăng ký.
+Failed to fill input: Không thể điền input
+'Failed to get credential: {0}': 'Không thể lấy thông tin xác thực: {0}'
+'Failed to load file: {0}': 'Không thể tải file: {0}'
+Failed to save changes:: 'Không thể lưu thay đổi:'
+File has been deleted.: File đã bị xóa.
+File has been renamed.: File đã được đổi tên.
+File saved.: Đã lưu file.
+'File upload failed: {0}': 'Tải file lên thất bại: {0}'
+File uploaded successfully.: Tải file lên thành công.
+Filename: Tên file
+'Filename: {0}': 'Tên file: {0}'
+Files: File
+Fill to Pretest: Điền vào pretest
+Find custom font: Tìm font tùy chỉnh
+First of Problem: First của bài
+Font size: Cỡ chữ
+Footnote: Chú thích cuối trang
+Forgot Password and/or Username: Quên mật khẩu và/hoặc tên người dùng
+Forgot password or username?: Quên mật khẩu hoặc tên người dùng?
+Formula blocks: Khối công thức
+Freeze scoreboard with N minutes remaining: Đóng băng bảng xếp hạng khi còn N phút
+General Issue: Vấn đề chung
+Generate: Tạo
+Generate Testdata: Tạo testdata
+Generating...: Đang tạo...
+Global settings: Cài đặt chung
+Group / UID: Nhóm / UID
+Group Name: Tên nhóm
+Hack: Hack
+Hack submission: Hack lượt nộp
+Hacked: Đã hack
+Handled requests: Yêu cầu đã xử lý
+Hard Deadline: Hạn chót cứng
+Help: Trợ giúp
+Hidden: Đã ẩn
+Hide Selected: Ẩn mục đã chọn
+Hide tags: Ẩn tag
+Highlight: Tô sáng
+History: Lịch sử
+Homework: Bài tập về nhà
+Homework Introduction: Giới thiệu bài tập về nhà
+Host: Chủ trì
+Hostname: Tên máy
+Images: Hình ảnh
+Images With Size: Hình ảnh có kích thước
+Import User: Nhập người dùng
+In Progress: Đang thực hiện
+In following contests: Trong các cuộc thi sau
+In following homework: Trong các bài tập về nhà sau
+In following training plans: Trong các khóa luyện tập sau
+Information: Thông tin
+Init Discussion Nodes: Khởi tạo mục thảo luận
+Inline codes: Code nội dòng
+Inline formulas: Công thức nội dòng
+Input: Đầu vào
+Input filled to pretest!: Đã điền input vào pretest!
+Introduce: Giới thiệu
+Introduce must not exceed 500 characters and it will be shown in the list view.: Phần giới thiệu không được vượt quá 500 ký tự và sẽ hiển thị trong danh sách.
+Invalid: Không hợp lệ
+Invalid RegExp: RegExp không hợp lệ
+Invitation code:: 'Mã mời:'
+Is rated: Có tính rating
+Join: Tham gia
+Join Domain: Tham gia miền
+Join Domain to Attend Contest: Tham gia miền để dự thi
+Join Domain to Claim Homework: Tham gia miền để nhận bài tập về nhà
+Join Domain to Create a Discussion: Tham gia miền để tạo thảo luận
+Join Domain to Submit: Tham gia miền để nộp bài
+'Join {0}': 'Tham gia {0}'
+Judge Config: Cấu hình chấm
+Judge Status: Trạng thái máy chấm
+Judged At: Chấm lúc
+Judged By: Chấm bởi
+Judging Queue: Hàng đợi chấm
+Jury: Ban giám khảo
+Last Submit At: Lần nộp cuối
+Last Update At: Cập nhật cuối
+Latest Version: Phiên bản mới nhất
+Learn More: Tìm hiểu thêm
+Leave: Rời
+Leave Edit Mode: Rời chế độ chỉnh sửa
+Leave empty for default: Để trống để dùng mặc định
+Legacy mode: Chế độ cũ
+Light: Sáng
+Limit user to finish contest within N hours: Giới hạn người dùng hoàn thành cuộc thi trong N giờ
+Limitations: Giới hạn
+Link: Liên kết
+Link copied to clipboard!: Đã sao chép liên kết vào clipboard!
+Linked Accounts: Tài khoản đã liên kết
+Links: Liên kết
+List View: Xem danh sách
+Loading editor...: Đang tải editor...
+Loading failed.: Tải thất bại.
+Loading file...: Đang tải file...
+Loading...: Đang tải...
+Location: Vị trí
+Lock Topic: Khóa chủ đề
+Login: Đăng nhập
+Login to Attend Contest: Đăng nhập để dự thi
+Login to Claim Homework: Đăng nhập để nhận bài tập về nhà
+Login to Create a Discussion: Đăng nhập để tạo thảo luận
+Login to Submit: Đăng nhập để nộp bài
+Login to join training plan: Đăng nhập để ghi danh khóa luyện tập
+Logout: Đăng xuất
+Logout All Sessions: Đăng xuất mọi phiên
+Logout This Session: Đăng xuất phiên này
+Lost Password: Quên mật khẩu
+Lucky: May mắn
+Manage: Quản lý
+Mark Green: Đánh dấu xanh lá
+Mark Red: Đánh dấu đỏ
+Mark Yellow: Đánh dấu vàng
+Markdown: Markdown
+Materials: Tài liệu
+Memory Cost: Bộ nhớ dùng
+Memory Info: Thông tin bộ nhớ
+Mention: Nhắc đến
+'Message from {0}:': 'Tin nhắn từ {0}:'
+Messages: Tin nhắn
+Moderator: Điều hành viên
+Month: Tháng
+More: Thêm
+Move to: Di chuyển đến
+Multi Platform Authenticator: Trình xác thực đa nền tảng
+Multi-file: Nhiều file
+My Domains: Miền của tôi
+My Files: File của tôi
+My Profile: Hồ sơ của tôi
+My Recent Submissions: Lượt nộp gần đây của tôi
+My Role: Vai trò của tôi
+My Submissions: Lượt nộp của tôi
+My status: Trạng thái của tôi
+Name: Tên
+New: Mới
+New Email: Email mới
+New Filename: Tên file mới
+New Training Plan: Khóa luyện tập mới
+New filename(s): Tên file mới
+Network error: Lỗi mạng
+No: Không
+No Permission to Attend Contest: Không có quyền dự thi
+No Permission to Claim Homework: Không có quyền nhận bài tập về nhà
+No Permission to Create a Discussion: Không có quyền tạo thảo luận
+No Permission to Submit: Không có quyền nộp bài
+No Submissions: Không có lượt nộp
+No Supported file type.: Không có loại file được hỗ trợ.
+No changes to make.: Không có thay đổi để thực hiện.
+No file selected.: Chưa chọn file.
+No group available: Không có nhóm khả dụng
+No submission language available for this problem.: Không có ngôn ngữ nộp bài khả dụng cho bài này.
+No target available: Không có mục tiêu khả dụng
+No testcase here: Không có testcase ở đây
+'No {0} at current.': 'Hiện chưa có {0}.'
+None: Không có
+Not Attended: Chưa tham gia
+Not Claimed: Chưa nhận
+Not Enrolled: Chưa ghi danh
+Not joined yet: Chưa tham gia
+Not started with a number: Không bắt đầu bằng số
+Not wrapped with space: Không được bao bởi khoảng trắng
+Ok: OK
+Only A-Z, a-z, 0-9 and _ are accepted: Chỉ chấp nhận A-Z, a-z, 0-9 và _
+Only Partic.: Chỉ người tham gia
+Oops!: Rất tiếc!
+Open: Mở
+Open Polyhedron: Mở Polyhedron
+Open Scratchpad: Mở Scratchpad
+Open Since: Mở từ
+Open in Problem Set: Mở trong kho bài tập
+Open theme select: Mở chọn giao diện
+Operating System: Hệ điều hành
+Or upload a file:: 'Hoặc tải file lên:'
+Or use other methods:: 'Hoặc dùng phương thức khác:'
+Or use the following link:: 'Hoặc dùng liên kết sau:'
+Or, with automatically filled invitation code: Hoặc dùng mã mời được điền tự động
+Original content: Nội dung gốc
+Original filename(s): Tên file gốc
+Original Score: Điểm gốc
+'Original score: {0}': 'Điểm gốc: {0}'
+Output: Đầu ra
+Owner: Chủ sở hữu
+Params: Tham số
+Partic.: Người tham gia
+Password: Mật khẩu
+Password reset mail has been sent to your email.: Email đặt lại mật khẩu đã được gửi đến email của bạn.
+Penalty (Minutes): Phạt (phút)
+Peak Memory: Bộ nhớ tối đa
+Peak Time: Thời gian tối đa
+Permission Control: Quản lý quyền
+Permissions: Quyền
+Pick a problem randomly based on the current filter.: Chọn ngẫu nhiên một bài dựa trên bộ lọc hiện tại.
+Pin: Ghim
+Pin level: Mức ghim
+Plan: Kế hoạch
+Please follow the instructions on your device to complete the verification.: Vui lòng làm theo hướng dẫn trên thiết bị để hoàn tất xác minh.
+Please input the generator.: Vui lòng nhập generator.
+Please input the standard program.: Vui lòng nhập chương trình chuẩn.
+Please select at least one file to perform this operation.: Vui lòng chọn ít nhất một file để thực hiện thao tác này.
+Please select at least one group to perform this operation.: Vui lòng chọn ít nhất một nhóm để thực hiện thao tác này.
+Please select at least one problem to perform this operation.: Vui lòng chọn ít nhất một bài để thực hiện thao tác này.
+Please select at least one role to perform this operation.: Vui lòng chọn ít nhất một vai trò để thực hiện thao tác này.
+Please select at least one user to perform this operation.: Vui lòng chọn ít nhất một người dùng để thực hiện thao tác này.
+Please use your two factor authentication app to scan the qrcode below:: 'Vui lòng dùng ứng dụng xác thực hai yếu tố để quét mã QR bên dưới:'
+Please wait until contest host unfreeze the scoreboard.: Vui lòng đợi host cuộc thi mở đóng băng bảng xếp hạng.
+Preparing Upload...: Đang chuẩn bị tải lên...
+Preset: Thiết lập sẵn
+Pretest: Pretest
+Pretest Your Code: Pretest code của bạn
+Preview: Xem trước
+Print: In
+Print New File: In file mới
+Print Request: Yêu cầu in
+'Priv has been updated to {0}.': 'Quyền đã được cập nhật thành {0}.'
+Privacy: Quyền riêng tư
+Privilege: Đặc quyền
+Problem ID cannot be a pure number. Leave blank if you want to use numberic id.: ID bài không được là số thuần. Để trống nếu muốn dùng ID dạng số.
+Problem List: Danh sách bài
+Problem Tags: Tag bài tập
+Problem Type: Loại bài
+Problem ids copied to clipboard!: Đã sao chép ID bài vào clipboard!
+Problems: Bài tập
+Processing...: Đang xử lý...
+Progress: Tiến độ
+Properties: Thuộc tính
+Public: Công khai
+Quit Scratchpad: Thoát Scratchpad
+Rank: Hạng
+Ranked Users: Người dùng được xếp hạng
+Ranking status updated.: Đã cập nhật trạng thái xếp hạng.
+Recent Activities: Hoạt động gần đây
+Recent Problems: Bài gần đây
+Recent Solutions: Lời giải gần đây
+Records: Lượt nộp
+RegExp supported, quote with "/": Hỗ trợ RegExp, đặt trong dấu "/"
+Registered at: Đăng ký lúc
+Rejudge: Chấm lại
+Rejudge all submissions: Chấm lại mọi lượt nộp
+Related: Liên quan
+Relax and try to remember your password.: Bình tĩnh và thử nhớ lại mật khẩu của bạn.
+Remember me: Ghi nhớ đăng nhập
+Remove: Xóa
+Remove Selected: Xóa mục đã chọn
+Remove Selected Group: Xóa nhóm đã chọn
+Remove Selected User: Xóa người dùng đã chọn
+Rename Selected: Đổi tên mục đã chọn
+Repeat Password: Nhập lại mật khẩu
+Replace with: Thay bằng
+Reply: Trả lời
+Report: Báo cáo
+Require Invitation Code: Yêu cầu mã mời
+Reset: Đặt lại
+Reset Password: Đặt lại mật khẩu
+Reset Password or Find Username: Đặt lại mật khẩu hoặc tìm tên người dùng
+Restart: Khởi động lại
+Role: Vai trò
+'Role has been updated to {0} for selected users.': 'Vai trò đã được cập nhật thành {0} cho người dùng đã chọn.'
+'Role has been updated to {0}.': 'Vai trò đã được cập nhật thành {0}.'
+Role name can only contains numbers, letters and underscores.: Tên vai trò chỉ được chứa số, chữ cái và dấu gạch dưới.
+Rule: Luật
+Run: Chạy
+Run Pretest: Chạy pretest
+Run script: Chạy script
+Sample Input: Input mẫu
+Sample Output: Output mẫu
+Save: Lưu
+School: Trường
+Save All Changes: Lưu tất cả thay đổi
+Saved.: Đã lưu.
+Saving file...: Đang lưu file...
+Score: Điểm
+Scoreboard: Bảng xếp hạng
+Scoreboard (Hidden): Bảng xếp hạng (đã ẩn)
+Scoring method: Cách tính điểm
+Scripts: Script
+Search: Tìm kiếm
+Search contests...: Tìm cuộc thi...
+Search homeworks...: Tìm bài tập về nhà...
+Search training...: Tìm khóa luyện tập...
+Section: Phần
+Select Problems: Chọn bài
+Select User: Chọn người dùng
+Select a node to create discussion.: Chọn một mục để tạo thảo luận.
+Selected categories: Danh mục đã chọn
+Selected files have been deleted.: Các file đã chọn đã bị xóa.
+Selected files have been renamed.: Các file đã chọn đã được đổi tên.
+Selected groups have been deleted.: Các nhóm đã chọn đã bị xóa.
+Selected roles have been deleted.: Các vai trò đã chọn đã bị xóa.
+Selected users have been removed from the domain.: Người dùng đã chọn đã bị xóa khỏi miền.
+Send: Gửi
+Send Broadcast Message: Gửi thông báo
+Send By: Gửi bởi
+Send Clarification Request: Gửi câu hỏi
+Send Message: Gửi tin nhắn
+Send Password Reset Email: Gửi email đặt lại mật khẩu
+Send Verification Email: Gửi email xác minh
+Sent: Đã gửi
+"Seperated with ','": "Phân tách bằng ','"
+Servers: Máy chủ
+Service Status: Trạng thái dịch vụ
+Set Color: Đặt màu
+Set Privilege: Đặt đặc quyền
+Set Roles for Selected User: Đặt vai trò cho người dùng đã chọn
+Set Score for Contest: Đặt điểm cho cuộc thi
+Set dependencies: Đặt phụ thuộc
+Set time and memory limits: Đặt giới hạn thời gian và bộ nhớ
+Settings: Cài đặt
+She: Cô ấy
+Show: Hiển thị
+Show less: Hiện ít hơn
+Show more: Hiện thêm
+Show tags: Hiện tag
+Sign Up: Đăng ký
+Sign Up Now: Đăng ký ngay
+Sign up mail has been sent to your email.: Email đăng ký đã được gửi đến email của bạn.
+Size: Kích thước
+Solutions: Lời giải
+Solutions Liked: Lời giải được thích
+Solved: Đã giải
+'Solved {0} problems, RP: {1} (No. {2})': 'Đã giải {0} bài, RP: {1} (Hạng {2})'
+Some problems in the training are missing or you do not have permission to view them.: Một số bài trong khóa luyện tập bị thiếu hoặc bạn không có quyền xem.
+Source: Nguồn
+Standard mode: Chế độ chuẩn
+Star: Theo dõi
+Star Topic: Theo dõi chủ đề
+Starred Problems: Bài đã theo dõi
+Starred Users: Người dùng đã theo dõi
+Start at: Bắt đầu lúc
+Statistics: Thống kê
+Subject: Chủ đề
+Student ID: Mã học sinh/sinh viên
+Submission Statistics: Thống kê lượt nộp
+Submissions: Lượt nộp
+Submit: Nộp
+Submit Solution: Nộp lời giải
+Submit Your Code: Nộp code của bạn
+Submit to Judge: Nộp để chấm
+Submitted: Đã nộp
+Submitted.: Đã nộp.
+'Subtask {0}': 'Subtask {0}'
+Subtasks: Subtask
+Successfully attended: Tham gia thành công
+Successfully changed.: Thay đổi thành công.
+Successfully enabled.: Bật thành công.
+Successfully updated.: Cập nhật thành công.
+SuperUser: SuperUser
+Support: Hỗ trợ
+Switch account: Chuyển tài khoản
+Tab size: Cỡ tab
+Tags: Tag
+Target: Mục tiêu
+Technical Information: Thông tin kỹ thuật
+Technical Issue: Vấn đề kỹ thuật
+'Template {0} not found.': 'Không tìm thấy template {0}.'
+Terms of Service: Điều khoản dịch vụ
+Testdata: Testdata
+Text: Văn bản
+Theme: Giao diện
+This is the current session: Đây là phiên hiện tại
+This page needs JavaScript to work.: Trang này cần JavaScript để hoạt động.
+This user was banned.: Người dùng này đã bị cấm.
+Time Cost: Thời gian dùng
+Time (Seconds): Thời gian (giây)
+Time Extension: Gia hạn thời gian
+Title: Tiêu đề
+Title is required.: Bắt buộc nhập tiêu đề.
+Toggle Pretest Panel: Bật/tắt bảng pretest
+Toggle Records Panel: Bật/tắt bảng lượt nộp
+Tools: Công cụ
+Total: Tổng
+Total Score: Tổng điểm
+Total Time: Tổng thời gian
+Training: Luyện tập
+Tried: Đã thử
+Two Factor Authentication: Xác thực hai yếu tố
+Two Factor Authentication Code: Mã xác thực hai yếu tố
+Type: Loại
+UnRank: Bỏ xếp hạng
+Unhide Selected: Bỏ ẩn mục đã chọn
+Unique: Duy nhất
+Unknown User: Người dùng không xác định
+User: Người dùng
+Each user can create domains. A domain can be used for classes, teams, or organizations.: Mỗi người dùng có thể tạo miền. Miền có thể dùng cho lớp học, đội nhóm hoặc tổ chức.
+You can control visibility and permissions by configuring roles.: Bạn có thể kiểm soát khả năng hiển thị và quyền bằng cách cấu hình vai trò.
+The default domain is {0}. Clicking the Hydro logo returns to this domain.: Miền mặc định là {0}. Bấm logo Hydro sẽ quay về miền này.
+'{0} uses {1} for judging. See the status page for compiler versions and flags.': '{0} dùng {1} để chấm bài. Xem trang trạng thái để biết phiên bản trình biên dịch và các tham số.'
+Time usage is measured by CPU time. Memory usage is measured by the process memory footprint.: Thời gian được tính theo CPU time. Bộ nhớ được tính theo mức bộ nhớ tiến trình sử dụng.
+Default memory limit is 256MiB unless a problem states a different limit.: Giới hạn bộ nhớ mặc định là 256MiB trừ khi đề bài quy định giới hạn khác.
+Unless stated otherwise, use standard input and standard output (STD I/O).: Nếu đề không nói khác, hãy dùng chuẩn nhập và chuẩn xuất (STD I/O).
+IO: IO
+queued and waiting for judge worker.: đang trong hàng đợi và chờ máy chấm.
+Fetched: Đã nhận
+picked by judge worker, preparing.: đã được máy chấm nhận, đang chuẩn bị.
+Compiling: Đang biên dịch
+source code is compiling.: mã nguồn đang được biên dịch.
+Judging: Đang chấm
+running testcases.: đang chạy testcase.
+output is correct.: kết quả đúng.
+Wrong Answer: Sai kết quả
+output differs from expected answer.: kết quả khác đáp án mong đợi.
+Time Limit Exceeded: Quá thời gian
+runtime exceeded limit.: thời gian chạy vượt giới hạn.
+Memory Limit Exceeded: Quá bộ nhớ
+memory usage exceeded limit.: bộ nhớ sử dụng vượt giới hạn.
+Runtime Error: Lỗi khi chạy
+runtime failure (e.g. crash or invalid operation).: lỗi khi chạy, ví dụ crash hoặc thao tác không hợp lệ.
+compilation failed.: biên dịch thất bại.
+System Error: Lỗi hệ thống
+internal judge/platform error.: lỗi nội bộ của máy chấm hoặc nền tảng.
+Canceled: Đã hủy
+judging was canceled.: lượt chấm đã bị hủy.
+Unknown Error: Lỗi không xác định
+unknown failure reason.: chưa rõ nguyên nhân lỗi.
+Ignored: Đã bỏ qua
+record was ignored.: lượt nộp đã bị bỏ qua.
+Common causes:: 'Nguyên nhân thường gặp:'
+Selected language does not match your code.: Ngôn ngữ đã chọn không khớp với code của bạn.
+Java main class is not named {0}.: Class main của Java không có tên là {0}.
+General syntax or build issues.: Lỗi cú pháp hoặc lỗi build chung.
+Training plans are curated problem sequences for structured practice.: Các khóa luyện tập là chuỗi bài được tuyển chọn để luyện tập có cấu trúc.
+Different rulesets use different ranking and scoring logic.: Mỗi bộ luật dùng cách xếp hạng và tính điểm khác nhau.
+Refer to each contest page for exact rules and penalty behavior.: Xem trang từng cuộc thi để biết luật và cách phạt chính xác.
+Accepted ratio can be noisy and is not always a reliable indicator of difficulty.: Tỉ lệ AC có thể nhiễu và không phải lúc nào cũng phản ánh chính xác độ khó.
+RP can be obtained from problems, activities, and contests based on platform rules.: RP có thể nhận được từ bài tập, hoạt động và cuộc thi theo quy tắc của nền tảng.
+RP Algorithm: Thuật toán RP
+Problem difficulty is estimated from submissions, acceptance behavior, and evaluation history.: Độ khó bài tập được ước tính từ lượt nộp, hành vi AC và lịch sử đánh giá.
+New problems may have unstable difficulty values.: Bài mới có thể có giá trị độ khó chưa ổn định.
+Difficulty becomes more stable with more submissions.: Độ khó sẽ ổn định hơn khi có nhiều lượt nộp.
+Algorithmic estimation may still be imperfect.: Ước tính bằng thuật toán vẫn có thể chưa hoàn hảo.
+See {0}.: Xem {0}.
+testdata documentation: tài liệu testdata
+If you cannot sign in, verify your username carefully first.: Nếu không thể đăng nhập, hãy kiểm tra kỹ tên người dùng trước.
+If needed, use {0}.: Nếu cần, hãy dùng {0}.
+Hydro uses CommonMark and supports extra features such as formulas, mentions, media embeds, and file references.: Hydro dùng CommonMark và hỗ trợ thêm các tính năng như công thức, nhắc tên, nhúng media và tham chiếu file.
+Allow builtin-login: Cho phép đăng nhập tích hợp
+Allow invite users: Cho phép mời người dùng
+Allow using gravatar:email qq:id github:name url:link format.: Cho phép dùng định dạng gravatar:email qq:id github:name url:link.
+Allowed langs: Ngôn ngữ được phép
+Bulletin: Thông báo
+CDN Prefix: Tiền tố CDN
+CORS domains: Miền CORS
+Choose the background image in your profile page.: Chọn ảnh nền hiển thị trên trang hồ sơ của bạn.
+Contests per page: Số cuộc thi mỗi trang
+Custom host: Host tùy chỉnh
+Daily update check: Kiểm tra cập nhật hằng ngày
+Database version: Phiên bản cơ sở dữ liệu
+Default Code Language: Ngôn ngữ code mặc định
+Default Code Template: Mẫu code mặc định
+Default Privilege: Đặc quyền mặc định
+Default display language: Ngôn ngữ hiển thị mặc định
+Display Name: Tên hiển thị
+Discussions per page: Số thảo luận mỗi trang
+Gender: Giới tính
+Gravatar URL Prefix: Tiền tố URL Gravatar
+Homepage config: Cấu hình trang chủ
+Hostname Header: Header hostname
+IP Header: Header IP
+If left blank, the built-in template of the corresponding language will be used.: Nếu để trống, mẫu tích hợp của ngôn ngữ tương ứng sẽ được dùng.
+Installation ID: ID cài đặt
+Language config: Cấu hình ngôn ngữ
+Listen host: Host lắng nghe
+Mail From: Email gửi từ
+Max code length: Độ dài code tối đa
+Max files for contest or training: Số file tối đa cho cuộc thi hoặc khóa luyện tập
+Max files for user: Số file tối đa cho người dùng
+Max files per problem: Số file tối đa mỗi bài
+Max files size per problem: Dung lượng file tối đa mỗi bài
+Max pretest count per minute: Số pretest tối đa mỗi phút
+Max submission count per minute: Số lượt nộp tối đa mỗi phút
+Max submission count per user per minute: Số lượt nộp tối đa mỗi người dùng mỗi phút
+Max total file size for contest or training: Tổng dung lượng file tối đa cho cuộc thi hoặc khóa luyện tập
+Max total file size for user: Tổng dung lượng file tối đa cho người dùng
+Max upload file size: Dung lượng tải lên tối đa
+Phone: Số điện thoại
+Problem Categories: Danh mục bài tập
+Problems per page: Số bài mỗi trang
+Profile Background Image: Ảnh nền hồ sơ
+Record stat mode: Chế độ thống kê lượt nộp
+Records per page: Số lượt nộp mỗi trang
+Replies per page: Số phản hồi mỗi trang
+SMTP Password: Mật khẩu SMTP
+SMTP Server Host: Host máy chủ SMTP
+SMTP Server Port: Cổng máy chủ SMTP
+SMTP Username: Tên đăng nhập SMTP
+Saved session expire seconds: Thời gian hết hạn phiên đã lưu (giây)
+Server BaseURL: BaseURL máy chủ
+Server Center: Trung tâm máy chủ
+Server Name: Tên máy chủ
+Server Port: Cổng máy chủ
+Share problem with domain (* for any): Chia sẻ bài với miền (* là tất cả)
+Show enrolled users for training: Hiển thị người dùng đã ghi danh trong khóa luyện tập
+Solutions per page: Số lời giải mỗi trang
+Timezone: Múi giờ
+Trainings per page: Số khóa luyện tập mỗi trang
+Unread Message Count: Số tin nhắn chưa đọc
+Unsaved session expire seconds: Thời gian hết hạn phiên chưa lưu (giây)
+Use per-user limits instead of per ip limits: Dùng giới hạn theo người dùng thay vì theo IP
+Use reverse_proxy: Dùng reverse proxy
+Users per page: Số người dùng mỗi trang
+Verify register email: Xác minh email đăng ký
+WebSocket Prefix: Tiền tố WebSocket
+Will be used as the domain icon.: Sẽ được dùng làm biểu tượng miền.
+Unknown language: Ngôn ngữ không xác định
+Unlimited: Không giới hạn
+Unlink: Hủy liên kết
+Unlock Topic: Mở khóa chủ đề
+Unlock scoreboard: Mở đóng băng bảng xếp hạng
+Unstar: Bỏ theo dõi
+Unstar Topic: Bỏ theo dõi chủ đề
+Update: Cập nhật
+Update Permission: Cập nhật quyền
+Update Settings: Cập nhật cài đặt
+Updated.: Đã cập nhật.
+Updating...: Đang cập nhật...
+Upload: Tải lên
+Upload Failed: Tải lên thất bại
+Upload File: Tải file lên
+Upload success.: Tải lên thành công.
+Upload zipfile: Tải file zip lên
+Uploaded By: Tải lên bởi
+Uploading files...: Đang tải file lên...
+Uploading...: Đang tải lên...
+'Uploading... ({0}%)': 'Đang tải lên... ({0}%)'
+Upvote: Bỏ phiếu lên
+Use Authenticator: Dùng trình xác thực
+Use Password: Dùng mật khẩu
+Use TFA Code: Dùng mã TFA
+User ID: ID người dùng
+User Privilege: Đặc quyền người dùng
+User added.: Đã thêm người dùng.
+User can join this domain by visiting the following URL: Người dùng có thể tham gia miền này bằng URL sau
+User-defined role: Vai trò tự định nghĩa
+Username: Tên người dùng
+Username / UID: Tên người dùng / UID
+Users: Người dùng
+Users with those roles will be removed from the domain.: Người dùng có các vai trò đó sẽ bị xóa khỏi miền.
+Value: Giá trị
+Videos: Video
+View: Xem
+View Contest: Xem cuộc thi
+View Details: Xem chi tiết
+View Homework: Xem bài tập về nhà
+View Problem: Xem bài
+View Training: Xem khóa luyện tập
+'View all {0} solutions': 'Xem tất cả {0} lời giải'
+Visit: Truy cập
+Waiting: Đang chờ
+Week: Tuần
+What is this?: Đây là gì?
+What's domain?: Miền là gì?
+What's script?: Script là gì?
+Year: Năm
+Yes: Có
+You are invited to join {0}: Bạn được mời tham gia {0}
+You can cancel this at user setting page.: Bạn có thể hủy ở trang cài đặt người dùng.
+You can create your own training plans and share them with others.: Bạn có thể tạo khóa luyện tập riêng và chia sẻ với người khác.
+You don't have permission to upload file.: Bạn không có quyền tải file lên.
+You have permission to create problems for this domain.: Bạn có quyền tạo bài trong miền này.
+You haven't set an email.: Bạn chưa đặt email.
+You received a system message, click here to view.: Bạn nhận được một tin nhắn hệ thống, bấm vào đây để xem.
+Your Device: Thiết bị của bạn
+Your account will be deleted in 7 days.: Tài khoản của bạn sẽ bị xóa sau 7 ngày.
+Your browser doesn't support WebAuthn.: Trình duyệt của bạn không hỗ trợ WebAuthn.
+Your browser doesn't support platform authenticator.: Trình duyệt của bạn không hỗ trợ trình xác thực nền tảng.
+'[Richtext message]': '[Tin nhắn richtext]'
+click to add: bấm để thêm
+collapse: thu gọn
+contest: cuộc thi
+currently offline: hiện đang offline
+default: mặc định
+expand: mở rộng
+home_account: Tài khoản
+home_messages: Tin nhắn
+home_preference: Tùy chọn
+home_security: Bảo mật
+homework: bài tập về nhà
+hour(s): giờ
+judge_extra_files: File bổ sung của máy chấm
+key: khóa
+just now: vừa xong
+last active at: hoạt động lần cuối lúc
+last login at: đăng nhập lần cuối lúc
+left: trái
+pid: PID
+required: bắt buộc
+right: phải
+score: điểm
+testdata: testdata
+title: tiêu đề
+user_extra_files: File bổ sung của người dùng
+value: giá trị
+About preferredPrefix option: Về tùy chọn preferredPrefix
+After you've performed a sudo-protected action, you'll only be asked to re-authenticate again after a few hours of inactivity.: Sau khi bạn thực hiện một thao tác cần sudo, bạn chỉ cần xác thực lại sau vài giờ không hoạt động.
+Are you sure to print this file?: Bạn chắc chắn muốn in file này?
+Are you sure to rename the following file?: Bạn chắc chắn muốn đổi tên file sau?
+Are you sure you want to delete this subtask?: Bạn chắc chắn muốn xóa subtask này?
+Auto adjust the format of line breaks and remove unnecessary whitespace characters.: Tự động chuẩn hóa xuống dòng và xóa ký tự khoảng trắng không cần thiết.
+By signing up a {0} universal account, you can submit code and join discussions in all online judging services provided by us.: Khi đăng ký tài khoản {0}, bạn có thể nộp code và tham gia thảo luận trên tất cả dịch vụ chấm bài trực tuyến do chúng tôi cung cấp.
+For better problem version management and validation, we suggest using Polyhedron to prepare problems.: Để quản lý phiên bản bài tập và kiểm tra tốt hơn, chúng tôi khuyến nghị dùng Polyhedron để chuẩn bị bài.
+Hello! You can click following link to sign up your {0} account:: 'Xin chào! Bạn có thể bấm liên kết sau để đăng ký tài khoản {0}:'
+Hello, {0}! You can click following link to active your new email of your {1} account:: 'Xin chào, {0}! Bạn có thể bấm liên kết sau để kích hoạt email mới cho tài khoản {1}:'
+Hello, {0}! You can click following link to reset the password of your {1} account:: 'Xin chào, {0}! Bạn có thể bấm liên kết sau để đặt lại mật khẩu cho tài khoản {1}:'
+Ignore trailing space and enter.: Bỏ qua khoảng trắng cuối dòng và phím Enter.
+Keep original problem owner. Only used if this problemset is exported from current system.: Giữ nguyên chủ sở hữu bài gốc. Chỉ dùng khi bộ bài được xuất từ hệ thống hiện tại.
+LaTeX Expressions: Biểu thức LaTeX
+Make the problem hidden.: Ẩn bài tập này.
+Mark user as joined using admin privilege: Đánh dấu người dùng đã tham gia bằng quyền quản trị
+Polyhedron supports managing problem version history, testing solutions, checking time limits, composing contest statements, cooperation and much more.: Polyhedron hỗ trợ quản lý lịch sử phiên bản bài, kiểm thử lời giải, kiểm tra giới hạn thời gian, soạn đề thi, cộng tác và nhiều tính năng khác.
+Problems created in polyhedron can be directly imported into any Hydro based online judge system.: Bài được tạo bằng Polyhedron có thể nhập trực tiếp vào mọi hệ thống online judge dựa trên Hydro.
+Ranking: Xếp hạng
+The contest is a flexible time contest. You need to complete the contest within a specified time after you attended.: Đây là cuộc thi thời gian linh hoạt. Bạn cần hoàn thành trong thời gian quy định sau khi tham gia.
+The contest is ended. New submissions will be treated as correction submissions and will not be counted in the contest.: Cuộc thi đã kết thúc. Lượt nộp mới sẽ được tính là lượt sửa bài và không được tính vào cuộc thi.
+The discussion is locked, you can not reply anymore.: Thảo luận đã bị khóa, bạn không thể trả lời thêm.
+The domain owner:: 'Chủ sở hữu miền:'
+The link will be expired at {0}: Liên kết sẽ hết hạn lúc {0}
+The preferred problem ID prefix.: Tiền tố ID bài tập ưu tiên.
+The ranking page is not updated realtime.: Trang xếp hạng không được cập nhật theo thời gian thực.
+The scoreboard was frozen with {0} minutes remaining at {1} - submissions in the last {0} minutes of the contest are still shown as pending.: Bảng xếp hạng đã bị đóng băng khi còn {0} phút vào lúc {1} - các lượt nộp trong {0} phút cuối vẫn hiển thị là đang chờ.
+Their account will not be deleted and they will be with the guest role until they re-join the domain.: Tài khoản của họ sẽ không bị xóa và họ sẽ có vai trò khách cho đến khi tham gia lại miền.
+This email was requested from {0}: Email này được yêu cầu từ {0}
+This email was sent by {0} automatically, and please do not reply directly.: Email này được {0} gửi tự động, vui lòng không trả lời trực tiếp.
+This is a copy of another problem.: Đây là bản sao của một bài khác.
+This page is only for pasting code from other sources.: Trang này chỉ dùng để dán code từ nguồn khác.
+This section cannot be challenged at present, so please complete the following sections first: Hiện chưa thể thử thách phần này, vui lòng hoàn thành các phần trước.
+To join the domain, users can click the "Join Domain" button on "My Domain" page.: Để tham gia miền, người dùng có thể bấm nút "Tham gia miền" ở trang "Miền của tôi".
+Unsupported configure this type of problem. Please refer to the documentation.: Không hỗ trợ cấu hình loại bài này. Vui lòng xem tài liệu.
+Users will have to manually join the domain first before selected roles can be applied.: Người dùng cần tự tham gia miền trước khi có thể áp dụng các vai trò đã chọn.
+'Using custom font: {0}': 'Đang dùng font tùy chỉnh: {0}'
+Using your {0} universal account: Dùng tài khoản {0} của bạn
+We will check code similarity after this contest.: Chúng tôi sẽ kiểm tra độ tương đồng code sau cuộc thi này.
+Webauthn is not available in insecure context.: WebAuthn không khả dụng trong ngữ cảnh không bảo mật.
+With this feature, you can import problems that you can view from a site to here. Their title, content, tags and categories will be imported.: Với tính năng này, bạn có thể nhập các bài mà bạn xem được từ một trang khác vào đây. Tiêu đề, nội dung, tag và danh mục sẽ được nhập.
+You are currently in legacy mode. Some additional features will be unavailable. We strongly recommend switching to standard mode on a modern browser.: Bạn đang ở chế độ cũ. Một số tính năng bổ sung sẽ không khả dụng. Chúng tôi khuyến nghị chuyển sang chế độ chuẩn trên trình duyệt hiện đại.
+You cannot submit for this problem because the contest is ended. You can click "Open in Problem Set" to view this problem in normal mode.: Bạn không thể nộp bài này vì cuộc thi đã kết thúc. Bạn có thể bấm "Mở trong kho bài tập" để xem bài ở chế độ thường.
+Your account has two factor authentication enabled. Please choose an authenticator to verify.: Tài khoản của bạn đã bật xác thực hai yếu tố. Vui lòng chọn trình xác thực để xác minh.
+Your browser does not support WebAuthn or you are not in secure context.: Trình duyệt của bạn không hỗ trợ WebAuthn hoặc bạn không ở ngữ cảnh bảo mật.
+page.training_detail.see_other_user_detail: Bạn đang xem chi tiết khóa luyện tập của người dùng {0}.
+problem.stats.sort.: 'Sắp xếp thống kê bài:'
+problem_type.: 'Loại bài:'
+rpDetailText_: 'Chi tiết RP:'
+'sort::': 'Sắp xếp:'
 AI Check: Kiểm tra AI
 AI Suspicion: Nghi ngờ AI
 Potential AI: Có khả năng là AI
@@ -66,11 +919,13 @@ setting_privacy: Quyền riêng tư
 setting_usage: Tùy chọn sử dụng
 sort::default: Mặc định
 sort::recent: Gần đây
+Suggested Links: "\u004C\u0069\u00EA\u006E \u006B\u1EBF\u0074 \u0111\u1EC1 \u0078\u0075\u1EA5\u0074"
 tasks_list: Danh sách tác vụ
 timeago_locale: vi
 training_create: Tạo khóa luyện tập
 training_edit: Chỉnh sửa khóa luyện tập
 training_main: Luyện tập
+Vietnamese: Tiếng Việt
 UI Language: Ngôn ngữ giao diện
 user_detail: Chi tiết người dùng
 user_login: Đăng nhập

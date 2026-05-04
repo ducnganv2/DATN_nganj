@@ -1,0 +1,7 @@
+{
+  "processed_candidates": 35,
+  "total_candidates": 1000,
+  "done_count": 19,
+  "last_pack": 10,
+  "output_path": "/kaggle/working/gemini_batch_output_1000.jsonl"
+}

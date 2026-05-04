@@ -1,3 +1,4 @@
+/* eslint-disable max-len, no-await-in-loop, style/quotes */
 import { spawn } from 'node:child_process';
 import { createHash, randomUUID } from 'node:crypto';
 import { promises as fs } from 'node:fs';
@@ -143,7 +144,7 @@ function parseCommaSeparatedEnv(name: string) {
     return [...new Set(value.split(',').map((entry) => entry.trim()).filter(Boolean))];
 }
 
-function parseKaggleRuntimeMode() {
+function parseKaggleRuntimeMode(): KaggleATCRuntimeMode {
     const value = process.env.HYDRO_KAGGLE_ATC_RUNTIME_MODE?.trim().toLowerCase();
     if (!value) return 'prebuilt';
     if (value === 'copy' || value === 'prebuilt') return 'prebuilt';

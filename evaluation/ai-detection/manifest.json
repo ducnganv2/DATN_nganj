@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-05-02T09:05:56.217331+00:00",
+  "human_count": 1000,
+  "ai_count": 1000,
+  "total_sample_count": 2000,
+  "language": "cpp",
+  "ai_model": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+  "human_source": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection\\data\\human_1000.jsonl",
+  "openai_batch_request_file": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection\\requests\\openai_batch_requests_1000.jsonl",
+  "status": "complete",
+  "batch_output": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection\\requests\\qwen_batch_output_1000.jsonl",
+  "paired_dataset_json": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection\\data\\pairs_1000.json",
+  "labeled_samples_csv": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection\\data\\samples_2000.csv",
+  "missing_ai_count": 0,
+  "detector_evaluation": {
+    "provider": "kaggle-atc-batch",
+    "base_model": "CodeLlama 7B Instruct HF",
+    "method": "entropy",
+    "threshold": -0.18,
+    "num_input_rows": 2000,
+    "num_checked_rows": 1946,
+    "num_skipped_rows": 20,
+    "num_error_rows": 34,
+    "accuracy": 0.8299075025693731,
+    "f1": 0.8105323411562679,
+    "fpr": 0.05323590814196242,
+    "auc": 0.9348687380085099,
+    "metrics_file": "C:\\DATN\\test\\Hydro-master\\evaluation\\ai-detection\\results\\prod_eval\\metrics.json"
+  }
+}

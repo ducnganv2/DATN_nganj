@@ -5,7 +5,7 @@ import type fs from 'fs';
 import type { Dictionary, NumericDictionary } from 'lodash';
 import type { Binary, FindCursor, ObjectId } from 'mongodb';
 import type {
-    FileInfo, RecordJudgeInfo, RecordPayload,
+    FileInfo, RecordJudgeInfo, RecordPayload, SubmissionAICheck,
 } from '@hydrooj/common/types';
 import type { Context } from './context';
 import type { PrintTaskStatus } from './model/contest';

@@ -1,0 +1,2130 @@
+sample_id,task_id,title,variant,label,pred_ai,raw_score,score_ai,threshold,nonempty_lines_n,nonwhitespace_chars_n,code
+6_p00167_Bubble_Sort_human,6_p00167_Bubble_Sort,p00167 Bubble Sort,human,0,1,-0.1620534211397171,-0.1620534211397171,-0.18,19,201,"#include <cstdio>
+
+int main(){
+	int n,a[100];
+	while(scanf(""%d"",&n), n != 0){
+		for(int i = 0; i < n; i++){
+			scanf(""%d"",&a[i]);
+		}
+		int c = 0;
+		for(int i = 0; i < n; i++){
+			for(int j = i + 1; j < n; j++){
+				if(a[i] > a[j]){
+					c++;
+				}
+			}
+		}
+		printf(""%d\n"",c);
+	}
+	return 0;
+}"
+2_1320_F._Blocks_and_Sensors_human,2_1320_F._Blocks_and_Sensors,1320_F. Blocks and Sensors,human,0,1,-0.1663055568933487,-0.1663055568933487,-0.18,112,2617,"#include <bits/stdc++.h>
+using namespace std;
+template <class T>
+istream& operator>>(istream& is, vector<T>& v) {
+  for (T& x : v) is >> x;
+  return is;
+}
+template <class T>
+ostream& operator<<(ostream& os, const vector<T>& v) {
+  if (!v.empty()) {
+    os << v.front();
+    for (int x = 1; x < v.size(); ++x) os << ' ' << v[x];
+  }
+  return os;
+}
+void gg() {
+  cout << ""-1\n"";
+  exit(0);
+}
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+  int n, m, k;
+  cin >> n >> m >> k;
+  vector<vector<vector<int>>> ans(n,
+                                  vector<vector<int>>(m, vector<int>(k, -1)));
+  vector<vector<int>> xp(m, vector<int>(k)), xn(m, vector<int>(k)),
+      yp(n, vector<int>(k)), yn(n, vector<int>(k)), zp(n, vector<int>(m)),
+      zn(n, vector<int>(m)), pxp(m, vector<int>(k)),
+      pxn(m, vector<int>(k, n - 1)), pyp(n, vector<int>(k)),
+      pyn(n, vector<int>(k, m - 1)), pzp(n, vector<int>(m)),
+      pzn(n, vector<int>(m, k - 1));
+  cin >> xp >> xn >> yp >> yn >> zp >> zn;
+  queue<tuple<int, int, int>> q;
+  for (int x = 0; x < n; ++x)
+    for (int y = 0; y < m; ++y)
+      for (int z = 0; z < k; ++z)
+        if (!(xp[y][z] && xn[y][z] && yp[x][z] && yn[x][z] && zp[x][y] &&
+              zn[x][y]))
+          ans[x][y][z] = 0;
+  function<void(int, int)> exx = [&](int y, int z) {
+    while (pxp[y][z] < n && !ans[pxp[y][z]][y][z]) ++pxp[y][z];
+    while (pxn[y][z] >= 0 && !ans[pxn[y][z]][y][z]) --pxn[y][z];
+    if (pxp[y][z] >= n || pxn[y][z] < 0) gg();
+    q.emplace(pxp[y][z], y, z);
+    q.emplace(pxn[y][z], y, z);
+  };
+  function<void(int, int)> exy = [&](int x, int z) {
+    while (pyp[x][z] < m && !ans[x][pyp[x][z]][z]) ++pyp[x][z];
+    while (pyn[x][z] >= 0 && !ans[x][pyn[x][z]][z]) --pyn[x][z];
+    if (pyp[x][z] >= m || pyn[x][z] < 0) gg();
+    q.emplace(x, pyp[x][z], z);
+    q.emplace(x, pyn[x][z], z);
+  };
+  function<void(int, int)> exz = [&](int x, int y) {
+    while (pzp[x][y] < k && !ans[x][y][pzp[x][y]]) ++pzp[x][y];
+    while (pzn[x][y] >= 0 && !ans[x][y][pzn[x][y]]) --pzn[x][y];
+    if (pzp[x][y] >= k || pzn[x][y] < 0) gg();
+    q.emplace(x, y, pzp[x][y]);
+    q.emplace(x, y, pzn[x][y]);
+  };
+  for (int y = 0; y < m; ++y)
+    for (int z = 0; z < k; ++z) {
+      if (bool(xp[y][z]) != bool(xn[y][z])) gg();
+      if (!xp[y][z]) continue;
+      exx(y, z);
+    }
+  for (int x = 0; x < n; ++x)
+    for (int z = 0; z < k; ++z) {
+      if (bool(yp[x][z]) != bool(yn[x][z])) gg();
+      if (!yp[x][z]) continue;
+      exy(x, z);
+    }
+  for (int x = 0; x < n; ++x)
+    for (int y = 0; y < m; ++y) {
+      if (bool(zp[x][y]) != bool(zn[x][y])) gg();
+      if (!zp[x][y]) continue;
+      exz(x, y);
+    }
+  while (!q.empty()) {
+    int x, y, z;
+    tie(x, y, z) = q.front();
+    q.pop();
+    if (ans[x][y][z] == 0) continue;
+    vector<int> col;
+    if (pxp[y][z] == x) col.push_back(xp[y][z]);
+    if (pxn[y][z] == x) col.push_back(xn[y][z]);
+    if (pyp[x][z] == y) col.push_back(yp[x][z]);
+    if (pyn[x][z] == y) col.push_back(yn[x][z]);
+    if (pzp[x][y] == z) col.push_back(zp[x][y]);
+    if (pzn[x][y] == z) col.push_back(zn[x][y]);
+    if (col.size() == 0) continue;
+    col.erase(unique(col.begin(), col.end()), col.end());
+    if (col.size() == 1) {
+      ans[x][y][z] = col.back();
+      continue;
+    }
+    ans[x][y][z] = 0;
+    exx(y, z);
+    exy(x, z);
+    exz(x, y);
+  }
+  for (int x = 0; x < n; ++x) {
+    for (int y = 0; y < m; ++y) {
+      for (int z = 0; z < k; ++z)
+        if (ans[x][y][z] == -1) ans[x][y][z] = 0;
+      cout << ans[x][y] << '\n';
+    }
+    cout << '\n';
+  }
+  return 0;
+}"
+2_1382_A._Common_Subsequence_human,2_1382_A._Common_Subsequence,1382_A. Common Subsequence,human,0,1,-0.12053047865629196,-0.12053047865629196,-0.18,32,344,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, m;
+    cin >> n >> m;
+    int arr[n];
+    int arr1[m];
+    for (int i = 0; i < n; i++) {
+      cin >> arr[i];
+    }
+    for (int i = 0; i < m; i++) {
+      cin >> arr1[i];
+    }
+    int num = -1;
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        if (arr[i] == arr1[j]) {
+          num = arr[i];
+          break;
+        }
+      }
+    }
+    if (num != -1) {
+      cout << ""YES"" << endl;
+      cout << ""1 "" << num << endl;
+    } else
+      cout << ""NO"" << endl;
+  }
+}"
+2_219_A._k-String_human,2_219_A._k-String,219_A. k-String,human,0,1,-0.14713570475578308,-0.14713570475578308,-0.18,30,346,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n;
+  cin >> n;
+  string s;
+  cin >> s;
+  int ara[26];
+  for (int i = 0; i < 26; i++) {
+    ara[i] = 0;
+  }
+  for (int i = 0, len = s.length(); i < len; i++) {
+    ara[s[i] - 'a']++;
+  }
+  for (int i = 0; i < 26; i++) {
+    if (ara[i] % n != 0) {
+      printf(""-1"");
+      return 0;
+    }
+    ara[i] /= n;
+  }
+  for (int k = 0; k < n; k++) {
+    for (int i = 0; i < 26; i++) {
+      for (int j = 0; j < ara[i]; j++) {
+        printf(""%c"", i + 'a');
+      }
+    }
+  }
+  printf(""\n"");
+}"
+2_268_A._Games_human,2_268_A._Games,268_A. Games,human,0,1,-0.14651378989219666,-0.14651378989219666,-0.18,21,253,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int home[30];
+  int away[30];
+  int n;
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cin >> home[i];
+    cin >> away[i];
+  }
+  int cnt = 0;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (i == j) continue;
+      if (home[i] == away[j]) cnt++;
+    }
+  }
+  cout << cnt << '\n';
+  return 0;
+}"
+2_754_B._Ilya_and_tic-tac-toe_game_human,2_754_B._Ilya_and_tic-tac-toe_game,754_B. Ilya and tic-tac-toe game,human,0,1,-0.061655040830373764,-0.061655040830373764,-0.18,70,1682,"#include <bits/stdc++.h>
+using namespace std;
+char board[4][4];
+bool Valid(int x, int y) { return (x >= 0 && x < 4 && y >= 0 && y < 4); }
+int main() {
+  std::ios::sync_with_stdio(false);
+  for (int i = 0; i < 4; ++i) {
+    for (int j = 0; j < 4; ++j) {
+      cin >> board[i][j];
+    }
+  }
+  bool valid = false;
+  for (int i = 0; i < 4; ++i) {
+    for (int j = 0; j < 4; ++j) {
+      if (board[i][j] == 'x') {
+        if (Valid(i - 1, j) && board[i - 1][j] == 'x' && Valid(i - 2, j) &&
+                board[i - 2][j] == '.' ||
+            Valid(i - 1, j) && board[i - 1][j] == '.' && Valid(i - 2, j) &&
+                board[i - 2][j] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i + 1, j) && board[i + 1][j] == 'x' &&
+                       Valid(i + 2, j) && board[i + 2][j] == '.' ||
+                   Valid(i + 1, j) && board[i + 1][j] == '.' &&
+                       Valid(i + 2, j) && board[i + 2][j] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i, j - 1) && board[i][j - 1] == 'x' &&
+                       Valid(i, j - 2) && board[i][j - 2] == '.' ||
+                   Valid(i, j - 1) && board[i][j - 1] == '.' &&
+                       Valid(i, j - 2) && board[i][j - 2] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i, j + 1) && board[i][j + 1] == 'x' &&
+                       Valid(i, j + 2) && board[i][j + 2] == '.' ||
+                   Valid(i, j + 1) && board[i][j + 1] == '.' &&
+                       Valid(i, j + 2) && board[i][j + 2] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i + 1, j + 1) && board[i + 1][j + 1] == 'x' &&
+                       Valid(i + 2, j + 2) && board[i + 2][j + 2] == '.' ||
+                   Valid(i + 1, j + 1) && board[i + 1][j + 1] == '.' &&
+                       Valid(i + 2, j + 2) && board[i + 2][j + 2] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i - 1, j - 1) && board[i - 1][j - 1] == 'x' &&
+                       Valid(i - 2, j - 2) && board[i - 2][j - 2] == '.' ||
+                   Valid(i - 1, j - 1) && board[i - 1][j - 1] == '.' &&
+                       Valid(i - 2, j - 2) && board[i - 2][j - 2] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i - 1, j + 1) && board[i - 1][j + 1] == 'x' &&
+                       Valid(i - 2, j + 2) && board[i - 2][j + 2] == '.' ||
+                   Valid(i - 1, j + 1) && board[i - 1][j + 1] == '.' &&
+                       Valid(i - 2, j + 2) && board[i - 2][j + 2] == 'x') {
+          valid = true;
+          break;
+        } else if (Valid(i + 1, j - 1) && board[i + 1][j - 1] == 'x' &&
+                       Valid(i + 2, j - 2) && board[i + 2][j - 2] == '.' ||
+                   Valid(i + 1, j - 1) && board[i + 1][j - 1] == '.' &&
+                       Valid(i + 2, j - 2) && board[i + 2][j - 2] == 'x') {
+          valid = true;
+          break;
+        }
+      }
+    }
+  }
+  (valid) ? cout << ""YES\n"" : cout << ""NO\n"";
+  return 0;
+}"
+2_609_B._The_Best_Gift_human,2_609_B._The_Best_Gift,609_B. The Best Gift,human,0,1,-0.13884887099266052,-0.13884887099266052,-0.18,21,257,"#include <bits/stdc++.h>
+using namespace std;
+int a[15];
+int main() {
+  int n, m;
+  scanf(""%d%d"", &n, &m);
+  memset(a, 0, sizeof a);
+  for (int i = 1; i <= n; i++) {
+    int x;
+    scanf(""%d"", &x);
+    a[x]++;
+  }
+  int ans = 0;
+  for (int i = 1; i <= m; i++) {
+    for (int j = i + 1; j <= m; j++) {
+      ans = ans + a[i] * a[j];
+    }
+  }
+  printf(""%d\n"", ans);
+  return 0;
+}"
+2_656_E._Out_of_Controls_human,2_656_E._Out_of_Controls,656_E. Out of Controls,human,0,1,-0.17122700810432434,-0.17122700810432434,-0.18,23,420,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int maxn = 999999999;
+  int m[105][105];
+  int n;
+  cin >> n;
+  for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++) m[i][j] = maxn;
+  for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++) cin >> m[i][j];
+  for (int k = 0; k < n; k++)
+    for (int i = 0; i < n; i++)
+      for (int j = 0; j < n; j++) {
+        if (m[i][j] > m[i][k] + m[k][j]) m[i][j] = m[i][k] + m[k][j];
+      }
+  int ans = 0;
+  for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++)
+      if (m[i][j] < maxn) ans = max(ans, m[i][j]);
+  printf(""%d\n"", ans);
+  return 0;
+}"
+2_1408_A._Circle_Coloring_human,2_1408_A._Circle_Coloring,1408_A. Circle Coloring,human,0,1,-0.16886255145072937,-0.16886255145072937,-0.18,95,1453,"#include <bits/stdc++.h>
+using namespace std;
+const long long MOD = 1000000007;
+void solve();
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  long long t;
+  cin >> t;
+  while (t--) {
+    solve();
+    cout << ""\n"";
+  }
+  cerr << ""time taken : "" << (float)clock() / CLOCKS_PER_SEC << "" secs"" << endl;
+  return 0;
+}
+long long ceils(long long x, long long y) { return x / y + ((x % y) != 0); }
+long long gcd(long long a, long long b) {
+  if (b == 0)
+    return a;
+  else
+    return gcd(b, a % b);
+}
+long long lcm(long long a, long long b) { return a / gcd(a, b) * b; }
+void solve() {
+  long long n;
+  cin >> n;
+  long long a[n], b[n], c[n];
+  for (long long i = 0; i < n; i++) cin >> a[i];
+  for (long long i = 0; i < n; i++) cin >> b[i];
+  for (long long i = 0; i < n; i++) cin >> c[i];
+  long long ans[n];
+  ans[0] = a[0];
+  for (long long i = 1; i < n; i++) {
+    ans[i] = a[i];
+    if (ans[i] == ans[i - 1]) ans[i] = b[i];
+    if (ans[i] == ans[i - 1]) ans[i] = c[i];
+  }
+  long long ok = 0;
+  for (long long i = 1; i < n; i++) {
+    if (ans[i] == ans[i - 1]) {
+      ok = 1;
+      break;
+    }
+  }
+  if (ok) {
+    ans[0] = b[0];
+    for (long long i = 1; i < n; i++) {
+      ans[i] = b[i];
+      if (ans[i] == ans[i - 1]) ans[i] = a[i];
+      if (ans[i] == ans[i - 1]) ans[i] = c[i];
+    }
+    ok = 0;
+    for (long long i = 1; i < n; i++) {
+      if (ans[i] == ans[i - 1]) {
+        ok = 1;
+        break;
+      }
+    }
+  }
+  if (ok) {
+    ans[0] = c[0];
+    for (long long i = 1; i < n; i++) {
+      ans[i] = c[i];
+      if (ans[i] == ans[i - 1]) ans[i] = a[i];
+      if (ans[i] == ans[i - 1]) ans[i] = b[i];
+    }
+    ok = 0;
+    for (long long i = 1; i < n; i++) {
+      if (ans[i] == ans[i - 1]) {
+        ok = 1;
+        break;
+      }
+    }
+  }
+  if (ans[n - 1] == ans[0]) {
+    if (ans[n - 1] == a[n - 1]) {
+      if (ans[n - 2] == b[n - 1])
+        ans[n - 1] = c[n - 1];
+      else
+        ans[n - 1] = b[n - 1];
+    } else if (ans[n - 1] == b[n - 1]) {
+      if (ans[n - 2] == a[n - 1])
+        ans[n - 1] = c[n - 1];
+      else
+        ans[n - 1] = a[n - 1];
+    } else {
+      if (ans[n - 2] == b[n - 1])
+        ans[n - 1] = a[n - 1];
+      else
+        ans[n - 1] = b[n - 1];
+    }
+  }
+  for (long long i = 0; i < n; i++) cout << ans[i] << "" "";
+}"
+2_438_A._The_Child_and_Toy_human,2_438_A._The_Child_and_Toy,438_A. The Child and Toy,human,0,1,-0.16208991408348083,-0.16208991408348083,-0.18,37,608,"#include <bits/stdc++.h>
+using namespace std;
+const int MAXN = 1005;
+int cost[MAXN];
+char used[MAXN];
+vector<int> g[MAXN];
+int main() {
+  ios_base::sync_with_stdio(false);
+  int n, m;
+  cin >> n >> m;
+  for (int i = 0; i < n; i++) cin >> cost[i];
+  for (int i = 0; i < m; i++) {
+    int x, y;
+    cin >> x >> y;
+    x--;
+    y--;
+    g[x].push_back(y);
+    g[y].push_back(x);
+  }
+  int ans = 0;
+  for (int i = 0; i < n; i++) {
+    int maxv = -1;
+    for (int j = 0; j < n; j++)
+      if (!used[j] && (maxv == -1 || cost[j] > cost[maxv])) maxv = j;
+    for (size_t j = 0; j < g[maxv].size(); j++) ans += cost[g[maxv][j]];
+    used[maxv] = true;
+    for (int j = 0; j < n; j++)
+      for (int k = 0; k < (int)g[j].size(); k++)
+        if (g[j][k] == maxv) {
+          swap(g[j][k], g[j].back());
+          g[j].pop_back();
+          k--;
+        }
+  }
+  cout << ans << '\n';
+  return 0;
+}"
+2_604_A._Uncowed_Forces_human,2_604_A._Uncowed_Forces,604_A. Uncowed Forces,human,0,1,-0.15046042203903198,-0.15046042203903198,-0.18,17,337,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int m[5], w[5], h[2], score[5] = {500, 1000, 1500, 2000, 2500};
+  for (int i = 0; i < 5; i++) cin >> m[i];
+  for (int i = 0; i < 5; i++) cin >> w[i];
+  cin >> h[0] >> h[1];
+  int ans = 0;
+  for (int i = 0; i < 5; i++) {
+    int mx = (3 * score[i]) / 10;
+    int cx = (((250 - m[i]) * (score[i] / 250))) - 50 * w[i];
+    ans += max(mx, cx);
+  }
+  ans += 100 * h[0] - 50 * h[1];
+  cout << ans << endl;
+  return 0;
+}"
+2_835_A._Key_races_human,2_835_A._Key_races,835_A. Key races,human,0,1,-0.17814990878105164,-0.17814990878105164,-0.18,15,209,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int s, v1, v2, t1, t2;
+  cin >> s >> v1 >> v2 >> t1 >> t2;
+  int st = s * v1 + t1 * 2, nd = s * v2 + t2 * 2;
+  if (st < nd) {
+    cout << ""First"";
+  } else if (st > nd) {
+    cout << ""Second"";
+  } else {
+    cout << ""Friendship"";
+  }
+  return 0;
+}"
+5_p03371_AtCoder_Beginner_Contest_095_-_Half_and_Half_human,5_p03371_AtCoder_Beginner_Contest_095_-_Half_and_Half,p03371 AtCoder Beginner Contest 095 - Half and Half,human,0,1,-0.14117933809757233,-0.14117933809757233,-0.18,13,212,"#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+  int A,B,C,X,Y,ans=0;
+  cin >> A >> B >> C >> X >> Y;
+  if(A+B<2*C){
+    ans=X*A+Y*B;
+  }else{
+    ans=min(X,Y)*C*2+max(X-Y,0)*min(A,2*C)+max(Y-X,0)*min(B,2*C);
+  }
+  cout << ans << endl;
+
+}"
+2_1011_A._Stages_human,2_1011_A._Stages,1011_A. Stages,human,0,1,-0.1769399344921112,-0.1769399344921112,-0.18,29,385,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  std::ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  int n, k;
+  cin >> n >> k;
+  string s;
+  cin >> s;
+  sort(s.begin(), s.end());
+  string ans;
+  ans += s[0];
+  k--;
+  for (int i = 1; i < s.length() && k > 0; i++) {
+    if (k > 0 && s[i] - ans[ans.length() - 1] > 1) {
+      ans += s[i];
+      k--;
+    }
+  }
+  if (k == 0) {
+    int count = 0;
+    for (int i = 0; i < ans.length(); i++) {
+      count += ans[i] - 96;
+    }
+    cout << count << '\n';
+  } else
+    cout << ""-1\n"";
+}"
+2_1080_C._Masha_and_two_friends_human,2_1080_C._Masha_and_two_friends,1080_C. Masha and two friends,human,0,1,-0.172322615981102,-0.172322615981102,-0.18,65,1025,"#include <bits/stdc++.h>
+using namespace std;
+long long calc(long long x1, long long y1, long long x2, long long y2) {
+  if ((x2 - x1 + 1) * (y2 - y1 + 1) % 2 == 0) return 1;
+  return 2;
+}
+int main() {
+  long long t;
+  cin >> t;
+  while (t--) {
+    long long n, m;
+    cin >> n >> m;
+    long long x1, y1, x2, y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+    long long x3, y3, x4, y4;
+    cin >> x3 >> y3 >> x4 >> y4;
+    long long a, b;
+    long long sum_a, sum_b;
+    if (calc(1, 1, m, n) == 1) {
+      sum_a = sum_b = n * m / 2;
+    } else {
+      sum_a = n * m / 2 + 1;
+      sum_b = n * m / 2;
+    }
+    if (calc(x1, y1, x2, y2) == 1)
+      a = (x2 - x1 + 1) * (y2 - y1 + 1) / 2;
+    else {
+      if (x1 % 2 == y1 % 2)
+        a = (x2 - x1 + 1) * (y2 - y1 + 1) / 2;
+      else
+        a = (x2 - x1 + 1) * (y2 - y1 + 1) / 2 + 1;
+    }
+    if (calc(x3, y3, x4, y4) == 1)
+      b = (x4 - x3 + 1) * (y4 - y3 + 1) / 2;
+    else {
+      if (x3 % 2 == y3 % 2)
+        b = (x4 - x3 + 1) * (y4 - y3 + 1) / 2 + 1;
+      else
+        b = (x4 - x3 + 1) * (y4 - y3 + 1) / 2;
+    }
+    sum_a += a;
+    sum_a -= b;
+    sum_b -= a;
+    sum_b += b;
+    long long tmpx = max(x1, x3);
+    long long tmpy = max(y1, y3);
+    long long tmpxx = min(x2, x4);
+    long long tmpyy = min(y2, y4);
+    if (tmpx > tmpxx || tmpy > tmpyy) {
+    } else {
+      long long c;
+      if (calc(tmpx, tmpy, tmpxx, tmpyy) == 1)
+        c = (tmpxx - tmpx + 1) * (tmpyy - tmpy + 1) / 2;
+      else {
+        if (tmpx % 2 == tmpy % 2)
+          c = (tmpxx - tmpx + 1) * (tmpyy - tmpy + 1) / 2;
+        else
+          c = (tmpxx - tmpx + 1) * (tmpyy - tmpy + 1) / 2 + 1;
+      }
+      sum_b += c;
+      sum_a -= c;
+    }
+    cout << sum_a << "" "" << sum_b << endl;
+  }
+}"
+2_1249_D1._Too_Many_Segments_(easy_version)_human,2_1249_D1._Too_Many_Segments_(easy_version),1249_D1. Too Many Segments (easy version),human,0,1,-0.17399734258651733,-0.17399734258651733,-0.18,75,1295,"#include <bits/stdc++.h>
+using namespace std;
+int arr[200005], tree[4 * 200005], lazy[4 * 200005];
+struct info {
+  int l, r, i;
+};
+vector<info> vec;
+bool comp(info a, info b) {
+  if (a.r != b.r) return a.r < b.r;
+  return a.l < b.l;
+}
+void update(int node, int a, int b, int i, int j, int value) {
+  if (lazy[node] != 0) {
+    tree[node] += lazy[node];
+    if (a != b) {
+      lazy[node * 2] += lazy[node];
+      lazy[node * 2 + 1] += lazy[node];
+    }
+    lazy[node] = 0;
+  }
+  if (a > b || a > j || b < i) return;
+  if (a >= i && b <= j) {
+    tree[node] += value;
+    if (a != b) {
+      lazy[node * 2] += value;
+      lazy[node * 2 + 1] += value;
+    }
+    return;
+  }
+  int mid = (a + b) / 2;
+  update(node * 2, a, mid, i, j, value);
+  update(1 + node * 2, 1 + mid, b, i, j, value);
+  tree[node] = max(tree[node * 2], tree[node * 2 + 1]);
+}
+int query(int node, int a, int b, int i, int j) {
+  if (a > b || a > j || b < i) return 0;
+  if (lazy[node] != 0) {
+    tree[node] += lazy[node];
+    if (a != b) {
+      lazy[node * 2] += lazy[node];
+      lazy[node * 2 + 1] += lazy[node];
+    }
+    lazy[node] = 0;
+  }
+  if (a >= i && b <= j) return tree[node];
+  int mid = (a + b) / 2;
+  int q1 = query(node * 2, a, mid, i, j);
+  int q2 = query(1 + node * 2, 1 + mid, b, i, j);
+  int res = max(q1, q2);
+  return res;
+}
+int main() {
+  int i, n, k, a, b, mx = -1;
+  scanf(""%d %d"", &n, &k);
+  for (i = 0; i < n; i++) {
+    scanf(""%d %d"", &a, &b);
+    mx = max(mx, b);
+    vec.push_back({a, b, i + 1});
+  }
+  sort((vec).begin(), (vec).end(), comp);
+  queue<int> q;
+  for (i = 0; i < n; i++) {
+    int l = vec[i].l, r = vec[i].r;
+    int mxv = query(1, 0, mx - 1, l - 1, r - 1);
+    if (mxv < k)
+      update(1, 0, mx - 1, l - 1, r - 1, 1);
+    else
+      q.push(vec[i].i);
+  }
+  printf(""%d\n"", q.size());
+  while (!q.empty()) {
+    printf(""%d "", q.front());
+    q.pop();
+  }
+}"
+2_187_B._AlgoRace_human,2_187_B._AlgoRace,187_B. AlgoRace,human,0,1,-0.1423594057559967,-0.1423594057559967,-0.18,49,732,"#include <bits/stdc++.h>
+using namespace std;
+const int N = 66, INF = 1000000009;
+int n, m, q;
+int a[N][N][N];
+int dp[N][N][N];
+int main() {
+  cin >> n >> m >> q;
+  for (int i = 0; i < m; ++i) {
+    for (int x = 1; x <= n; ++x) {
+      for (int y = 1; y <= n; ++y) {
+        cin >> a[i][x][y];
+      }
+    }
+    for (int z = 1; z <= n; ++z) {
+      for (int x = 1; x <= n; ++x) {
+        for (int y = 1; y <= n; ++y) {
+          a[i][x][y] = min(a[i][x][y], a[i][x][z] + a[i][z][y]);
+        }
+      }
+    }
+  }
+  for (int i = 0; i < N; ++i)
+    for (int j = 0; j < N; ++j)
+      for (int k = 0; k < N; ++k) dp[i][j][k] = INF;
+  for (int i = 0; i < m; ++i) {
+    for (int x = 1; x <= n; ++x) {
+      for (int y = 1; y <= n; ++y) {
+        dp[x][y][0] = min(a[i][x][y], dp[x][y][0]);
+      }
+    }
+  }
+  for (int k = 0; k < n; ++k) {
+    for (int x = 1; x <= n; ++x) {
+      for (int y = 1; y <= n; ++y) {
+        for (int hy = 1; hy <= n; ++hy) {
+          dp[x][hy][k + 1] = min(dp[x][hy][k + 1], dp[x][y][k] + dp[y][hy][0]);
+        }
+      }
+    }
+  }
+  while (q--) {
+    int x, y, k;
+    cin >> x >> y >> k;
+    k = min(k, n);
+    cout << dp[x][y][k] << endl;
+  }
+  return 0;
+}"
+5_p03003_AtCoder_Beginner_Contest_130_-_Common_Subsequence_human,5_p03003_AtCoder_Beginner_Contest_130_-_Common_Subsequence,p03003 AtCoder Beginner Contest 130 - Common Subsequence,human,0,1,-0.12572358548641205,-0.12572358548641205,-0.18,29,476,"#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MOD = 1000 * 1000 * 1000 + 7;
+
+int main()
+{
+	int N, M;
+	cin >> N >> M;
+
+	vector<int> S(N), T(M);
+	for (auto &x : S) cin >> x;
+	for (auto &x : T) cin >> x;
+
+	vector<vector<long long>> dp(N + 1, vector<long long>(M + 1, 0));
+
+	for (int i = 0; i <= N; ++i) {
+		dp[i][0] = 1;
+	}
+	for (int j = 0; j <= M; ++j) {
+		dp[0][j] = 1;
+	}
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < M; ++j) {
+			dp[i + 1][j + 1] = (dp[i][j + 1] + dp[i + 1][j]) % MOD;
+			if (S[i] != T[j]) {
+				dp[i + 1][j + 1] = (dp[i + 1][j + 1] + MOD - dp[i][j]) % MOD;
+			}
+		}
+	}
+	cout << dp[N][M] << endl;
+}"
+6_p00025_Hit_and_Blow_human,6_p00025_Hit_and_Blow,p00025 Hit and Blow,human,0,1,-0.13523101806640625,-0.13523101806640625,-0.18,18,279,"#include ""bits/stdc++.h""
+using namespace std;
+int main() {
+	int a[4], b[4];
+	while (cin >> a[0] >> a[1] >> a[2] >> a[3] >> b[0] >> b[1] >> b[2] >> b[3]) {
+		int n1 = 0, n2 = 0;
+		for (int i = 0; i < 4;i++) {
+			if (a[i] == b[i])n1++;
+		}
+		for (int i = 0; i < 4;i++) {
+			for (int j = 0; j < 4;j++) {
+				if (i == j)continue;
+				if (a[i] == b[j]) n2++;
+			}
+		}
+		cout << n1 << "" "" << n2 << endl;
+	}
+}"
+2_1230_A._Dawid_and_Bags_of_Candies_human,2_1230_A._Dawid_and_Bags_of_Candies,1230_A. Dawid and Bags of Candies,human,0,1,-0.1726270318031311,-0.1726270318031311,-0.18,15,221,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int a[4], i;
+  for (i = 0; i < 4; i++) cin >> a[i];
+  sort(a, a + 4);
+  if (a[0] + a[3] == a[1] + a[2]) {
+    cout << ""YES"" << endl;
+  } else if (a[0] + a[1] + a[2] == a[3])
+    cout << ""YES"" << endl;
+  else {
+    cout << ""NO"" << endl;
+  }
+  return 0;
+}"
+2_215_A._Bicycle_Chain_human,2_215_A._Bicycle_Chain,215_A. Bicycle Chain,human,0,1,-0.16215187311172485,-0.16215187311172485,-0.18,31,343,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n, m, i, j, max, count = 0, flag = 0;
+  cin >> n;
+  int a[n];
+  for (i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  cin >> m;
+  int b[m];
+  for (j = 0; j < m; j++) {
+    cin >> b[j];
+    for (i = 0; i < n; i++) {
+      if (b[j] % a[i] == 0) {
+        if (flag == 0) {
+          max = b[j] / a[i];
+          count++;
+          flag = 1;
+        } else if (b[j] / a[i] == max) {
+          count++;
+        } else if (b[j] / a[i] > max) {
+          max = b[j] / a[i];
+          count = 1;
+        }
+      }
+    }
+  }
+  cout << count;
+  return 0;
+}"
+2_870_A._Search_for_Pretty_Integers_human,2_870_A._Search_for_Pretty_Integers,870_A. Search for Pretty Integers,human,0,1,-0.1136515885591507,-0.1136515885591507,-0.18,27,309,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n, m;
+  cin >> n >> m;
+  int a[100], b[100];
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  sort(a, a + n);
+  for (int i = 0; i < m; i++) {
+    cin >> b[i];
+  }
+  sort(b, b + m);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      if (a[i] == b[j]) {
+        cout << a[i] << '\n';
+        return 0;
+      }
+    }
+  }
+  if (a[0] > b[0]) {
+    swap(a[0], b[0]);
+  }
+  cout << a[0] << b[0] << '\n';
+}"
+2_940_A._Points_on_the_line_human,2_940_A._Points_on_the_line,940_A. Points on the line,human,0,1,-0.16241231560707092,-0.16241231560707092,-0.18,20,238,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n, d;
+  cin >> n >> d;
+  int *a = new int[n];
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  sort(a, a + n);
+  int ans = 0;
+  for (int i = 0; i < n; i++) {
+    for (int j = i; j < n; j++) {
+      if (a[j] - a[i] <= d && j - i + 1 > ans) {
+        ans = j - i + 1;
+      }
+    }
+  }
+  cout << (n - ans) << endl;
+}"
+2_967_D._Resource_Distribution_human,2_967_D._Resource_Distribution,967_D. Resource Distribution,human,0,1,-0.16492663323879242,-0.16492663323879242,-0.18,90,1505,"#include <bits/stdc++.h>
+using namespace std;
+typedef struct node {
+  int index;
+  long long num;
+  node() {}
+  node(int _index, long long _num) {
+    index = _index;
+    num = _num;
+  }
+} node;
+bool cmp(const node& a, const node& b) { return a.num < b.num; }
+int mylowerbound(const vector<node>& vec, long long n) {
+  int start = 0, end = vec.size() - 1;
+  if (n < vec[0].num) return 0;
+  if (n > vec.back().num) return vec.size();
+  while (start <= end) {
+    if (start == end)
+      return start;
+    else if (start == end - 1) {
+      if (vec[start].num >= n) return start;
+      return end;
+    } else {
+      int mid = start + (end - start) / 2;
+      if (vec[mid].num >= n)
+        end = mid;
+      else
+        start = mid + 1;
+    }
+  }
+  return -1;
+}
+int main() {
+  int n = 0;
+  long long x1 = 0, x2 = 0;
+  cin >> n >> x1 >> x2;
+  vector<node> vec;
+  for (int i = 0; i < n; i++) {
+    int curnum = 0;
+    scanf(""%d"", &curnum);
+    vec.push_back(node(i, curnum));
+  }
+  sort(vec.begin(), vec.end(), cmp);
+  for (int i = 1; i <= n; i++) {
+    long long curNum = (x1 + i - 1) / i;
+    int index = mylowerbound(vec, curNum);
+    int nextIndex = i + index;
+    if (nextIndex < n) {
+      curNum = vec[nextIndex].num;
+      int len = (x2 + curNum - 1) / curNum;
+      if (len <= n - nextIndex) {
+        cout << ""Yes"" << endl;
+        cout << i << "" "" << len << endl;
+        for (int j = index; j < nextIndex; j++) {
+          cout << vec[j].index + 1 << "" "";
+        }
+        cout << endl;
+        for (int j = 0; j < len; j++) {
+          cout << vec[j + nextIndex].index + 1 << "" "";
+        }
+        cout << endl;
+        return 0;
+      }
+    }
+  }
+  for (int i = 1; i <= n; i++) {
+    long long curNum = (x2 + i - 1) / i;
+    int index = mylowerbound(vec, curNum);
+    int nextIndex = i + index;
+    if (nextIndex < n) {
+      curNum = vec[nextIndex].num;
+      int len = (x1 + curNum - 1) / curNum;
+      if (len <= n - nextIndex) {
+        cout << ""Yes"" << endl;
+        cout << len << "" "" << i << endl;
+        for (int j = 0; j < len; j++) {
+          cout << vec[j + nextIndex].index + 1 << "" "";
+        }
+        cout << endl;
+        for (int j = index; j < nextIndex; j++) {
+          cout << vec[j].index + 1 << "" "";
+        }
+        cout << endl;
+        return 0;
+      }
+    }
+  }
+  cout << ""No"" << endl;
+  return 0;
+}"
+6_p02425_Bit_Flag_human,6_p02425_Bit_Flag,p02425 Bit Flag,human,0,1,-0.08294258266687393,-0.08294258266687393,-0.18,45,531,"#include <iostream>
+#include <bitset>
+
+int main()
+{
+	std::bitset<64> bs(0);
+
+	int q; std::cin >> q;
+	for (int i=0; i<q; i++) {
+		int op, k;
+		std::cin >> op;
+		switch (op) {
+		case 0:
+			std::cin >> k;
+			std::cout << bs.test(k) << std::endl;
+			break;
+		case 1:
+			std::cin >> k;
+			bs.set(k);
+			break;
+		case 2:
+			std::cin >> k;
+			bs.reset(k);
+			break;
+		case 3:
+			std::cin >> k;
+			bs.flip(k);
+			break;
+		case 4:
+			std::cout << bs.all() << std::endl;
+			break;
+		case 5:
+			std::cout << bs.any() << std::endl;
+			break;
+		case 6:
+			std::cout << bs.none() << std::endl;
+			break;
+		case 7:
+			std::cout << bs.count() << std::endl;
+			break;
+		case 8:
+			std::cout << bs.to_ullong() << std::endl;
+			break;
+		}
+	}
+	return 0;
+}"
+2_1184_D1._Parallel_Universes_(Easy)_human,2_1184_D1._Parallel_Universes_(Easy),1184_D1. Parallel Universes (Easy),human,0,1,-0.11181563884019852,-0.11181563884019852,-0.18,27,231,"#include <bits/stdc++.h>
+int main() {
+  int n, k, m, t, i;
+  scanf(""%d%d%d%d"", &n, &k, &m, &t);
+  int a, b;
+  for (i = 0; i < t; i++) {
+    scanf(""%d %d"", &a, &b);
+    if (a == 0) {
+      if (b < k) {
+        n -= b;
+        k -= b;
+      } else {
+        n = b;
+      }
+    }
+    if (a == 1) {
+      if (b <= k) {
+        n += 1;
+        k += 1;
+      } else {
+        n += 1;
+      }
+    }
+    printf(""%d %d\n"", n, k);
+  }
+  return 0;
+}"
+2_1392_B._Omkar_and_Infinity_Clock_human,2_1392_B._Omkar_and_Infinity_Clock,1392_B. Omkar and Infinity Clock,human,0,1,-0.14986072480678558,-0.14986072480678558,-0.18,45,518,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  long long t, i, n, k;
+  cin >> t;
+  while (t--) {
+    cin >> n >> k;
+    long long a[n], maxa;
+    for (i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    if (k % 2 != 0) {
+      maxa = a[0];
+      for (i = 0; i < n; i++) {
+        maxa = max(maxa, a[i]);
+      }
+      for (i = 0; i < n; i++) {
+        a[i] = maxa - a[i];
+      }
+    } else {
+      maxa = a[0];
+      for (i = 0; i < n; i++) {
+        maxa = max(maxa, a[i]);
+      }
+      for (i = 0; i < n; i++) {
+        a[i] = maxa - a[i];
+      }
+      maxa = a[0];
+      for (i = 0; i < n; i++) {
+        maxa = max(maxa, a[i]);
+      }
+      for (i = 0; i < n; i++) {
+        a[i] = maxa - a[i];
+      }
+    }
+    for (i = 0; i < n; i++) {
+      cout << a[i] << "" "";
+    }
+    cout << endl;
+  }
+  return 0;
+}"
+2_300_A._Array_human,2_300_A._Array,300_A. Array,human,0,1,-0.17044597864151,-0.17044597864151,-0.18,26,328,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n;
+  cin >> n;
+  int a[n];
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  sort(a, a + n);
+  cout << ""1 "" << a[0] << endl;
+  if (a[n - 1] > 0) {
+    cout << ""1 "" << a[n - 1] << endl;
+    cout << n - 2 << endl;
+    for (int i = 1; i < n - 1; i++) {
+      cout << a[i] << "" "";
+    }
+    cout << endl;
+  } else {
+    cout << ""2 "" << a[1] << "" "" << a[2] << endl;
+    cout << n - 3 << "" "";
+    for (int i = 3; i < n; i++) {
+      cout << a[i] << "" "";
+    }
+  }
+}"
+2_513_A._Game_human,2_513_A._Game,513_A. Game,human,0,1,-0.0788654163479805,-0.0788654163479805,-0.18,11,138,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n1, n2, k1, k2;
+  cin >> n1 >> n2 >> k1 >> k2;
+  if (n1 <= n2)
+    cout << ""Second"";
+  else
+    cout << ""First"";
+  return 0;
+}"
+2_90_B._African_Crossword_human,2_90_B._African_Crossword,90_B. African Crossword,human,0,1,-0.1499156802892685,-0.1499156802892685,-0.18,39,412,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  char a[150][150];
+  int n, m;
+  cin >> n >> m;
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  int s[150][150];
+  memset(s, 0, sizeof(s));
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      char c = a[i][j];
+      for (int b = 0; b < m; b++) {
+        if (b != j) {
+          if (c == a[i][b]) {
+            s[i][b] = 1;
+          }
+        }
+      }
+      for (int b = 0; b < n; b++) {
+        if (b != i) {
+          if (c == a[b][j]) {
+            s[b][j] = 1;
+          }
+        }
+      }
+    }
+  }
+  for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++) {
+      if (s[i][j] != 1) {
+        cout << a[i][j];
+      }
+    }
+  cout << endl;
+  return 0;
+}"
+5_p03729_AtCoder_Beginner_Contest_060_-_Shiritori_human,5_p03729_AtCoder_Beginner_Contest_060_-_Shiritori,p03729 AtCoder Beginner Contest 060 - Shiritori,human,0,1,-0.09485746920108795,-0.09485746920108795,-0.18,8,155,"#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string a, b, c;
+  cin >> a >> b >> c;
+  cout << ((a[a.size()-1] == b[0] && b[b.size()-1] == c[0]) ? ""YES"" : ""NO"") << ""\n"";
+
+  return(0);
+}"
+6_p00642_Ben_Toh_human,6_p00642_Ben_Toh,p00642 Ben Toh,human,0,1,-0.15463238954544067,-0.15463238954544067,-0.18,49,954,"#include <iostream>
+#include <vector>
+#include <set>
+#include <map>
+#include <queue>
+#include <sstream>
+#include <algorithm>
+#include <numeric>
+#include <cmath>
+#include <complex>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <cassert>
+
+#define rep(i,n) for(int i=0;i<n;i++)
+#define rp(i,c) rep(i,(c).size())
+#define fr(i,c) for(__typeof((c).begin()) i=(c).begin();i!=(c).end();i++)
+#define mp make_pair
+#define pb push_back
+#define all(c) (c).begin(),(c).end()
+#define dbg(x) cerr<<#x<<"" = ""<<(x)<<endl
+
+using namespace std;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int,int> pi;
+const int inf=1<<28;
+const double INF=1e10,EPS=1e-9;
+
+int n;
+double dp[100001][30],ans[100001];
+
+int main()
+{
+	double pw[30];
+	pw[0]=1; rep(i,29)pw[i+1]=pw[i]*0.5;
+
+	fill_n(ans,100001,0);
+	rep(i,100001)rep(j,30)dp[i][j]=0;
+	dp[0][0]=1;
+
+	for(int i=1;i<100001;i++)
+	{
+		rep(j,30)
+		{
+			dp[i][0]+=dp[i-1][j]*(1-pw[j]);
+			if(j<29)dp[i][j+1]+=dp[i-1][j]*pw[j];
+		}
+		ans[i]=ans[i-1];
+		rep(j,29)ans[i]+=dp[i][j+1];
+	}
+
+	while(cin>>n,n)printf(""%.3f\n"",ans[n]);
+
+	return 0;
+}"
+6_p01051_Squid_Ink_human,6_p01051_Squid_Ink,p01051 Squid Ink,human,0,1,-0.17750416696071625,-0.17750416696071625,-0.18,64,1469,"#include <iostream>
+#include <algorithm>
+#define MAX_R 10000
+#define MAX_C 30
+#define INF 100000
+using namespace std;
+typedef pair<int, int> coordinate;
+char field[MAX_R][MAX_C + 1];
+bool used[MAX_R][MAX_C + 1];
+int d[MAX_R][MAX_C + 1];
+int dx[4] = { 1, 0, -1, 0 }, dy[4] = { 0, 1, 0, -1 };
+int R, C;
+coordinate start, goal;
+
+void dijkstra(coordinate s) {
+	d[s.second][s.first] = 0;
+
+	while (1) {
+		coordinate v(-1, -1);
+		for (int i = 0; i < R; ++i) {
+			for (int j = 0; j < C; ++j) {
+				if (!used[i][j] && (v == coordinate(-1, -1) || d[i][j] < d[v.second][v.first])) {
+					v = coordinate(j, i);
+				}
+			}
+		}
+
+		if (v == coordinate(-1, -1)) break;
+		used[v.second][v.first] = true;
+
+		for (int i = 0; i <= 4; ++i) {
+			int nx = v.first + dx[i]; int ny = v.second + dy[i];
+			if (0 <= nx && nx < C && 0 <= ny && ny < R && field[ny][nx] != '#') {
+				if (field[ny][nx] == 'o') d[ny][nx] = min(d[ny][nx], d[v.second][v.first] + 1);
+				else if (field[ny][nx] == 'x') d[ny][nx] = min(d[ny][nx], d[v.second][v.first] + 3);
+				else d[ny][nx] = min(d[ny][nx], d[v.second][v.first] + 2);
+
+				int nnx = nx + dx[i]; int nny = ny + dy[i];
+				if (0 <= nnx && nnx < C && 0 <= nny && nny < R && field[nny][nnx] != '#') {
+					d[nny][nnx] = min(d[nny][nnx], d[v.second][v.first] + 4);
+
+					int nnnx = nnx + dx[i]; int nnny = nny + dy[i];
+					if (0 <= nnnx && nnnx < C && 0 <= nnny && nnny < R && field[nnny][nnnx] != '#') {
+						d[nnny][nnnx] = min(d[nnny][nnnx], d[v.second][v.first] + 5);
+					}
+				}
+
+			}
+		}
+	}
+}
+
+int main() {
+	char tmp;
+	cin >> R >> C;
+	for (int i = 0; i < R; ++i) {
+		fill(d[i], d[i] + C, INF);
+		fill(used[i], used[i] + C, false);
+	}
+	for (int i = 0; i < R; ++i) {
+		for (int j = 0; j < C; ++j) {
+			cin >> tmp;
+			if (tmp == 'S') start = coordinate(j, i);
+			if (tmp == 'G') goal = coordinate(j, i);
+			if (tmp == '#') used[i][j] = true;
+			field[i][j] = tmp;
+		}
+	}
+	dijkstra(start);
+	cout << d[goal.second][goal.first] << endl;
+	return 0;
+}"
+6_p02369_Cycle_Detection_for_a_Directed_Graph_human,6_p02369_Cycle_Detection_for_a_Directed_Graph,p02369 Cycle Detection for a Directed Graph,human,0,1,-0.08403618633747101,-0.08403618633747101,-0.18,70,955,"#include<iostream>
+#include <list>
+#include <limits.h>
+
+using namespace std;
+
+class Graph
+{
+	int V;
+	list<int> *adj;
+	bool isCyclicUtil(int v, bool visited[], bool *rs);
+public:
+	Graph(int V);
+	void addEdge(int v, int w);
+	bool isCyclic();
+};
+
+Graph::Graph(int V)
+{
+	this->V = V;
+	adj = new list<int>[V];
+}
+
+void Graph::addEdge(int v, int w)
+{
+	adj[v].push_back(w);
+}
+
+bool Graph::isCyclicUtil(int v, bool visited[], bool *recStack)
+{
+	if (visited[v] == false)
+	{
+		visited[v] = true;
+		recStack[v] = true;
+
+		list<int>::iterator i;
+		for (i = adj[v].begin(); i != adj[v].end(); ++i)
+		{
+			if (!visited[*i] && isCyclicUtil(*i, visited, recStack))
+				return true;
+			else if (recStack[*i])
+				return true;
+		}
+
+	}
+	recStack[v] = false;
+	return false;
+}
+
+bool Graph::isCyclic()
+{
+	bool *visited = new bool[V];
+	bool *recStack = new bool[V];
+	for (int i = 0; i < V; i++)
+	{
+		visited[i] = false;
+		recStack[i] = false;
+	}
+
+	for (int i = 0; i < V; i++)
+		if (isCyclicUtil(i, visited, recStack))
+			return true;
+
+	return false;
+}
+
+int main()
+{
+	int V, E, s, t;
+
+	cin >> V >> E;
+
+	Graph g(V);
+
+	for (int i = 0; i < E; i++) {
+		cin >> s >> t;
+		g.addEdge(s, t);
+	}
+
+	if (g.isCyclic())
+		cout << 1 << endl;
+	else
+		cout << 0 << endl;
+	return 0;
+}"
+2_177_D1._Encrypting_Messages_human,2_177_D1._Encrypting_Messages,177_D1. Encrypting Messages,human,0,1,-0.16583393514156342,-0.16583393514156342,-0.18,17,353,"#include <bits/stdc++.h>
+using namespace std;
+int a[100005], b[100005], ans[100005];
+int main() {
+  int mod, n, m, i, j, sum = 0;
+  scanf(""%d %d %d"", &n, &m, &mod);
+  for (i = 0; i < n; i++) scanf(""%d"", &a[i]);
+  for (i = 0; i < m; i++) scanf(""%d"", &b[i]);
+  for (i = 0; i < n; i++) {
+    if (i < m) sum += b[i];
+    if (i >= n - m + 1) sum -= b[i - (n - m + 1)];
+    if (sum < 0) sum += mod;
+    sum %= mod;
+    ans[i] = (a[i] + sum) % mod;
+  }
+  for (i = 0; i < n; i++) printf(""%d "", ans[i]);
+}"
+2_673_C._Bear_and_Colors_human,2_673_C._Bear_and_Colors,673_C. Bear and Colors,human,0,1,-0.1709909588098526,-0.1709909588098526,-0.18,23,362,"#include <bits/stdc++.h>
+using namespace std;
+int t[5005], n, used[5005], ret[5005];
+int main() {
+  cin >> n;
+  for (int i = 0; i < n; ++i) {
+    cin >> t[i];
+  }
+  for (int i = 0; i < n; ++i) {
+    memset(used, 0, sizeof used);
+    used[t[i]]++;
+    int mx = t[i];
+    ret[t[i]]++;
+    for (int j = i + 1; j < n; ++j) {
+      used[t[j]]++;
+      if (used[t[j]] > used[mx] || (used[t[j]] == used[mx] && t[j] < mx))
+        mx = t[j];
+      ret[mx]++;
+    }
+  }
+  for (int i = 1; i <= n; ++i) cout << ret[i] << "" "";
+  return 0;
+}"
+2_740_B._Alyona_and_flowers_human,2_740_B._Alyona_and_flowers,740_B. Alyona and flowers,human,0,1,-0.16911494731903076,-0.16911494731903076,-0.18,19,271,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  ios_base::sync_with_stdio(0);
+  int n, m;
+  cin >> n >> m;
+  vector<int> val(n);
+  for (auto &i : val) cin >> i;
+  int a, b;
+  long long res = 0;
+  for (int i = 0; i < m; ++i) {
+    cin >> a >> b;
+    long long t = 0;
+    for (int j = a - 1; j < b; ++j) t += val[j];
+    if (t > 0) res += t;
+  }
+  cout << res << endl;
+  return 0;
+}"
+5_p03072_AtCoder_Beginner_Contest_124_-_Great_Ocean_View_human,5_p03072_AtCoder_Beginner_Contest_124_-_Great_Ocean_View,p03072 AtCoder Beginner Contest 124 - Great Ocean View,human,0,1,-0.1504715085029602,-0.1504715085029602,-0.18,13,153,"#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int N;
+  cin >> N;
+
+  int maxi = 0, ans = 0;
+
+  for (int i = 0; i < N; i++) {
+    int H;
+    cin >> H;
+    if (H >= maxi) maxi = H, ans++;
+  }
+
+  cout << ans << ""\n"";
+}"
+6_p02319_0-1_Knapsack_Problem_II_human,6_p02319_0-1_Knapsack_Problem_II,p02319 0-1 Knapsack Problem II,human,0,1,-0.1502387374639511,-0.1502387374639511,-0.18,31,529,"#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using P = pair<ll, ll>;
+
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    ll N, W;
+    cin >> N >> W;
+    vector<ll> v(N), w(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> v.at(i) >> w.at(i);
+    }
+
+    vector<vector<ll> > dp(N + 1, vector<ll>(10001, INT_MAX));
+    dp.at(0).at(0) = 0;
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j <= 10000; ++j) {
+            if (j >= v.at(i)) {
+                dp.at(i + 1).at(j) = min(dp.at(i).at(j), dp.at(i).at(j - v.at(i)) + w.at(i));
+            } else {
+                dp.at(i + 1).at(j) = dp.at(i).at(j);
+            }
+        }
+    }
+
+    ll ans = 0;
+    for (int j = 0; j <= 10000; ++j) {
+        if (dp.at(N).at(j) <= W) ans = j;
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}"
+6_p02464_Set_Intersection_human,6_p02464_Set_Intersection,p02464 Set Intersection,human,0,1,-0.1750829964876175,-0.1750829964876175,-0.18,29,332,"#include<bits/stdc++.h>
+
+#define all(x) (x).begin(),(x).end()
+using namespace std;
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    set<int> a,b,c;
+    int n,m;
+    int x;
+
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>x;
+        a.insert(x);
+    }
+
+    cin>>m;
+    for(int i=0;i<m;i++)
+    {
+        cin>>x;
+        b.insert(x);
+    }
+
+    set_intersection(all(a),all(b),inserter(c,c.end()));
+
+    for(int i:c)
+    {
+        cout<<i<<endl;
+    }
+
+    return 0;
+}"
+2_1406_A._Subset_Mex_human,2_1406_A._Subset_Mex,1406_A. Subset Mex,human,0,1,-0.15844778716564178,-0.15844778716564178,-0.18,25,233,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    sort(a, a + n);
+    int m = 0, k = 0;
+    for (int i = 0; i < n; i++) {
+      if (a[i] == m) {
+        m++;
+      } else if (a[i] == k) {
+        k++;
+      }
+    }
+    cout << m + k << ""\n"";
+  }
+  return 0;
+}"
+2_155_A._I_love_%username%_human,2_155_A._I_love_%username%,155_A. I_love_%username%,human,0,1,-0.1281585395336151,-0.1281585395336151,-0.18,23,243,"#include <bits/stdc++.h>
+int main() {
+  int n, cnt = 0;
+  scanf(""%d"", &n);
+  int a[n];
+  for (int i = 0; i < n; i++) {
+    scanf(""%d"", &a[i]);
+  }
+  int maxx = a[0];
+  int minn = a[0];
+  for (int i = 0; i < n; i++) {
+    if (a[i] > maxx) {
+      maxx = a[i];
+      cnt++;
+    }
+    if (a[i] < minn) {
+      minn = a[i];
+      cnt++;
+    }
+  }
+  printf(""%d\n"", cnt);
+  return 0;
+}"
+2_409_A._The_Great_Game_human,2_409_A._The_Great_Game,409_A. The Great Game,human,0,1,-0.1577906459569931,-0.1577906459569931,-0.18,22,366,"#include <bits/stdc++.h>
+using namespace std;
+string a, b;
+int wa, wb;
+int main() {
+  cin >> a >> b;
+  for (int i = 0; i < a.size(); i += 2) {
+    if (a[i] == '8' && b[i] == '[') wa++;
+    if (a[i] == '[' && b[i] == '(') wa++;
+    if (a[i] == '(' && b[i] == '8') wa++;
+    if (b[i] == '8' && a[i] == '[') wb++;
+    if (b[i] == '[' && a[i] == '(') wb++;
+    if (b[i] == '(' && a[i] == '8') wb++;
+  }
+  if (wa > wb)
+    puts(""TEAM 1 WINS"");
+  else if (wa < wb)
+    puts(""TEAM 2 WINS"");
+  else
+    puts(""TIE"");
+  return 0;
+}"
+2_602_A._Two_Bases_human,2_602_A._Two_Bases,602_A. Two Bases,human,0,1,-0.11992283910512924,-0.11992283910512924,-0.18,26,289,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n, bn;
+  cin >> n >> bn;
+  long long int sum = 0;
+  while (n--) {
+    int a;
+    cin >> a;
+    sum = (long long int)bn * sum + a;
+  }
+  long long int sum1 = 0;
+  int m, bm;
+  cin >> m >> bm;
+  while (m--) {
+    int a;
+    cin >> a;
+    sum1 = (long long int)bm * sum1 + a;
+  }
+  if (sum > sum1)
+    cout << '>';
+  else if (sum < sum1)
+    cout << '<';
+  else
+    cout << '=';
+}"
+6_p01007_Matrix_Operations_human,6_p01007_Matrix_Operations,p01007 Matrix Operations,human,0,1,-0.15207931399345398,-0.15207931399345398,-0.18,103,1686,"#include <iostream>
+#include <string>
+#include <vector>
+#include <cstring>
+#include <climits>
+#include <algorithm>
+#include <map>
+#include <queue>
+#include <cassert>
+using namespace std;
+
+int arr[15][15];
+int t[15][15];
+
+int main() {
+	int n, m;
+	cin >> n >> m;
+	for (int i=0; i<n; ++i) {
+		for (int j=0; j<n; ++j) {
+			assert(i < 15 && j < 15);
+			cin >> arr[i][j];
+		}
+	}
+	int o;
+	for (int i=0; i<m; ++i) {
+		cin >> o;
+		int r, c, size, angle;
+		if (o == 0) {
+			cin >> r >> c >> size >> angle;
+			--r, --c;
+			if (angle == 0 || angle == 360) {
+				// pass
+			} else if (angle == 90) {
+				memcpy(t, arr, sizeof t);
+				for (int j=0; j<size; ++j) {
+					for (int k=0; k<size; ++k) {
+						assert(r+j < 15 && c+k < 15);
+						assert(0 <= r+j && 0 <= c+k);
+						assert(r+size-1-k < 15 && c+j < 15);
+						assert(0 <= r+size-1-k && 0 <= c+j);
+						arr[r+j][c+k] = t[r+size-1-k][c+j];
+					}
+				}
+			} else if (angle == 180) {
+				memcpy(t, arr, sizeof t);
+				for (int j=0; j<size; ++j) {
+					for (int k=0; k<size; ++k) {
+						assert(r+j < 15 && c+k < 15);
+						assert(r+size-1-j < 15 && c+size-1-k < 15);
+						arr[r+j][c+k] = t[r+size-1-j][c+size-1-k];
+					}
+				}
+			} else if (angle == 270) {
+				memcpy(t, arr, sizeof t);
+				for (int j=0; j<size; ++j) {
+					for (int k=0; k<size; ++k) {
+						assert(r+j < 15 && c+k < 15);
+						assert(r+k < 15 && c+size-1-j < 15);
+						arr[r+j][c+k] = t[r+k][c+size-1-j];
+					}
+				}
+			}
+		} else if (o == 1) {
+			cin >> r >> c >> size;
+			--r, --c;
+			for (int j=r; j<r+size; ++j) {
+				for (int k=c; k<c+size; ++k) {
+					arr[j][k] = 1 - arr[j][k];
+				}
+			}
+		} else if (o == 2) {
+			cin >> r;
+			--r;
+			rotate(arr[r], arr[r]+1, arr[r]+n);
+		} else if (o == 3) {
+			cin >> r;
+			--r;
+			rotate(arr[r], arr[r]+n-1, arr[r]+n);
+		} else {
+			cin >> r >> c;
+			--r, --c;
+			queue<pair<int,int> > q;
+			q.push(make_pair(r, c));
+			int v = 1 - arr[r][c];
+			while ( ! q.empty()) {
+				int nr = q.front().first;
+				int nc = q.front().second;
+				q.pop();
+				if (arr[nr][nc] == v) continue;
+				arr[nr][nc] = v;
+				if (nr+1 < n) q.push(make_pair(nr+1, nc));
+				if (0 <= nr-1) q.push(make_pair(nr-1, nc));
+				if (nc+1 < n) q.push(make_pair(nr, nc+1));
+				if (0 <= nc-1) q.push(make_pair(nr, nc-1));
+			}
+		}
+	}
+	for (int i=0; i<n; ++i) {
+		for (int j=0; j<n; ++j) {
+			cout << (j == 0 ? """" : "" "") << arr[i][j];
+		}
+		cout << endl;
+	}
+	return 0;
+}"
+2_1140_C._Playlist_human,2_1140_C._Playlist,1140_C. Playlist,human,0,1,-0.17823663353919983,-0.17823663353919983,-0.18,37,720,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int n, k;
+  cin >> n >> k;
+  vector<pair<int, int>> songs(n);
+  vector<int> len(n);
+  for (int idx = 0; idx < n; idx++) {
+    int a, b;
+    cin >> a >> b;
+    songs[idx].first = b;
+    songs[idx].second = a;
+    len[idx] = a;
+  }
+  sort(songs.begin(), songs.end());
+  long long curSum = 0;
+  long long maxPleasure = LLONG_MIN;
+  priority_queue<int, vector<int>, greater<int>> q;
+  for (int idx = n - 1; idx >= 0; idx--) {
+    if (q.size() < k) {
+      curSum += songs[idx].second;
+      q.push(songs[idx].second);
+      maxPleasure = max(curSum * songs[idx].first, maxPleasure);
+    } else if (q.size() >= k) {
+      maxPleasure =
+          max((curSum + songs[idx].second - q.top()) * songs[idx].first,
+              maxPleasure);
+      if (songs[idx].second > q.top()) {
+        curSum -= q.top();
+        q.pop();
+        q.push(songs[idx].second);
+        curSum += songs[idx].second;
+      }
+    }
+  }
+  cout << maxPleasure << endl;
+}"
+2_1199_F._Rectangle_Painting_1_human,2_1199_F._Rectangle_Painting_1,1199_F. Rectangle Painting 1,human,0,1,-0.1758093237876892,-0.1758093237876892,-0.18,29,706,"#include <bits/stdc++.h>
+using namespace std;
+int n;
+char s[51][51];
+int ans[51][51][51][51];
+int solve(int r1, int c1, int r2, int c2) {
+  if (r1 == r2 && c1 == c2) ans[r1][c1][r2][c2] = (s[r1][c1] == '#');
+  if (ans[r1][c1][r2][c2] != -1) return ans[r1][c1][r2][c2];
+  ans[r1][c1][r2][c2] = max(r2 - r1 + 1, c2 - c1 + 1);
+  int cans = ans[r1][c1][r2][c2];
+  for (int i = r1 + 1; i <= r2; i++) {
+    cans = min(cans, solve(r1, c1, i - 1, c2) + solve(i, c1, r2, c2));
+  }
+  for (int i = c1 + 1; i <= c2; i++) {
+    cans = min(cans, solve(r1, c1, r2, i - 1) + solve(r1, i, r2, c2));
+  }
+  ans[r1][c1][r2][c2] = cans;
+  return ans[r1][c1][r2][c2];
+}
+int main() {
+  scanf(""%d"", &n);
+  for (int i = 0; i < n; i++) scanf(""%s"", s[i]);
+  for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++)
+      for (int k = 0; k < n; k++)
+        for (int l = 0; l < n; l++) ans[i][j][k][l] = -1;
+  int ans = solve(0, 0, n - 1, n - 1);
+  printf(""%d\n"", ans);
+}"
+2_69_A._Young_Physicist_human,2_69_A._Young_Physicist,69_A. Young Physicist,human,0,1,-0.11759284138679504,-0.11759284138679504,-0.18,18,273,"#include <bits/stdc++.h>
+int main() {
+  int n, x, y, z;
+  scanf(""%d"", &n);
+  int arr[1][3];
+  arr[0][0] = arr[0][1] = arr[0][2] = 0;
+  for (int i = 0; i < n; i++) {
+    scanf(""%d %d %d"", &x, &y, &z);
+    arr[0][0] += x;
+    arr[0][1] += y;
+    arr[0][2] += z;
+  }
+  if (arr[0][0] == 0 && arr[0][1] == 0 && arr[0][2] == 0)
+    printf(""YES"");
+  else
+    printf(""NO"");
+  return 0;
+}"
+2_720_D._Slalom_human,2_720_D._Slalom,720_D. Slalom,human,0,1,-0.17759151756763458,-0.17759151756763458,-0.18,149,2828,"#include <bits/stdc++.h>
+using namespace std;
+const long long MAXN = 1e6 + 10;
+const long long INF = 1e9 + 10;
+const long long Mod = 1e9 + 7;
+struct node {
+  long long val, lazy;
+  bool zero;
+  node() {
+    val = 0;
+    lazy = 0;
+    zero = false;
+  }
+};
+node segt_2[4 * MAXN];
+vector<pair<int, pair<int, int> > > query[MAXN];
+int segt_1[4 * MAXN];
+void set_update(int id, int l, int r, int p, int d) {
+  if (l > p || r < p) {
+    return;
+  }
+  if (l == r) {
+    segt_1[id] = d;
+    return;
+  }
+  int mid = (l + r) / 2;
+  set_update(2 * id + 1, l, mid, p, d);
+  set_update(2 * id + 2, mid + 1, r, p, d);
+  segt_1[id] = min(segt_1[2 * id + 1], segt_1[2 * id + 2]);
+}
+int get_min(int id, int L, int R, int l, int r) {
+  if (L > r || R < l) {
+    return INF;
+  }
+  if (L >= l && R <= r) {
+    return segt_1[id];
+  }
+  int mid = (L + R) / 2;
+  return min(get_min(2 * id + 1, L, mid, l, r),
+             get_min(2 * id + 2, mid + 1, R, l, r));
+}
+void lzu(int id) {
+  if (segt_2[id].zero) {
+    segt_2[2 * id + 1].val = 0;
+    segt_2[2 * id + 1].lazy = 0;
+    segt_2[2 * id + 2].val = 0;
+    segt_2[2 * id + 2].lazy = 0;
+    segt_2[2 * id + 1].zero = true;
+    segt_2[2 * id + 2].zero = true;
+  }
+  segt_2[2 * id + 1].val += segt_2[id].lazy;
+  segt_2[2 * id + 1].val %= Mod;
+  segt_2[2 * id + 2].val += segt_2[id].lazy;
+  segt_2[2 * id + 2].val %= Mod;
+  ;
+  segt_2[2 * id + 1].lazy += segt_2[id].lazy;
+  segt_2[2 * id + 1].lazy %= Mod;
+  segt_2[2 * id + 2].lazy += segt_2[id].lazy;
+  segt_2[2 * id + 2].lazy %= Mod;
+  ;
+  segt_2[id].lazy = 0;
+  segt_2[id].zero = false;
+}
+void add_update(int id, int L, int R, int l, int r, int d) {
+  if (l > r || L > r || R < l) {
+    return;
+  }
+  if (L >= l && R <= r) {
+    segt_2[id].val += d;
+    segt_2[id].val %= Mod;
+    segt_2[id].lazy += d;
+    segt_2[id].lazy %= Mod;
+    return;
+  }
+  lzu(id);
+  int mid = (L + R) / 2;
+  add_update(2 * id + 1, L, mid, l, r, d);
+  add_update(2 * id + 2, mid + 1, R, l, r, d);
+  segt_2[id].val = segt_2[2 * id + 1].val + segt_2[2 * id + 2].val;
+}
+void zero_update(int id, int L, int R, int l, int r) {
+  if (l > r || L > r || R < l) {
+    return;
+  }
+  if (L >= l && R <= r) {
+    segt_2[id].val = 0;
+    segt_2[id].lazy = 0;
+    segt_2[id].zero = true;
+    return;
+  }
+  lzu(id);
+  int mid = (L + R) / 2;
+  zero_update(2 * id + 1, L, mid, l, r);
+  zero_update(2 * id + 2, mid + 1, R, l, r);
+  segt_2[id].val = segt_2[2 * id + 1].val + segt_2[2 * id + 2].val;
+}
+long long get_res(int id, int l, int r, int p) {
+  if (l > p || r < p) {
+    return 0;
+  }
+  if (l == r) {
+    return segt_2[id].val;
+  }
+  lzu(id);
+  long long mid = (l + r) / 2;
+  return get_res(2 * id + 1, l, mid, p) + get_res(2 * id + 2, mid + 1, r, p);
+}
+int main() {
+  ios_base ::sync_with_stdio(false);
+  cin.tie(0);
+  int n, m, k;
+  cin >> n >> m >> k;
+  for (int i = 0; i < k; i++) {
+    int x1, y1, x2, y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+    query[x1].push_back(make_pair(1LL, make_pair(y1, y2)));
+    query[x2 + 1].push_back(make_pair(0LL, make_pair(y1, y2)));
+  }
+  set_update(0, 0, m + 1, m + 1, m + 1);
+  for (long long i = 0; i <= m; i++) {
+    set_update(0, 0, m + 1, i, INF);
+  }
+  for (int i = 1; i <= n; i++) {
+    sort(query[i].begin(), query[i].end());
+    for (int j = 0; j < query[i].size(); j++) {
+      if (query[i][j].first) {
+        set_update(0, 0, m + 1, query[i][j].second.second,
+                   query[i][j].second.first);
+      } else {
+        set_update(0, 0, m + 1, query[i][j].second.second, INF);
+      }
+    }
+    if (i == 1) {
+      add_update(0, 0, m + 1, 1, get_min(0, 0, m + 1, 0, m + 1) - 1, 1);
+    }
+    for (int j = (int)(query[i].size()) - 1; j >= 0; j--) {
+      if (query[i][j].first) {
+        zero_update(0, 0, m + 1, query[i][j].second.first,
+                    query[i][j].second.second);
+      } else {
+        add_update(
+            0, 0, m + 1, query[i][j].second.first,
+            get_min(0, 0, m + 1, query[i][j].second.first - 1, m + 1) - 1,
+            get_res(0, 0, m + 1, query[i][j].second.first - 1));
+      }
+    }
+  }
+  cout << get_res(0, 0, m + 1, m);
+}"
+5_p02680_AtCoder_Beginner_Contest_168_-_._(Single_Dot)_human,5_p02680_AtCoder_Beginner_Contest_168_-_._(Single_Dot),p02680 AtCoder Beginner Contest 168 - . (Single Dot),human,0,1,-0.16059862077236176,-0.16059862077236176,-0.18,140,2645,"#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<queue>
+using namespace std;
+int N,M;
+int A[1000],B[1000],C[1000];
+int D[1000],E[1000],F[1000];
+bool vis[3010][3010];
+vector<pair<int,int> >WX[3010],WY[3010];
+bool wx[3010][3010],wy[3010][3010];
+int main()
+{
+	cin>>N>>M;
+	vector<long>X,Y;
+	X.push_back((long)-2e9);
+	X.push_back(0);
+	X.push_back((long)2e9);
+	Y.push_back((long)-2e9);
+	Y.push_back(0);
+	Y.push_back((long)2e9);
+	for(int i=0;i<N;i++)
+	{
+		cin>>A[i]>>B[i]>>C[i];
+		X.push_back(A[i]);
+		X.push_back(B[i]);
+		Y.push_back(C[i]);
+	}
+	for(int i=0;i<M;i++)
+	{
+		cin>>D[i]>>E[i]>>F[i];
+		X.push_back(D[i]);
+		Y.push_back(E[i]);
+		Y.push_back(F[i]);
+	}
+	sort(X.begin(),X.end());
+	X.erase(unique(X.begin(),X.end()),X.end());
+	sort(Y.begin(),Y.end());
+	Y.erase(unique(Y.begin(),Y.end()),Y.end());
+	for(int i=0;i<N;i++)
+	{
+		A[i]=lower_bound(X.begin(),X.end(),A[i])-X.begin();
+		B[i]=lower_bound(X.begin(),X.end(),B[i])-X.begin();
+		C[i]=lower_bound(Y.begin(),Y.end(),C[i])-Y.begin();
+		WX[C[i]].push_back(make_pair(A[i],B[i]));
+	}
+	for(int i=0;i<M;i++)
+	{
+		D[i]=lower_bound(X.begin(),X.end(),D[i])-X.begin();
+		E[i]=lower_bound(Y.begin(),Y.end(),E[i])-Y.begin();
+		F[i]=lower_bound(Y.begin(),Y.end(),F[i])-Y.begin();
+		WY[D[i]].push_back(make_pair(E[i],F[i]));
+	}
+	WX[0].push_back(make_pair(0,X.size()+1));
+	WX[Y.size()].push_back(make_pair(0,X.size()+1));
+	for(int i=0;i<=Y.size();i++)
+	{
+		sort(WX[i].begin(),WX[i].end());
+		for(int j=0;j<WX[i].size();)
+		{
+			int L=WX[i][j].first,R=WX[i][j].second;
+			while(j<WX[i].size()&&WX[i][j].first<=R)
+			{
+				R=max(R,WX[i][j].second);
+				j++;
+			}
+			for(int k=L;k<R;k++)wx[i][k]=true;
+		}
+	}
+	WY[0].push_back(make_pair(0,Y.size()+1));
+	WY[X.size()].push_back(make_pair(0,Y.size()+1));
+	for(int i=0;i<=X.size();i++)
+	{
+		sort(WY[i].begin(),WY[i].end());
+		for(int j=0;j<WY[i].size();)
+		{
+			int L=WY[i][j].first,R=WY[i][j].second;
+			while(j<WY[i].size()&&WY[i][j].first<=R)
+			{
+				R=max(R,WY[i][j].second);
+				j++;
+			}
+			for(int k=L;k<R;k++)wy[i][k]=true;
+		}
+	}
+	queue<pair<int,int> >P;
+	vector<int>sx,sy;
+	{
+		int id=lower_bound(X.begin(),X.end(),0)-X.begin();
+		sx.push_back(id-1);
+		sx.push_back(id);
+	}
+	{
+		int id=lower_bound(Y.begin(),Y.end(),0)-Y.begin();
+		sy.push_back(id-1);
+		sy.push_back(id);
+	}
+	for(int x:sx)for(int y:sy)
+	{
+		vis[x][y]=true;
+		P.push(make_pair(x,y));
+	}
+	while(!P.empty())
+	{
+		int x=P.front().first,y=P.front().second;
+		P.pop();
+		if(!wy[x][y]&&!vis[x-1][y])
+		{
+			vis[x-1][y]=true;
+			P.push(make_pair(x-1,y));
+		}
+		if(!wx[y][x]&&!vis[x][y-1])
+		{
+			vis[x][y-1]=true;
+			P.push(make_pair(x,y-1));
+		}
+		if(!wy[x+1][y]&&!vis[x+1][y])
+		{
+			vis[x+1][y]=true;
+			P.push(make_pair(x+1,y));
+		}
+		if(!wx[y+1][x]&&!vis[x][y+1])
+		{
+			vis[x][y+1]=true;
+			P.push(make_pair(x,y+1));
+		}
+	}
+	long long ans=0;
+	for(int i=0;i<X.size();i++)for(int j=0;j<Y.size();j++)
+	{
+		if(!vis[i][j])continue;
+		if(i==0||j==0||i+1==X.size()||j+1==Y.size())
+		{
+			cout<<""INF""<<endl;
+			return 0;
+		}
+		ans+=(X[i+1]-X[i])*(Y[j+1]-Y[j]);
+	}
+	cout<<ans<<endl;
+}"
+2_120_A._Elevator_human,2_120_A._Elevator,120_A. Elevator,human,0,1,-0.14799019694328308,-0.14799019694328308,-0.18,23,284,"#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  ifstream ifile(""input.txt"");
+  if (ifile) freopen(""input.txt"", ""rt"", stdin);
+  if (ifile) freopen(""output.txt"", ""wt"", stdout);
+  string s;
+  cin >> s;
+  int r;
+  cin >> r;
+  if (s == ""front"") {
+    if (r == 1)
+      cout << ""L"";
+    else
+      cout << ""R"";
+  } else {
+    if (r == 1)
+      cout << ""R"";
+    else
+      cout << ""L"";
+  }
+  return 0;
+}"
